@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Linkedin } from "lucide-react";
 import { useState } from "react";
 import { SectionHeading } from "@/components/SectionHeading";
 import {
@@ -9,7 +10,7 @@ import {
 } from "@/components/ui/dialog";
 import { CREW, FACULTY } from "@/data/event";
 
-type Organizer = { name: string; role: string; pill: string; image?: string };
+type Organizer = { name: string; role: string; pill: string; image?: string; linkedin?: string };
 
 const SUBSECTION_STYLES = {
   Faculty: {
@@ -62,6 +63,21 @@ function Avatar({
   );
 }
 
+function LinkedInLink({ person }: { person: Organizer }) {
+  return (
+    <a
+      href={person.linkedin ?? "#"}
+      target={person.linkedin ? "_blank" : undefined}
+      rel={person.linkedin ? "noopener noreferrer" : undefined}
+      aria-label={`${person.name} LinkedIn`}
+      onClick={(e) => e.stopPropagation()}
+      className="grid h-8 w-8 place-items-center rounded-lg border border-white/10 text-white/60 transition-colors hover:border-[#FF9900]/50 hover:text-white"
+    >
+      <Linkedin className="h-3.5 w-3.5" />
+    </a>
+  );
+}
+
 function OrganizerDetailDialog({
   person,
   index,
@@ -83,7 +99,8 @@ function OrganizerDetailDialog({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
-        className={`glass-strong max-w-md border-white/10 bg-transparent p-8 text-center shadow-2xl ${shadowClass} sm:rounded-3xl [&>button]:text-white/70 [&>button]:hover:text-white`}
+        overlayClassName="bg-black/90"
+        className={`glass-strong max-w-md border-white/10 bg-[#0a0f1a]/95 p-8 text-center shadow-2xl ${shadowClass} sm:rounded-3xl [&>button]:text-white/70 [&>button]:hover:text-white`}
       >
         <div className="flex flex-col items-center">
           <Avatar person={person} index={index} className="h-52 w-52 sm:h-60 sm:w-60" />
@@ -93,9 +110,12 @@ function OrganizerDetailDialog({
           <DialogDescription className="mt-2 text-base text-white/60 sm:text-lg">
             {person.role}
           </DialogDescription>
-          <span className="mt-4 inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-white/50">
-            {person.pill}
-          </span>
+          <div className="mt-4 inline-flex items-center gap-2">
+            <span className="inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-white/50">
+              {person.pill}
+            </span>
+            <LinkedInLink person={person} />
+          </div>
         </div>
       </DialogContent>
     </Dialog>
@@ -158,11 +178,14 @@ function InteractiveOrganizerGrid({
               <p className="text-sm text-white/60 transition-colors duration-300 group-hover:text-white/80">
                 {o.role}
               </p>
-              <span
-                className={`mt-1 inline-flex rounded-full border border-white/10 bg-white/5 px-2 py-0.5 font-mono text-[10px] uppercase tracking-widest text-white/50 transition-colors duration-300 group-hover:text-white/70 ${pillHoverClass}`}
-              >
-                {o.pill}
-              </span>
+              <div className="mt-1 flex items-center gap-2">
+                <span
+                  className={`inline-flex rounded-full border border-white/10 bg-white/5 px-2 py-0.5 font-mono text-[10px] uppercase tracking-widest text-white/50 transition-colors duration-300 group-hover:text-white/70 ${pillHoverClass}`}
+                >
+                  {o.pill}
+                </span>
+                <LinkedInLink person={o} />
+              </div>
             </div>
           </motion.div>
         ))}

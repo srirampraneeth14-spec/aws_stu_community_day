@@ -140,11 +140,11 @@ export const SPONSORS = {
 };
 
 export const FACULTY = [
-  { name: "Raghu Kalidindi", role: "Chairman", pill: "REC", image: "/faculty/raghu-kalidindi.png" },
-  { name: "Rahul Kalidindi", role: "Vice-Chairman", pill: "REC", image: "/faculty/rahul-kalidindi.png" },
-  { name: "A Vijay Kumar", role: "Principal", pill: "REC", image: "/faculty/a-vijay-kumar.png" },
-  { name: "P Satish Rama Chowdary", role: "Dean, Student Affairs", pill: "REC", image: "/faculty/p-satish-rama-chowdary.png" },
-  { name: "M Siva Kumar", role: "Faculty Co-Ordinator, AWS REC", pill: "REC" },
+  { name: "Raghu Kalidindi", role: "Chairman", pill: "REC", image: "/faculty/raghu-kalidindi.png", linkedin: "https://www.linkedin.com/in/raghu-kalidindi-aab36158/" },
+  { name: "Rahul Kalidindi", role: "Vice-Chairman", pill: "REC", image: "/faculty/rahul-kalidindi.png", linkedin: "https://www.linkedin.com/in/rahulkalidindi/" },
+  { name: "A Vijay Kumar", role: "Principal", pill: "REC", image: "/faculty/a-vijay-kumar.png", linkedin: "https://www.linkedin.com/in/dr-a-vijay-kumar-64451468/" },
+  { name: "P Satish Rama Chowdary", role: "Dean, Student Affairs", pill: "REC", image: "/faculty/p-satish-rama-chowdary.png", linkedin: "https://www.linkedin.com/in/chowdary-paladuga/" },
+  { name: "M Siva Kumar", role: "Faculty Co-Ordinator, AWS REC", pill: "REC", image: "/faculty/m-siva-kumar.png" },
 ];
 
 export const CREW = [
