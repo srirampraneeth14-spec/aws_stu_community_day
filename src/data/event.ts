@@ -148,21 +148,21 @@ export const FACULTY = [
 ];
 
 export const CREW = [
-  { name: "T V Sathwik Sai", role: "Captain", pill: "Core Team" },
-  { name: "Prem Sai", role: "Operations & Logistics Lead", pill: "Core Team" },
-  { name: "Akshay Lingam", role: "Technical and Labs Lead", pill: "Core Team" },
-  { name: "Varshini Samireddy", role: "Content & Designing Lead", pill: "Core Team" },
-  { name: "K Veena Lahari", role: "Event & Community Lead", pill: "Core Team" },
-  { name: "Ujwala Tadapaneni", role: "Projects & Industry Use Cases Lead", pill: "Core Team" },
-  { name: "P Sri Ram Praneeth", role: "Technical and Labs Co-Ordinator", pill: "Co-Ordinators" },
-  { name: "Pavan Surya Alla", role: "Content & Designing Co-Ordinator", pill: "Co-Ordinators" },
-  { name: "Ganesh Gowtham", role: "Content & Designing Co-Ordinator", pill: "Co-Ordinators" },
+  { name: "T V Sathwik Sai", role: "Captain", pill: "Core Team", linkedin: "https://www.linkedin.com/in/sathwik-sai-t-v-ba202830a" },
+  { name: "Prem Sai", role: "Operations & Logistics Lead", pill: "Core Team", linkedin: "https://www.linkedin.com/in/prem-sai-50a97a337" },
+  { name: "Akshay Lingam", role: "Technical and Labs Lead", pill: "Core Team", linkedin: "https://www.linkedin.com/in/akshay-lingam-b00191387" },
+  { name: "Varshini Samireddy", role: "Content & Designing Lead", pill: "Core Team", linkedin: "https://www.linkedin.com/in/varshini-samireddy-996b67328" },
+  { name: "K Veena Lahari", role: "Event & Community Lead", pill: "Core Team", linkedin: "https://www.linkedin.com/in/karupathu-veena-lahari" },
+  { name: "Ujwala Tadapaneni", role: "Projects & Industry Use Cases Lead", pill: "Core Team", linkedin: "https://www.linkedin.com/in/ujwala-tadapaneni-59846633a" },
+  { name: "P Sri Ram Praneeth", role: "Technical and Labs Co-Ordinator", pill: "Co-Ordinators", linkedin: "https://www.linkedin.com/in/pediredla-sri-ram-praneeth-554aab315" },
+  { name: "Pavan Surya Alla", role: "Content & Designing Co-Ordinator", pill: "Co-Ordinators", linkedin: "https://www.linkedin.com/in/pavansurya-alla-458566342" },
+  { name: "Ganesh Gowtham", role: "Content & Designing Co-Ordinator", pill: "Co-Ordinators", linkedin: "https://www.linkedin.com/in/karri-ganesh-gowtham-10ab613ab" },
   { name: "Pujitha Devara", role: "Content & Designing Co-Ordinator", pill: "Co-Ordinators" },
-  { name: "Sai Preethi", role: "Operations & Logistics Co-Ordinator", pill: "Co-Ordinators" },
-  { name: "Varun Kumar", role: "Operations & Logistics Co-Ordinator", pill: "Co-Ordinators" },
-  { name: "Yogitha Varri", role: "Event & Community Co-Ordinator", pill: "Co-Ordinators" },
-  { name: "Boddeti Durga", role: "Projects & Industry Use Cases Co-Ordinator", pill: "Co-Ordinators" },
-  { name: "Killana Dilleswari", role: "Event & Community Co-Ordinator", pill: "Co-Ordinators" },
+  { name: "Sai Preethi", role: "Operations & Logistics Co-Ordinator", pill: "Co-Ordinators", linkedin: "https://www.linkedin.com/in/sai-preethi-02b5bb3ba" },
+  { name: "Varun Kumar", role: "Operations & Logistics Co-Ordinator", pill: "Co-Ordinators", linkedin: "https://www.linkedin.com/in/varunkumar-puti" },
+  { name: "Yogitha Varri", role: "Event & Community Co-Ordinator", pill: "Co-Ordinators", linkedin: "https://www.linkedin.com/in/yogitha-varri-594a36370" },
+  { name: "Boddeti Durga", role: "Projects & Industry Use Cases Co-Ordinator", pill: "Co-Ordinators", linkedin: "https://www.linkedin.com/in/boddetidurga" },
+  { name: "Killana Dilleswari", role: "Event & Community Co-Ordinator", pill: "Co-Ordinators", linkedin: "https://www.linkedin.com/in/killana-dilleswari-ab97b7394" },
 ];
 
 export const FAQ = [
