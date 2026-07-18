@@ -85,14 +85,22 @@ export function Navbar() {
           animate={{ opacity: 1, y: 0 }}
           className="fixed inset-x-3 top-[64px] z-50 lg:hidden"
         >
-          <div className="glass-strong rounded-2xl p-3">
+          <div
+            className="rounded-2xl border border-white/20 p-3 shadow-2xl shadow-black/50"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(10,15,26,0.95) 0%, rgba(10,15,26,0.92) 100%)",
+              backdropFilter: "blur(24px) saturate(180%)",
+              WebkitBackdropFilter: "blur(24px) saturate(180%)",
+            }}
+          >
             <ul className="grid grid-cols-2 gap-1">
               {NAV_LINKS.map((l) => (
                 <li key={l.id}>
                   <a
                     href={`#${l.id}`}
                     onClick={() => setOpen(false)}
-                    className="block rounded-lg px-3 py-2 text-sm text-white/80 hover:bg-white/5"
+                    className="block rounded-lg px-3 py-2 text-sm text-white/90 hover:bg-white/10"
                   >
                     {l.label}
                   </a>

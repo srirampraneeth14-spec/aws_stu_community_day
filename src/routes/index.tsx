@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { AchievementPopup } from "@/components/AchievementPopup";
 import { BackgroundLayers } from "@/components/BackgroundLayers";
 import { Footer } from "@/components/Footer";
 import { KonamiEgg } from "@/components/KonamiEgg";
@@ -41,7 +40,6 @@ function Index() {
         <RegisterCTA />
       </main>
       <Footer />
-      <AchievementPopup />
       <KonamiEgg />
     </div>
   );
