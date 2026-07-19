@@ -144,10 +144,10 @@ export const FACULTY = [
   { name: "Rahul Kalidindi", role: "Vice-Chairman", pill: "REC", image: "/faculty/rahul-kalidindi.png", linkedin: "https://www.linkedin.com/in/rahulkalidindi/" },
   { name: "A Vijay Kumar", role: "Principal", pill: "REC", image: "/faculty/a-vijay-kumar.png", linkedin: "https://www.linkedin.com/in/dr-a-vijay-kumar-64451468/" },
   { name: "P Satish Rama Chowdary", role: "Dean, Student Affairs", pill: "REC", image: "/faculty/p-satish-rama-chowdary.png", linkedin: "https://www.linkedin.com/in/chowdary-paladuga/" },
-  { name: "S Srinadh Raju", role: "HOD-CSE", pill: "REC", image: "/faculty/g-sridevi.png", linkedin: "https://www.linkedin.com/in/dr-sagiraju-srinadhraju-044b431b0" },
-  { name: "B Raja Sarath Kumar", role: "HOD-CSE(AI&ML)", pill: "REC", image: "/faculty/k-v-satyanarayana.png", linkedin: "https://www.linkedin.com/in/rajaboddu" },
-  { name: "K V Satyanarayana", role: "HOD-CSE(Data Science)", pill: "REC", image: "/faculty/s-srinadh-raju.png", linkedin: "https://www.linkedin.com/in/dr-v-satyanarayana-k-5a34a9329" },
-  { name: "G Sridevi", role: "HOD-CSE (Cyber Security & IoT)", pill: "REC", image: "/faculty/b-raja-sarath-kumar.png", linkedin: "https://www.linkedin.com/in/sridevi-gadde-02b4841b0" },
+  { name: "S Srinadh Raju", role: "HOD-CSE", pill: "REC", image: "/faculty/s-srinadh-raju-2026.png", linkedin: "https://www.linkedin.com/in/dr-sagiraju-srinadhraju-044b431b0" },
+  { name: "G Sridevi", role: "HOD-CSE(AI&ML)", pill: "REC", image: "/faculty/g-sridevi.png", linkedin: "https://www.linkedin.com/in/sridevi-gadde-02b4841b0" },
+  { name: "K V Satyanarayana", role: "HOD-CSE(Data Science)", pill: "REC", image: "/faculty/k-v-satyanarayana-2026.png", linkedin: "https://www.linkedin.com/in/dr-v-satyanarayana-k-5a34a9329" },
+  { name: "Varanasi Usha Bala", role: "HOD-CSE (Cyber Security & IoT)", pill: "REC", image: "/faculty/varanasi-usha-bala.png" },
   { name: "M Siva Kumar", role: "Faculty Co-Ordinator, AWS REC", pill: "REC", image: "/faculty/m-siva-kumar.png" },
 ];
 
