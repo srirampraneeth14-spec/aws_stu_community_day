@@ -147,7 +147,7 @@ export const FACULTY = [
   { name: "S Srinadh Raju", role: "HOD-CSE", pill: "REC", image: "/faculty/s-srinadh-raju-2026.png", linkedin: "https://www.linkedin.com/in/dr-sagiraju-srinadhraju-044b431b0" },
   { name: "G Sridevi", role: "HOD-CSE(AI&ML)", pill: "REC", image: "/faculty/g-sridevi.png", linkedin: "https://www.linkedin.com/in/sridevi-gadde-02b4841b0" },
   { name: "K V Satyanarayana", role: "HOD-CSE(Data Science)", pill: "REC", image: "/faculty/k-v-satyanarayana-2026.png", linkedin: "https://www.linkedin.com/in/dr-v-satyanarayana-k-5a34a9329" },
-  { name: "Varanasi Usha Bala", role: "HOD-CSE (Cyber Security & IoT)", pill: "REC", image: "/faculty/varanasi-usha-bala.png" },
+  { name: "Varanasi Usha Bala", role: "HOD-CSE (Cyber Security & IoT)", pill: "REC", image: "/faculty/varanasi-usha-bala.png", linkedin: "https://www.linkedin.com/in/dr-varanasi-usha-bala-17345914" },
   { name: "M Siva Kumar", role: "Faculty Co-Ordinator, AWS REC", pill: "REC", image: "/faculty/m-siva-kumar.png" },
 ];
 
