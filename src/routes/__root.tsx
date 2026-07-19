@@ -94,15 +94,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "AWS Community Day — Where Builders Meet the Cloud" },
       { name: "twitter:description", content: "AWS Community Day: a full day of talks, hands-on workshops, and networking for builders, students, and cloud enthusiasts. Learn, build, connect, grow." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1951a7ea-1da2-4f49-bf12-5694edac3251/id-preview-96186a30--0da77741-b65b-49c2-b652-c474b909f0c0.lovable.app-1783958821117.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1951a7ea-1da2-4f49-bf12-5694edac3251/id-preview-96186a30--0da77741-b65b-49c2-b652-c474b909f0c0.lovable.app-1783958821117.png" },
+      { property: "og:image", content: "/social-preview.png" },
+      { name: "twitter:image", content: "/social-preview.png" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
