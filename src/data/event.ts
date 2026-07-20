@@ -153,7 +153,7 @@ export const FACULTY = [
 
 export const CREW = [
   { name: "T V Sathwik Sai", role: "SBG Leader", pill: "Core Team", image: "/crew/t-v-sathwik-sai.png", linkedin: "https://www.linkedin.com/in/sathwik-sai-t-v-ba202830a" },
-  { name: "Prem Sai", role: "Operations & Logistics Lead", pill: "Core Team", linkedin: "https://www.linkedin.com/in/prem-sai-50a97a337" },
+  { name: "Prem Sai", role: "Operations & Logistics Lead", pill: "Core Team",image: "/crew/Prem.jpg", linkedin: "https://www.linkedin.com/in/prem-sai-50a97a337" },
   { name: "Akshay Lingam", role: "Technical and Labs Lead", pill: "Core Team",image: "/crew/Akshay.jpg", linkedin: "https://www.linkedin.com/in/akshay-lingam-b00191387" },
   { name: "Varshini Samireddy", role: "Content & Designing Lead", pill: "Core Team", linkedin: "https://www.linkedin.com/in/varshini-samireddy-996b67328" },
   { name: "K Veena Lahari", role: "Event & Community Lead", pill: "Core Team", linkedin: "https://www.linkedin.com/in/karupathu-veena-lahari" },
