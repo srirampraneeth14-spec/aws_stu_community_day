@@ -40,12 +40,7 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 function MeetupIcon({ className }: { className?: string }) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      aria-hidden
-      className={className}
-    >
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden className={className}>
       <path d="M6.5 12.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm5.5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm5.5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3ZM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2Z" />
     </svg>
   );
@@ -66,9 +61,8 @@ export function Footer() {
             <span className="text-base font-bold tracking-tight">AWS Community Day</span>
           </a>
           <p className="mt-4 max-w-md text-sm leading-relaxed text-white/60">
-            A community-run conference by builders, for builders. Talks, hands-on workshops,
-            and the kind of hallway conversations that turn into your next role, project,
-            or startup.
+            A community-run conference by builders, for builders. Talks, hands-on workshops, and the
+            kind of hallway conversations that turn into your next role, project, or startup.
           </p>
           <a
             href={VENUE_MAPS_URL}
@@ -107,9 +101,7 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="font-mono text-[10px] uppercase tracking-widest text-white/40">
-            Follow
-          </p>
+          <p className="font-mono text-[10px] uppercase tracking-widest text-white/40">Follow</p>
           <ul className="mt-4 space-y-2">
             {SOCIAL_LINKS.map(({ name, href, Icon, iconClass }) => (
               <li key={name}>
@@ -147,14 +139,16 @@ export function Footer() {
       <div className="mx-auto mt-12 max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="glass rounded-2xl p-4 font-mono text-xs text-white/70">
           <p>
-            <span className="text-[#22C55E]">$</span> echo &quot;Thank you for building with the community.&quot;
+            <span className="text-[#22C55E]">$</span> echo &quot;Thank you for building with the
+            community.&quot;
           </p>
           <p className="mt-1 text-white/40">
             <span className="text-[#22C55E]">$</span> exit 0
           </p>
         </div>
         <p className="mt-6 text-center font-mono text-[10px] uppercase tracking-widest text-white/30">
-          © {new Date().getFullYear()} AWS Community Day · Independently organized · Built with ☁ + ❤
+          © {new Date().getFullYear()} AWS Community Day · Independently organized · Built with ☁ +
+          ❤
         </p>
       </div>
     </footer>

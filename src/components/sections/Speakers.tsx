@@ -4,7 +4,11 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { SPEAKERS } from "@/data/event";
 
 function initials(name: string) {
-  return name.split(" ").map((n) => n[0]).slice(0, 2).join("");
+  return name
+    .split(" ")
+    .map((n) => n[0])
+    .slice(0, 2)
+    .join("");
 }
 
 export function Speakers() {
@@ -14,7 +18,11 @@ export function Speakers() {
         <SectionHeading
           id="5"
           eyebrow="Speakers"
-          title={<>The <span className="text-gradient-aws">humans</span> behind the sessions.</>}
+          title={
+            <>
+              The <span className="text-gradient-aws">humans</span> behind the sessions.
+            </>
+          }
           subtitle="AWS Heroes, Community Builders, and engineers doing the actual work."
         />
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

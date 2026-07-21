@@ -5,9 +5,12 @@ import { WORKSHOPS } from "@/data/event";
 
 function levelStyle(level: string) {
   switch (level) {
-    case "Beginner": return { color: "#22C55E", bg: "rgba(34,197,94,0.15)" };
-    case "Intermediate": return { color: "#38BDF8", bg: "rgba(56,189,248,0.15)" };
-    default: return { color: "#8B5CF6", bg: "rgba(139,92,246,0.15)" };
+    case "Beginner":
+      return { color: "#22C55E", bg: "rgba(34,197,94,0.15)" };
+    case "Intermediate":
+      return { color: "#38BDF8", bg: "rgba(56,189,248,0.15)" };
+    default:
+      return { color: "#8B5CF6", bg: "rgba(139,92,246,0.15)" };
   }
 }
 
@@ -18,7 +21,11 @@ export function Workshops() {
         <SectionHeading
           id="6"
           eyebrow="Workshops"
-          title={<>Bring a laptop. <span className="text-gradient-cool">Leave with code.</span></>}
+          title={
+            <>
+              Bring a laptop. <span className="text-gradient-cool">Leave with code.</span>
+            </>
+          }
           subtitle="Guided, hands-on labs across three levels. Mentors on hand for every session."
         />
         <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">

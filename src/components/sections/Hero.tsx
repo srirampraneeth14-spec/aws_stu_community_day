@@ -14,9 +14,9 @@ export function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-[11px] uppercase tracking-widest text-white/70 backdrop-blur"
+            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 font-tech text-[11px] uppercase tracking-widest text-white/70 backdrop-blur"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-[#22C55E] shadow-[0_0_10px_#22C55E]" />
+            <span className="h-1.5 w-1.5 rounded-full bg-[#7CCB8C] shadow-[0_0_8px_rgba(124,203,140,0.45)]" />
             Registration open · Learn · Build · Connect · Grow
           </motion.div>
 
@@ -28,8 +28,7 @@ export function Hero() {
           >
             Where Builders
             <br />
-            Meet the{" "}
-            <span className="text-gradient-aws">Cloud.</span>
+            Meet the <span className="text-[#D7E0EA]">Cloud.</span>
           </motion.h1>
 
           <motion.p
@@ -38,9 +37,9 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="mt-6 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg"
           >
-            A one-day, community-run AWS conference for students, developers, architects,
-            and the cloud-curious. Deep talks, hands-on workshops, and the kind of people
-            you&apos;ll want to build the future with.
+            A one-day, community-run AWS conference for students, developers, architects, and the
+            cloud-curious. Deep talks, hands-on workshops, and the kind of people you&apos;ll want
+            to build the future with.
           </motion.p>
 
           <motion.div
@@ -52,17 +51,14 @@ export function Hero() {
             <MagneticButton onClick={() => (window.location.hash = "#register")}>
               Register Now <ArrowRight className="h-4 w-4" />
             </MagneticButton>
-            <MagneticButton
-              variant="ghost"
-              onClick={() => (window.location.hash = "#agenda")}
-            >
+            <MagneticButton variant="ghost" onClick={() => (window.location.hash = "#agenda")}>
               Explore Agenda
             </MagneticButton>
           </motion.div>
 
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-white/60">
             <span className="flex items-center gap-2">
-              <CalendarDays className="h-4 w-4 text-[#38BDF8]" /> {EVENT_DATE}
+              <CalendarDays className="h-4 w-4 text-[#94A3B8]" /> {EVENT_DATE}
             </span>
             <a
               href={VENUE_MAPS_URL}
@@ -70,10 +66,10 @@ export function Hero() {
               rel="noopener noreferrer"
               className="flex items-center gap-2 transition-colors hover:text-white"
             >
-              <MapPin className="h-4 w-4 text-[#FF9900]" /> {EVENT_VENUE_NAME}
+              <MapPin className="h-4 w-4 text-[#D6A34B]" /> {EVENT_VENUE_NAME}
             </a>
-            <span className="flex items-center gap-2 font-mono text-xs text-white/40">
-              <Sparkles className="h-3.5 w-3.5 text-[#8B5CF6]" /> // sudo attend aws-community-day
+            <span className="flex items-center gap-2 font-tech text-xs text-white/40">
+              <Sparkles className="h-3.5 w-3.5 text-[#8FA3B8]" /> // sudo attend aws-community-day
             </span>
           </div>
 
@@ -89,9 +85,9 @@ export function Hero() {
               >
                 <p className="text-3xl font-bold text-white">
                   <CountUp to={s.value} />
-                  <span className="text-[#FF9900]">{s.suffix}</span>
+                  <span className="text-[#D6A34B]">{s.suffix}</span>
                 </p>
-                <p className="mt-1 font-mono text-[10px] uppercase tracking-widest text-white/50">
+                <p className="mt-1 font-tech text-[10px] uppercase tracking-widest text-white/50">
                   {s.label}
                 </p>
               </motion.div>

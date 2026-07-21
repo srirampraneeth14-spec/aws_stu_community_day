@@ -2,12 +2,7 @@ import { motion } from "framer-motion";
 import { Linkedin } from "lucide-react";
 import { useState } from "react";
 import { SectionHeading } from "@/components/SectionHeading";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { CREW, FACULTY } from "@/data/event";
 
 type Organizer = { name: string; role: string; pill: string; image?: string; linkedin?: string };
@@ -24,7 +19,11 @@ const SUBSECTION_STYLES = {
 } as const;
 
 function initials(name: string) {
-  return name.split(" ").map((n) => n[0]).slice(0, 2).join("");
+  return name
+    .split(" ")
+    .map((n) => n[0])
+    .slice(0, 2)
+    .join("");
 }
 
 function Avatar({
@@ -93,8 +92,7 @@ function OrganizerDetailDialog({
 }) {
   if (!person) return null;
 
-  const shadowClass =
-    variant === "faculty" ? "shadow-[#38BDF8]/10" : "shadow-[#FF9900]/10";
+  const shadowClass = variant === "faculty" ? "shadow-[#38BDF8]/10" : "shadow-[#FF9900]/10";
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -133,14 +131,10 @@ function InteractiveOrganizerGrid({
   const selected = selectedIndex !== null ? people[selectedIndex] : null;
 
   const hoverShadowClass =
-    variant === "faculty"
-      ? "hover:shadow-[#38BDF8]/15"
-      : "hover:shadow-[#FF9900]/15";
+    variant === "faculty" ? "hover:shadow-[#38BDF8]/15" : "hover:shadow-[#FF9900]/15";
 
   const pillHoverClass =
-    variant === "faculty"
-      ? "group-hover:border-[#38BDF8]/30"
-      : "group-hover:border-[#FF9900]/30";
+    variant === "faculty" ? "group-hover:border-[#38BDF8]/30" : "group-hover:border-[#FF9900]/30";
 
   return (
     <>

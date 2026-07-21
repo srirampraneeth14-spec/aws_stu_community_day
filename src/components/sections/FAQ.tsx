@@ -11,7 +11,11 @@ export function FAQ() {
           <SectionHeading
             id="9"
             eyebrow="FAQ"
-            title={<>Answers, <span className="text-gradient-cool">before you ask.</span></>}
+            title={
+              <>
+                Answers, <span className="text-gradient-cool">before you ask.</span>
+              </>
+            }
             subtitle="Missing something? Drop us a line in the contact section below."
           />
           <Accordion.Root type="single" collapsible className="space-y-3">

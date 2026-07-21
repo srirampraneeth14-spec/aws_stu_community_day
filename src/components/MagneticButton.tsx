@@ -31,9 +31,9 @@ export function MagneticButton({
         y.set(0);
       }}
       className={cn(
-        "group relative inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-tight transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF9900]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#09090B]",
+        "group relative inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-tight transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D6A34B]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#09090B]",
         variant === "primary" &&
-          "text-black shadow-[0_10px_40px_-10px_rgba(255,153,0,0.6)] hover:shadow-[0_10px_50px_-8px_rgba(255,153,0,0.8)]",
+          "text-black shadow-[0_10px_30px_-12px_rgba(201,161,90,0.4)] hover:shadow-[0_10px_40px_-10px_rgba(201,161,90,0.55)]",
         variant === "ghost" && "border border-white/15 text-white hover:bg-white/5",
         className,
       )}
@@ -43,7 +43,7 @@ export function MagneticButton({
         <span
           aria-hidden
           className="absolute inset-0 -z-10 rounded-full"
-          style={{ background: "linear-gradient(120deg, #FF9900, #FFB84D 60%, #FF9900)" }}
+          style={{ background: "linear-gradient(120deg, #B7791F, #D6A34B 60%, #B7791F)" }}
         />
       )}
       {children}

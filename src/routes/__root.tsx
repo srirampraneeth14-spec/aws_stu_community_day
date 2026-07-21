@@ -93,7 +93,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "AWS Community Day — Where Builders Meet the Cloud" },
-      { name: "twitter:description", content: "AWS Community Day: a full day of talks, hands-on workshops, and networking for builders, students, and cloud enthusiasts. Learn, build, connect, grow." },
+      {
+        name: "twitter:description",
+        content:
+          "AWS Community Day: a full day of talks, hands-on workshops, and networking for builders, students, and cloud enthusiasts. Learn, build, connect, grow.",
+      },
       { property: "og:image", content: "/social-preview.png" },
       { name: "twitter:image", content: "/social-preview.png" },
     ],

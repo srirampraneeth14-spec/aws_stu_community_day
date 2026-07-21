@@ -15,8 +15,18 @@ const NODES: Node[] = [
 ];
 
 const LINKS: [number, number][] = [
-  [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6],
-  [1, 5], [2, 5], [1, 3], [2, 4], [3, 6], [4, 6],
+  [0, 1],
+  [0, 2],
+  [0, 3],
+  [0, 4],
+  [0, 5],
+  [0, 6],
+  [1, 5],
+  [2, 5],
+  [1, 3],
+  [2, 4],
+  [3, 6],
+  [4, 6],
 ];
 
 export function CloudNetwork() {
@@ -100,7 +110,11 @@ export function CloudNetwork() {
               x2={(nb.x / 100) * size}
               y2={(nb.y / 100) * size}
               stroke="url(#link)"
-              strokeWidth={hover && (nodesWithOffset[a].id === hover || nodesWithOffset[b].id === hover) ? 1.6 : 0.9}
+              strokeWidth={
+                hover && (nodesWithOffset[a].id === hover || nodesWithOffset[b].id === hover)
+                  ? 1.6
+                  : 0.9
+              }
               strokeDasharray="4 6"
               style={{ animation: `dash ${8 + i * 0.5}s linear infinite` }}
             />
@@ -122,14 +136,24 @@ export function CloudNetwork() {
                 cy: [(na.y / 100) * size, (nb.y / 100) * size],
                 opacity: [0, 1, 0],
               }}
-              transition={{ duration: 3 + i * 0.4, repeat: Infinity, delay: i * 0.5, ease: "linear" }}
+              transition={{
+                duration: 3 + i * 0.4,
+                repeat: Infinity,
+                delay: i * 0.5,
+                ease: "linear",
+              }}
             />
           );
         })}
 
         {/* nodes */}
         {nodesWithOffset.map((n, i) => {
-          const grad = i % 3 === 0 ? "url(#node-orange)" : i % 3 === 1 ? "url(#node-blue)" : "url(#node-purple)";
+          const grad =
+            i % 3 === 0
+              ? "url(#node-orange)"
+              : i % 3 === 1
+                ? "url(#node-blue)"
+                : "url(#node-purple)";
           const cx = (n.x / 100) * size;
           const cy = (n.y / 100) * size;
           const dist = mouse ? Math.hypot(mouse.x - n.x, mouse.y - n.y) : 100;

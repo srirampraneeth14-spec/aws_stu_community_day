@@ -10,13 +10,18 @@ export function WhyAttend() {
         <SectionHeading
           id="2"
           eyebrow="Why Attend"
-          title={<>Six good reasons. <span className="text-white/50">One extraordinary day.</span></>}
+          title={
+            <>
+              Six good reasons. <span className="text-white/50">One extraordinary day.</span>
+            </>
+          }
           subtitle="From your first Lambda to your next architecture decision — there's a room for every stage of your cloud journey."
         />
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {WHY_ATTEND.map((c, i) => {
-            const Icon = (Icons as unknown as Record<string, Icons.LucideIcon>)[c.icon] ?? Icons.Circle;
+            const Icon =
+              (Icons as unknown as Record<string, Icons.LucideIcon>)[c.icon] ?? Icons.Circle;
             return (
               <motion.div
                 key={c.title}
@@ -30,11 +35,16 @@ export function WhyAttend() {
                 <div
                   aria-hidden
                   className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-60"
-                  style={{ background: "radial-gradient(circle, rgba(255,153,0,0.5), transparent 70%)" }}
+                  style={{
+                    background: "radial-gradient(circle, rgba(255,153,0,0.5), transparent 70%)",
+                  }}
                 />
                 <div
                   className="grid h-11 w-11 place-items-center rounded-xl"
-                  style={{ background: "linear-gradient(135deg, rgba(255,153,0,0.25), rgba(139,92,246,0.25))" }}
+                  style={{
+                    background:
+                      "linear-gradient(135deg, rgba(255,153,0,0.25), rgba(139,92,246,0.25))",
+                  }}
                 >
                   <Icon className="h-5 w-5 text-white" />
                 </div>

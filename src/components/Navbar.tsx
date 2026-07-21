@@ -25,8 +25,7 @@ export function Navbar() {
             scrolled ? "opacity-100" : "opacity-0",
           )}
           style={{
-            background:
-              "linear-gradient(180deg, rgba(9,9,11,0.75) 0%, rgba(9,9,11,0.4) 100%)",
+            background: "linear-gradient(180deg, rgba(9,9,11,0.75) 0%, rgba(9,9,11,0.4) 100%)",
             borderBottom: "1px solid rgba(255,255,255,0.06)",
           }}
         />
@@ -34,13 +33,13 @@ export function Navbar() {
           <a href="#top" className="flex items-center gap-2 text-white">
             <span
               className="grid h-8 w-8 place-items-center rounded-lg"
-              style={{ background: "linear-gradient(135deg,#FF9900,#8B5CF6)" }}
+              style={{ background: "linear-gradient(135deg,#D6A34B,#94A3B8)" }}
             >
               <Cloud className="h-4 w-4 text-black" />
             </span>
             <span className="flex flex-col leading-none">
               <span className="text-sm font-bold tracking-tight">AWS Community Day</span>
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50">
+              <span className="font-tech text-[10px] uppercase tracking-[0.2em] text-white/45">
                 where builders meet the cloud
               </span>
             </span>
@@ -62,8 +61,8 @@ export function Navbar() {
           <div className="flex items-center gap-2">
             <a
               href="#register"
-              className="hidden whitespace-nowrap rounded-full px-5 py-2 text-sm font-semibold text-black shadow-[0_10px_30px_-12px_rgba(255,153,0,0.8)] transition-transform hover:scale-[1.02] sm:inline-flex"
-              style={{ background: "linear-gradient(120deg, #FF9900, #FFB84D 60%, #FF9900)" }}
+              className="hidden whitespace-nowrap rounded-full px-5 py-2 text-sm font-semibold text-black shadow-[0_10px_26px_-12px_rgba(201,161,90,0.45)] transition-transform hover:scale-[1.02] sm:inline-flex"
+              style={{ background: "linear-gradient(120deg, #B7791F, #D6A34B 60%, #B7791F)" }}
             >
               Register Now
             </a>
@@ -111,7 +110,7 @@ export function Navbar() {
               href="#register"
               onClick={() => setOpen(false)}
               className="mt-2 block rounded-xl px-4 py-3 text-center text-sm font-semibold text-black"
-              style={{ background: "linear-gradient(120deg, #FF9900, #FFB84D 60%, #FF9900)" }}
+              style={{ background: "linear-gradient(120deg, #B7791F, #D6A34B 60%, #B7791F)" }}
             >
               Register Now
             </a>

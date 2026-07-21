@@ -10,12 +10,17 @@ export function Tracks() {
         <SectionHeading
           id="3"
           eyebrow="Tracks"
-          title={<>Nine tracks. <span className="text-gradient-aws">One ecosystem.</span></>}
+          title={
+            <>
+              Nine tracks. <span className="text-gradient-aws">One ecosystem.</span>
+            </>
+          }
           subtitle="Follow one path or roam freely — every session is designed to be approachable at first, ambitious by the end."
         />
         <div className="mt-12 grid gap-3 sm:grid-cols-2 md:grid-cols-3">
           {TRACKS.map((t, i) => {
-            const Icon = (Icons as unknown as Record<string, Icons.LucideIcon>)[t.icon] ?? Icons.Layers;
+            const Icon =
+              (Icons as unknown as Record<string, Icons.LucideIcon>)[t.icon] ?? Icons.Layers;
             return (
               <motion.div
                 key={t.name}

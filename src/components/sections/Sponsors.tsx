@@ -16,7 +16,11 @@ export function Sponsors() {
         <SectionHeading
           id="7"
           eyebrow="Sponsors"
-          title={<>Powered by <span className="text-gradient-aws">believers</span>.</>}
+          title={
+            <>
+              Powered by <span className="text-gradient-aws">believers</span>.
+            </>
+          }
           subtitle="The companies and communities that make this day possible. Hover to learn what they build."
         />
 
@@ -40,7 +44,10 @@ export function Sponsors() {
                     {TIER_STYLES[tier].sub}
                   </p>
                 </div>
-                <div className="h-px flex-1 translate-y-1 bg-gradient-to-r from-white/10 to-transparent" style={{ marginLeft: 24 }} />
+                <div
+                  className="h-px flex-1 translate-y-1 bg-gradient-to-r from-white/10 to-transparent"
+                  style={{ marginLeft: 24 }}
+                />
               </div>
               <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {SPONSORS[tier].map((s, i) => (

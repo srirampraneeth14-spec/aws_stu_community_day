@@ -9,7 +9,12 @@ export function About() {
           <SectionHeading
             id="1"
             eyebrow="About"
-            title={<>A conference <span className="text-gradient-cool">by the community</span>, for anyone learning the cloud.</>}
+            title={
+              <>
+                A conference <span className="text-gradient-cool">by the community</span>, for
+                anyone learning the cloud.
+              </>
+            }
           />
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -20,13 +25,13 @@ export function About() {
           >
             <p>
               AWS Community Day is a full day of talks, workshops, and hallway conversations
-              organized by the local AWS community. Whether you&apos;ve just heard about
-              &ldquo;the cloud&rdquo; or you&apos;ve been running production workloads for a
-              decade, you&apos;ll find something here that moves you forward.
+              organized by the local AWS community. Whether you&apos;ve just heard about &ldquo;the
+              cloud&rdquo; or you&apos;ve been running production workloads for a decade,
+              you&apos;ll find something here that moves you forward.
             </p>
             <p>
-              Every speaker, mentor, and volunteer is here because they love this stuff and
-              they want you to love it too. No gatekeeping. Beginners welcomed at the front.
+              Every speaker, mentor, and volunteer is here because they love this stuff and they
+              want you to love it too. No gatekeeping. Beginners welcomed at the front.
             </p>
             <div className="glass mt-6 rounded-2xl p-5 font-mono text-sm text-white/70">
               <span className="text-[#22C55E]">$</span> whoami

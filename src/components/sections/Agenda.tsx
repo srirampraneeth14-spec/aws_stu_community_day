@@ -10,10 +10,14 @@ type Filter = (typeof FILTERS)[number];
 
 function trackColor(track: AgendaItem["track"]) {
   switch (track) {
-    case "AI": return "#8B5CF6";
-    case "DevOps": return "#22C55E";
-    case "Workshops": return "#38BDF8";
-    default: return "#FF9900";
+    case "AI":
+      return "#8B5CF6";
+    case "DevOps":
+      return "#22C55E";
+    case "Workshops":
+      return "#38BDF8";
+    default:
+      return "#FF9900";
   }
 }
 
@@ -33,7 +37,11 @@ export function Agenda() {
         <SectionHeading
           id="4"
           eyebrow="Agenda"
-          title={<>One day. <span className="text-gradient-cool">Twelve moments.</span></>}
+          title={
+            <>
+              One day. <span className="text-gradient-cool">Twelve moments.</span>
+            </>
+          }
           subtitle="Scroll to see the day fill in. Filter by track to plan yours."
         />
 
@@ -75,7 +83,10 @@ export function Agenda() {
               >
                 <span
                   className="absolute -left-[19px] top-5 h-3 w-3 rounded-full ring-4 ring-[#09090B] sm:-left-[27px]"
-                  style={{ background: trackColor(it.track), boxShadow: `0 0 14px ${trackColor(it.track)}` }}
+                  style={{
+                    background: trackColor(it.track),
+                    boxShadow: `0 0 14px ${trackColor(it.track)}`,
+                  }}
                 />
                 <div className="glass rounded-2xl p-5">
                   <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
@@ -85,7 +96,10 @@ export function Agenda() {
                     </span>
                     <span
                       className="rounded-full px-2 py-0.5 font-mono text-[10px] uppercase tracking-widest"
-                      style={{ background: `${trackColor(it.track)}22`, color: trackColor(it.track) }}
+                      style={{
+                        background: `${trackColor(it.track)}22`,
+                        color: trackColor(it.track),
+                      }}
                     >
                       {it.track}
                     </span>
