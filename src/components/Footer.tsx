@@ -1,12 +1,7 @@
 import { Cloud, Instagram, Linkedin, Mail, MapPin, Youtube } from "lucide-react";
 
 const WHATSAPP_COMMUNITY_URL = "https://chat.whatsapp.com/HN03AQ6Dt4PFbuRYFewatv";
-import { NAV_LINKS } from "@/data/event";
-
-const VENUE_ADDRESS =
-  "Raghu Engineering College, Dakamarri, Bheemunipatnam Mandal, Visakhapatnam - 531162";
-const VENUE_MAPS_URL =
-  "https://www.google.com/maps/search/?api=1&query=Raghu+Engineering+College,Dakamarri,Bheemunipatnam+Mandal,Visakhapatnam+531162";
+import { NAV_LINKS, VENUE_ADDRESS, VENUE_MAPS_URL } from "@/data/event";
 
 const SOCIAL_LINKS = [
   {

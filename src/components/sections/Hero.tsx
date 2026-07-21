@@ -3,7 +3,7 @@ import { ArrowRight, CalendarDays, MapPin, Sparkles } from "lucide-react";
 import { CloudNetwork } from "@/components/CloudNetwork";
 import { CountUp } from "@/components/CountUp";
 import { MagneticButton } from "@/components/MagneticButton";
-import { STATS } from "@/data/event";
+import { EVENT_DATE, EVENT_VENUE_NAME, STATS, VENUE_MAPS_URL } from "@/data/event";
 
 export function Hero() {
   return (
@@ -62,11 +62,16 @@ export function Hero() {
 
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-white/60">
             <span className="flex items-center gap-2">
-              <CalendarDays className="h-4 w-4 text-[#38BDF8]" /> Saturday, October 18
+              <CalendarDays className="h-4 w-4 text-[#38BDF8]" /> {EVENT_DATE}
             </span>
-            <span className="flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-[#FF9900]" /> The Cloud Pavilion
-            </span>
+            <a
+              href={VENUE_MAPS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 transition-colors hover:text-white"
+            >
+              <MapPin className="h-4 w-4 text-[#FF9900]" /> {EVENT_VENUE_NAME}
+            </a>
             <span className="flex items-center gap-2 font-mono text-xs text-white/40">
               <Sparkles className="h-3.5 w-3.5 text-[#8B5CF6]" /> // sudo attend aws-community-day
             </span>

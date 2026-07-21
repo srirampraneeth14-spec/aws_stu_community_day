@@ -1,3 +1,10 @@
+export const EVENT_DATE = "Saturday, August 29";
+export const EVENT_VENUE_NAME = "Raghu Engineering College";
+export const VENUE_ADDRESS =
+  "Raghu Engineering College, Dakamarri, Bheemunipatnam Mandal, Visakhapatnam - 531162";
+export const VENUE_MAPS_URL =
+  "https://www.google.com/maps/search/?api=1&query=Raghu+Engineering+College,Dakamarri,Bheemunipatnam+Mandal,Visakhapatnam+531162";
+
 export const NAV_LINKS = [
   { id: "about", label: "About" },
   { id: "why", label: "Why Attend" },
@@ -155,8 +162,8 @@ export const CREW = [
   { name: "T V Sathwik Sai", role: "SBG Leader", pill: "Core Team", image: "/crew/t-v-sathwik-sai.png", linkedin: "https://www.linkedin.com/in/sathwik-sai-t-v-ba202830a" },
   { name: "Prem Sai", role: "Operations & Logistics Lead", pill: "Core Team",image: "/crew/Prem.jpg", linkedin: "https://www.linkedin.com/in/prem-sai-50a97a337" },
   { name: "Akshay Lingam", role: "Technical and Labs Lead", pill: "Core Team",image: "/crew/Akshay.jpg", linkedin: "https://www.linkedin.com/in/akshay-lingam-b00191387" },
-  { name: "Varshini Samireddy", role: "Content & Designing Lead", pill: "Core Team", linkedin: "https://www.linkedin.com/in/varshini-samireddy-996b67328" },
-  { name: "K Veena Lahari", role: "Event & Community Lead", pill: "Core Team", linkedin: "https://www.linkedin.com/in/karupathu-veena-lahari" },
+  { name: "Varshini Samireddy", role: "Content & Designing Lead", pill: "Core Team",image: "/crew/varshini.jpeg", linkedin: "https://www.linkedin.com/in/varshini-samireddy-996b67328" },
+  { name: "K Veena Lahari", role: "Event & Community Lead", pill: "Core Team",image: "/crew/veena.jpg", linkedin: "https://www.linkedin.com/in/karupathu-veena-lahari" },
   { name: "Ujwala Tadapaneni", role: "Projects & Industry Use Cases Lead", pill: "Core Team", image: "/crew/Ujwala.jpg", linkedin: "https://www.linkedin.com/in/ujwala-tadapaneni-59846633a" },
   { name: "P Sri Ram Praneeth", role: "Technical and Labs Co-Ordinator", pill: "Co-Ordinators", image: "/crew/Sri Ram.png", linkedin: "https://www.linkedin.com/in/pediredla-sri-ram-praneeth-554aab315" },
   { name: "Pavan Surya Alla", role: "Content & Designing Co-Ordinator", pill: "Co-Ordinators", image: "/crew/pavan-surya-alla.png", linkedin: "https://www.linkedin.com/in/pavansurya-alla-458566342" },
