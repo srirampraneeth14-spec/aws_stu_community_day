@@ -401,11 +401,27 @@ export const CREW = [
 export const FAQ = [
   {
     q: "Is AWS Community Day free to attend?",
-    a: "Yes — it's community-run and free, though registration is required so we can plan food, seating, and swag.",
+    a: "The event is paid, with affordable pricing for students and dedicated ticket categories for working professionals. Select the appropriate ticket during registration.",
+  },
+  {
+    q: "Who can attend AWS Community Day?",
+    a: "Students, developers, software engineers, cloud professionals, startup founders, IT enthusiasts, educators, and anyone interested in cloud technology are welcome to attend.",
   },
   {
     q: "I've never touched the cloud. Should I come?",
     a: "Absolutely. There's a dedicated beginner track and mentors on-site all day. This event exists to help you take your first step.",
+  },  
+  {
+    q: "What can I expect from the event?",
+    a: "Expect keynote sessions, technical talks, hands-on workshops, networking opportunities, sponsor booths, community interactions, giveaways, and real-world insights from AWS experts and community leaders.",
+  },  
+  {
+    q: "Will food and refreshments be provided?",
+    a: "Yes. Complimentary refreshments and lunch will be provided. Check the agenda for scheduled meal breaks.",
+  },
+  {
+    q: "Will Transportation be provided?",
+    a: "Yes — transportation will be provided for all attendees for Routes from Visakhapatnam,Vizianagaram to the venue and back. The timings will be shared with registered attendees.",
   },
   {
     q: "Do I need to bring a laptop?",
