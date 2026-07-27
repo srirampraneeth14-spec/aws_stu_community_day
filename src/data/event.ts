@@ -300,11 +300,11 @@ export const CREW = [
     linkedin: "https://www.linkedin.com/in/sathwik-sai-t-v-ba202830a",
   },
   {
-    name: "Prem Sai",
-    role: "Operations & Logistics Lead",
+    name: "Ujwala Tadapaneni",
+    role: "Projects & Industry Use Cases Lead",
     pill: "Core Team",
-    image: "/crew/Prem.jpg",
-    linkedin: "https://www.linkedin.com/in/prem-sai-50a97a337",
+    image: "/crew/Ujwala.jpg",
+    linkedin: "https://www.linkedin.com/in/ujwala-tadapaneni-59846633a",
   },
   {
     name: "Akshay Lingam",
@@ -314,13 +314,6 @@ export const CREW = [
     linkedin: "https://www.linkedin.com/in/akshay-lingam-b00191387",
   },
   {
-    name: "Varshini Samireddy",
-    role: "Content & Designing Lead",
-    pill: "Core Team",
-    image: "/crew/varshini.jpeg",
-    linkedin: "https://www.linkedin.com/in/varshini-samireddy-996b67328",
-  },
-  {
     name: "K Veena Lahari",
     role: "Event & Community Lead",
     pill: "Core Team",
@@ -328,12 +321,20 @@ export const CREW = [
     linkedin: "https://www.linkedin.com/in/karupathu-veena-lahari",
   },
   {
-    name: "Ujwala Tadapaneni",
-    role: "Projects & Industry Use Cases Lead",
+    name: "Prem Sai",
+    role: "Operations & Logistics Lead",
     pill: "Core Team",
-    image: "/crew/Ujwala.jpg",
-    linkedin: "https://www.linkedin.com/in/ujwala-tadapaneni-59846633a",
+    image: "/crew/Prem.jpg",
+    linkedin: "https://www.linkedin.com/in/prem-sai-50a97a337",
   },
+  {
+    name: "Varshini Samireddy",
+    role: "Content & Designing Lead",
+    pill: "Core Team",
+    image: "/crew/varshini.jpeg",
+    linkedin: "https://www.linkedin.com/in/varshini-samireddy-996b67328",
+  },
+  
   {
     name: "P Sri Ram Praneeth",
     role: "Technical and Labs Co-Ordinator",
