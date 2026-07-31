@@ -146,19 +146,54 @@ export const AGENDA: AgendaItem[] = [
 ];
 
 export const SPEAKERS = [
-  { name: "Aisha Rao", role: "Principal Engineer", company: "CloudScale", twitter: "aisha" },
-  { name: "David Chen", role: "AWS Hero", company: "Serverless.co", twitter: "dchen" },
-  { name: "Priya Nair", role: "ML Platform Lead", company: "Nimbus AI", twitter: "priyanair" },
+  {
+    name: "Aisha Rao",
+    role: "Principal Engineer",
+    company: "CloudScale",
+    linkedin: "https://www.linkedin.com/search/results/all/?keywords=Aisha%20Rao",
+  },
+  {
+    name: "David Chen",
+    role: "AWS Hero",
+    company: "Serverless.co",
+    linkedin: "https://www.linkedin.com/search/results/all/?keywords=David%20Chen",
+  },
+  {
+    name: "Priya Nair",
+    role: "ML Platform Lead",
+    company: "Nimbus AI",
+    linkedin: "https://www.linkedin.com/search/results/all/?keywords=Priya%20Nair",
+  },
   {
     name: "Marco Silva",
     role: "Solutions Architect",
     company: "Amazon Web Services",
-    twitter: "marco",
+    linkedin: "https://www.linkedin.com/search/results/all/?keywords=Marco%20Silva",
   },
-  { name: "Nadia Okonkwo", role: "Staff SRE", company: "Fintechly", twitter: "nadiaok" },
-  { name: "Leo Park", role: "Security Engineer", company: "Fortify", twitter: "leopark" },
-  { name: "Jonas Weber", role: "Community Builder", company: "K8sHub", twitter: "jonasw" },
-  { name: "Sara Iqbal", role: "Applied Scientist", company: "OpenLab", twitter: "sara" },
+  {
+    name: "Nadia Okonkwo",
+    role: "Staff SRE",
+    company: "Fintechly",
+    linkedin: "https://www.linkedin.com/search/results/all/?keywords=Nadia%20Okonkwo",
+  },
+  {
+    name: "Leo Park",
+    role: "Security Engineer",
+    company: "Fortify",
+    linkedin: "https://www.linkedin.com/search/results/all/?keywords=Leo%20Park",
+  },
+  {
+    name: "Jonas Weber",
+    role: "Community Builder",
+    company: "K8sHub",
+    linkedin: "https://www.linkedin.com/search/results/all/?keywords=Jonas%20Weber",
+  },
+  {
+    name: "Sara Iqbal",
+    role: "Applied Scientist",
+    company: "OpenLab",
+    linkedin: "https://www.linkedin.com/search/results/all/?keywords=Sara%20Iqbal",
+  },
 ];
 
 export const WORKSHOPS = [

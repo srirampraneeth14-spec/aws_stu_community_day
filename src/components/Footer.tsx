@@ -2,6 +2,8 @@ import { Cloud, Instagram, Linkedin, Mail, MapPin, Youtube } from "lucide-react"
 
 const WHATSAPP_COMMUNITY_URL = "https://chat.whatsapp.com/HN03AQ6Dt4PFbuRYFewatv";
 import { NAV_LINKS, VENUE_ADDRESS, VENUE_MAPS_URL } from "@/data/event";
+const VENUE_MAP_EMBED_URL =
+  "https://www.google.com/maps?q=Raghu+Engineering+College,+Dakamarri,+Bheemunipatnam+Mandal,+Visakhapatnam,+Andhra+Pradesh&output=embed";
 
 const SOCIAL_LINKS = [
   {
@@ -80,6 +82,29 @@ export function Footer() {
             <Mail className="h-4 w-4 text-[#38BDF8]" />
             awscloudclubrecofficial@gmail.com
           </a>
+          <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+            <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
+              <div>
+                <p className="text-sm font-medium text-white">Our location</p>
+                <p className="text-xs text-white/45">Raghu Engineering College</p>
+              </div>
+              <a
+                href={VENUE_MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-lg border border-white/10 px-3 py-1.5 text-xs text-white/60 transition-colors hover:border-[#FF9900]/40 hover:text-white"
+              >
+                Open in Maps
+              </a>
+            </div>
+            <iframe
+              title="Raghu Engineering College location map"
+              src={VENUE_MAP_EMBED_URL}
+              className="h-56 w-full"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </div>
 
         <div>
