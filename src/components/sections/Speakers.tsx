@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { SPEAKERS } from "@/data/event";
 
-type Speaker = { name: string; role: string; company: string; linkedin?: string };
+type Speaker = { name: string; role: string; company: string; image?: string; linkedin?: string };
 
 function initials(name: string) {
   return name
@@ -33,19 +33,32 @@ function LinkedInLink({ name, linkedin }: { name: string; linkedin?: string }) {
 }
 
 function SpeakerAvatar({ person, index, className = "h-16 w-16" }: { person: Speaker; index: number; className?: string }) {
+  const hasImage = Boolean(person.image);
+
   return (
-    <div
-      className={`grid ${className} shrink-0 place-items-center rounded-2xl text-lg font-black text-black`}
-      style={{
-        background:
-          index % 3 === 0
-            ? "linear-gradient(135deg,#FFB84D,#FF9900)"
-            : index % 3 === 1
-              ? "linear-gradient(135deg,#7DD3FC,#38BDF8)"
-              : "linear-gradient(135deg,#C4B5FD,#8B5CF6)",
-      }}
-    >
-      {initials(person.name)}
+    <div className={`relative overflow-hidden rounded-2xl ${className} shrink-0`}>
+      {hasImage ? (
+        <img
+          src={person.image}
+          alt={person.name}
+          loading="lazy"
+          className="h-full w-full object-cover"
+        />
+      ) : (
+        <div
+          className="grid h-full w-full place-items-center rounded-2xl text-lg font-black text-black"
+          style={{
+            background:
+              index % 3 === 0
+                ? "linear-gradient(135deg,#FFB84D,#FF9900)"
+                : index % 3 === 1
+                  ? "linear-gradient(135deg,#7DD3FC,#38BDF8)"
+                  : "linear-gradient(135deg,#C4B5FD,#8B5CF6)",
+          }}
+        >
+          {initials(person.name)}
+        </div>
+      )}
     </div>
   );
 }

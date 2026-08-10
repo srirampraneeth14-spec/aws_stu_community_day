@@ -1,4 +1,4 @@
-export const EVENT_DATE = "Saturday, August 29";
+export const EVENT_DATE = "Saturday, September 19";
 export const EVENT_VENUE_NAME = "Raghu Engineering College";
 export const VENUE_ADDRESS =
   "Raghu Engineering College, Dakamarri, Bheemunipatnam Mandal, Visakhapatnam - 531162";
@@ -147,52 +147,45 @@ export const AGENDA: AgendaItem[] = [
 
 export const SPEAKERS = [
   {
-    name: "Aisha Rao",
+    name: "Varsha Verma",
     role: "Principal Engineer",
     company: "CloudScale",
-    linkedin: "https://www.linkedin.com/search/results/all/?keywords=Aisha%20Rao",
+    image: "/speakers/varsha_verma.jpg",
+    linkedin: "https://www.linkedin.com/in/varsha-verma-cloud-devops ",
   },
   {
-    name: "David Chen",
+    name: "Nikita Mourya",
     role: "AWS Hero",
     company: "Serverless.co",
-    linkedin: "https://www.linkedin.com/search/results/all/?keywords=David%20Chen",
+    image: "/speakers/Nikita_Mourya.jpg",
+    linkedin: "https://www.linkedin.com/in/nikita-mourya ",
   },
   {
-    name: "Priya Nair",
+    name: "TBD",
     role: "ML Platform Lead",
     company: "Nimbus AI",
     linkedin: "https://www.linkedin.com/search/results/all/?keywords=Priya%20Nair",
   },
   {
-    name: "Marco Silva",
+    name: "Vishnu Rachapudi",
     role: "Solutions Architect",
     company: "Amazon Web Services",
-    linkedin: "https://www.linkedin.com/search/results/all/?keywords=Marco%20Silva",
+    image: "/speakers/Vishnu.jpg",
+    linkedin: "https://www.linkedin.com/in/vishnu-rachapudi-28956920b ",
   },
   {
-    name: "Nadia Okonkwo",
+    name: "Satyajith Samantray",
     role: "Staff SRE",
     company: "Fintechly",
-    linkedin: "https://www.linkedin.com/search/results/all/?keywords=Nadia%20Okonkwo",
+    image: "/speakers/satyajith.jpg",
+    linkedin: "https://www.linkedin.com/in/satyajit-samantray-b30a7075 ",
   },
   {
-    name: "Leo Park",
+    name: "Nagababu Medicherla",
     role: "Security Engineer",
     company: "Fortify",
-    linkedin: "https://www.linkedin.com/search/results/all/?keywords=Leo%20Park",
-  },
-  {
-    name: "Jonas Weber",
-    role: "Community Builder",
-    company: "K8sHub",
-    linkedin: "https://www.linkedin.com/search/results/all/?keywords=Jonas%20Weber",
-  },
-  {
-    name: "Sara Iqbal",
-    role: "Applied Scientist",
-    company: "OpenLab",
-    linkedin: "https://www.linkedin.com/search/results/all/?keywords=Sara%20Iqbal",
+    image: "/speakers/nagababu.jpg",
+    linkedin: "https://www.linkedin.com/in/nagababu-medicharla-b2a91a117 ",
   },
 ];
 
