@@ -80,69 +80,150 @@ export const TRACKS = [
   { name: "Career", tag: "grow", icon: "TrendingUp" },
 ];
 
-export type AgendaItem = {
-  time: string;
+export type AgendaParallelTrack = {
   title: string;
+  track: "Cloud" | "AI" | "DevOps" | "Workshops";
+  level?: string;
+};
+
+export type AgendaItem = {
+  startTime: string;
+  endTime: string;
+  title: string;
+  format?: string;
   speaker?: string;
   track: "Cloud" | "AI" | "DevOps" | "Workshops";
-  room: string;
+  parallelTracks?: AgendaParallelTrack[];
 };
 
 export const AGENDA: AgendaItem[] = [
-  { time: "08:30", title: "Registration & Coffee", track: "Cloud", room: "Foyer" },
   {
-    time: "09:15",
-    title: "Opening Keynote — Where Builders Meet the Cloud",
-    speaker: "Aisha Rao",
+    startTime: "8:30 AM",
+    endTime: "9:30 AM",
+    title: "Registration and Welcome",
+    format: "Check in and networking",
     track: "Cloud",
-    room: "Main Stage",
   },
   {
-    time: "10:00",
-    title: "Serverless Patterns at Scale",
-    speaker: "David Chen",
+    startTime: "9:30 AM",
+    endTime: "9:50 AM",
+    title: "Opening Ceremony",
+    format: "Welcome and introduction",
     track: "Cloud",
-    room: "Hall A",
   },
-  { time: "10:45", title: "LLM Ops on AWS", speaker: "Priya Nair", track: "AI", room: "Hall B" },
   {
-    time: "11:30",
-    title: "Workshop: Build a RAG App with Bedrock",
-    speaker: "Marco Silva",
-    track: "Workshops",
-    room: "Lab 1",
+    startTime: "9:50 AM",
+    endTime: "10:05 AM",
+    title: "Keynote",
+    format: "AWS or industry speaker",
+    track: "Cloud",
   },
-  { time: "12:30", title: "Lunch & Networking", track: "Cloud", room: "Foyer" },
   {
-    time: "13:30",
-    title: "GitOps in Production",
-    speaker: "Nadia Okonkwo",
+    startTime: "10:10 AM",
+    endTime: "11:00 AM",
+    title: "Session 1: Discover AWS",
+    format: "3 parallel talks",
+    track: "Cloud",
+    parallelTracks: [
+      {
+        title: "AWS and Cloud Computing: From Zero to Your First Cloud Application",
+        track: "Cloud",
+      },
+      {
+        title: "Building with Generative AI on AWS",
+        track: "AI",
+      },
+      {
+        title: "Your AWS Journey: Certifications, Skills and Cloud Careers",
+        track: "Cloud",
+      },
+    ],
+  },
+  {
+    startTime: "11:00 AM",
+    endTime: "11:15 AM",
+    title: "Tea and Networking Break",
+    track: "Cloud",
+  },
+  {
+    startTime: "11:15 AM",
+    endTime: "12:05 PM",
+    title: "Session 2: Build with AWS",
+    format: "3 parallel talks",
     track: "DevOps",
-    room: "Hall A",
+    parallelTracks: [
+      {
+        title: "From Website to Serverless: Building Modern Web Apps on AWS",
+        track: "Cloud",
+      },
+      {
+        title: "Cloud Security 101: Keeping Your Applications Safe on AWS",
+        track: "Cloud",
+      },
+      {
+        title: "From Code to Cloud: DevOps and Containers on AWS",
+        track: "DevOps",
+      },
+    ],
   },
   {
-    time: "14:15",
-    title: "Zero Trust on AWS",
-    speaker: "Leo Park",
+    startTime: "12:05 PM",
+    endTime: "12:45 PM",
+    title: "Panel Discussion",
+    format: "4 panelists and moderator",
     track: "Cloud",
-    room: "Hall B",
   },
   {
-    time: "15:00",
-    title: "Workshop: Deploy an EKS Cluster in 45 minutes",
-    speaker: "Jonas Weber",
+    startTime: "12:45 PM",
+    endTime: "1:45 PM",
+    title: "Lunch and Networking",
+    format: "Community networking",
+    track: "Cloud",
+  },
+  {
+    startTime: "1:45 PM",
+    endTime: "4:15 PM",
+    title: "Hands on Workshops",
+    format: "3 parallel workshops",
     track: "Workshops",
-    room: "Lab 2",
+    parallelTracks: [
+      {
+        title: "Build Your First Serverless Web App",
+        track: "Workshops",
+        level: "Beginner",
+      },
+      {
+        title: "Build a GenAI App with Amazon Bedrock",
+        track: "Workshops",
+        level: "Beginner to Intermediate",
+      },
+      {
+        title: "Docker to AWS: Deploy Your First Container",
+        track: "Workshops",
+        level: "Intermediate",
+      },
+    ],
   },
   {
-    time: "16:00",
-    title: "Fine-tuning Foundation Models",
-    speaker: "Sara Iqbal",
-    track: "AI",
-    room: "Hall B",
+    startTime: "4:15 PM",
+    endTime: "4:30 PM",
+    title: "Break",
+    track: "Cloud",
   },
-  { time: "16:45", title: "Panel: Careers in the Cloud", track: "Cloud", room: "Main Stage" },
-  { time: "17:30", title: "Closing + Community After-party", track: "Cloud", room: "Rooftop" },
+  {
+    startTime: "4:30 PM",
+    endTime: "5:20 PM",
+    title: "Panel Discussion",
+    format: "Interactive",
+    track: "Cloud",
+  },
+  {
+    startTime: "5:20 PM",
+    endTime: "5:30 PM",
+    title: "Closing Ceremony",
+    format: "Vote of thanks and closing",
+    track: "Cloud",
+  },
 ];
 
 export const SPEAKERS = [
