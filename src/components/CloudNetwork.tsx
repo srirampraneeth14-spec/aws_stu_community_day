@@ -7,12 +7,12 @@ type Node = { id: (typeof CLOUD_NODES)[number]; x: number; y: number; r: number 
 
 const NODES: Node[] = [
   { id: CLOUD_NODES[0], x: 50, y: 50, r: 26 },
-  { id: CLOUD_NODES[1], x: 22, y: 30, r: 18 },
+  { id: CLOUD_NODES[1], x: 22, y: 30, r: 20 },
   { id: CLOUD_NODES[2], x: 78, y: 26, r: 20 },
-  { id: CLOUD_NODES[3], x: 15, y: 72, r: 16 },
-  { id: CLOUD_NODES[4], x: 86, y: 74, r: 18 },
-  { id: CLOUD_NODES[5], x: 50, y: 12, r: 14 },
-  { id: CLOUD_NODES[6], x: 50, y: 88, r: 16 },
+  { id: CLOUD_NODES[3], x: 15, y: 72, r: 20 },
+  { id: CLOUD_NODES[4], x: 86, y: 74, r: 20 },
+  { id: CLOUD_NODES[5], x: 50, y: 12, r: 20 },
+  { id: CLOUD_NODES[6], x: 50, y: 88, r: 20 },
 ];
 
 const LINKS: [number, number][] = [
