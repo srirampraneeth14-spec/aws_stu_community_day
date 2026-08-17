@@ -1,9 +1,9 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useMemo, useState } from "react";
-import { CLOUD_NODES } from "@/data/event";
+import { CLOUD_NODE_SYNOPSIS, CLOUD_NODES } from "@/data/event";
 import { theme, rgba } from "@/lib/theme";
 
-type Node = { id: string; x: number; y: number; r: number };
+type Node = { id: (typeof CLOUD_NODES)[number]; x: number; y: number; r: number };
 
 const NODES: Node[] = [
   { id: CLOUD_NODES[0], x: 50, y: 50, r: 26 },
@@ -30,12 +30,53 @@ const LINKS: [number, number][] = [
   [4, 6],
 ];
 
+const CENTER_INDEX = 0;
+const SVG_SIZE = 480;
+
+function synopsisOffset(node: Node) {
+  const gap = 22;
+  const radiusPx = (node.r / SVG_SIZE) * 520 + gap;
+
+  if (node.x > 38 && node.x < 62 && node.y > 38 && node.y < 62) {
+    return { x: `${radiusPx}px`, y: "-50%" };
+  }
+  if (node.y <= 22) return { x: "-50%", y: `${radiusPx}px` };
+  if (node.y >= 78) return { x: "-50%", y: `calc(-100% - ${radiusPx}px)` };
+  if (node.x <= 28) return { x: `${radiusPx}px`, y: "-50%" };
+  if (node.x >= 72) return { x: `calc(-100% - ${radiusPx}px)`, y: "-50%" };
+  if (node.y < 50) return { x: "-50%", y: `${radiusPx}px` };
+  return { x: "-50%", y: `calc(-100% - ${radiusPx}px)` };
+}
+
+function synopsisArrowStyle(node: Node) {
+  if (node.x > 38 && node.x < 62 && node.y > 38 && node.y < 62) {
+    return { left: -5, top: "50%", marginTop: -5, borderTop: "none", borderRight: "none" };
+  }
+  if (node.y <= 22) {
+    return { top: -5, left: "50%", marginLeft: -5, borderBottom: "none", borderRight: "none" };
+  }
+  if (node.y >= 78) {
+    return { bottom: -5, left: "50%", marginLeft: -5, borderTop: "none", borderLeft: "none" };
+  }
+  if (node.x <= 28) {
+    return { left: -5, top: "50%", marginTop: -5, borderTop: "none", borderRight: "none" };
+  }
+  if (node.x >= 72) {
+    return { right: -5, top: "50%", marginTop: -5, borderBottom: "none", borderLeft: "none" };
+  }
+  if (node.y < 50) {
+    return { top: -5, left: "50%", marginLeft: -5, borderBottom: "none", borderRight: "none" };
+  }
+  return { bottom: -5, left: "50%", marginLeft: -5, borderTop: "none", borderLeft: "none" };
+}
+
 export function CloudNetwork() {
-  const [hover, setHover] = useState<string | null>(null);
+  const [selected, setSelected] = useState<(typeof CLOUD_NODES)[number] | null>(null);
   const [mouse, setMouse] = useState<{ x: number; y: number } | null>(null);
-  const size = 480;
 
   const nodesWithOffset = useMemo(() => NODES, []);
+  const selectedNode = nodesWithOffset.find((n) => n.id === selected) ?? null;
+  const activeId = selected;
 
   return (
     <div
@@ -48,6 +89,7 @@ export function CloudNetwork() {
         });
       }}
       onMouseLeave={() => setMouse(null)}
+      onClick={() => setSelected(null)}
     >
       <div
         className="absolute inset-0 rounded-full blur-3xl"
@@ -57,10 +99,11 @@ export function CloudNetwork() {
       />
 
       <svg
-        viewBox={`0 0 ${size} ${size}`}
+        viewBox={`0 0 ${SVG_SIZE} ${SVG_SIZE}`}
         className="relative h-full w-full"
         role="img"
         aria-label="Interactive cloud network illustration"
+        onClick={(e) => e.stopPropagation()}
       >
         <defs>
           <radialGradient id="node-orange" cx="50%" cy="40%" r="60%">
@@ -68,15 +111,10 @@ export function CloudNetwork() {
             <stop offset="60%" stopColor={theme.aws} />
             <stop offset="100%" stopColor={theme.awsDark} />
           </radialGradient>
-          <radialGradient id="node-purple" cx="50%" cy="40%" r="60%">
-            <stop offset="0%" stopColor="#E9D5FF" />
-            <stop offset="60%" stopColor={theme.purpleLight} />
-            <stop offset="100%" stopColor={theme.purpleDark} />
-          </radialGradient>
-          <radialGradient id="node-violet" cx="50%" cy="40%" r="60%">
-            <stop offset="0%" stopColor="#C4B5FD" />
-            <stop offset="60%" stopColor={theme.purple} />
-            <stop offset="100%" stopColor="#3B0764" />
+          <radialGradient id="node-purple" cx="50%" cy="38%" r="62%">
+            <stop offset="0%" stopColor={theme.purpleGlow} />
+            <stop offset="50%" stopColor={theme.purpleDark} />
+            <stop offset="100%" stopColor={theme.purpleDeep} />
           </radialGradient>
           <linearGradient id="link" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stopColor={theme.aws} stopOpacity="0.75" />
@@ -88,9 +126,9 @@ export function CloudNetwork() {
         {[0.35, 0.55, 0.75].map((s, i) => (
           <circle
             key={i}
-            cx={size / 2}
-            cy={size / 2}
-            r={(size / 2) * s}
+            cx={SVG_SIZE / 2}
+            cy={SVG_SIZE / 2}
+            r={(SVG_SIZE / 2) * s}
             fill="none"
             stroke={rgba(theme.purple, 0.12)}
           />
@@ -99,19 +137,16 @@ export function CloudNetwork() {
         {LINKS.map(([a, b], i) => {
           const na = nodesWithOffset[a];
           const nb = nodesWithOffset[b];
+          const isActive = activeId && (na.id === activeId || nb.id === activeId);
           return (
             <line
               key={i}
-              x1={(na.x / 100) * size}
-              y1={(na.y / 100) * size}
-              x2={(nb.x / 100) * size}
-              y2={(nb.y / 100) * size}
+              x1={(na.x / 100) * SVG_SIZE}
+              y1={(na.y / 100) * SVG_SIZE}
+              x2={(nb.x / 100) * SVG_SIZE}
+              y2={(nb.y / 100) * SVG_SIZE}
               stroke="url(#link)"
-              strokeWidth={
-                hover && (nodesWithOffset[a].id === hover || nodesWithOffset[b].id === hover)
-                  ? 1.6
-                  : 0.9
-              }
+              strokeWidth={isActive ? 1.6 : 0.9}
               strokeDasharray="4 6"
               style={{ animation: `dash ${8 + i * 0.5}s linear infinite` }}
             />
@@ -126,10 +161,10 @@ export function CloudNetwork() {
               key={`p${i}`}
               r={2.5}
               fill={theme.awsLight}
-              initial={{ cx: (na.x / 100) * size, cy: (na.y / 100) * size, opacity: 0 }}
+              initial={{ cx: (na.x / 100) * SVG_SIZE, cy: (na.y / 100) * SVG_SIZE, opacity: 0 }}
               animate={{
-                cx: [(na.x / 100) * size, (nb.x / 100) * size],
-                cy: [(na.y / 100) * size, (nb.y / 100) * size],
+                cx: [(na.x / 100) * SVG_SIZE, (nb.x / 100) * SVG_SIZE],
+                cy: [(na.y / 100) * SVG_SIZE, (nb.y / 100) * SVG_SIZE],
                 opacity: [0, 1, 0],
               }}
               transition={{
@@ -143,16 +178,13 @@ export function CloudNetwork() {
         })}
 
         {nodesWithOffset.map((n, i) => {
-          const grad =
-            i % 3 === 0
-              ? "url(#node-orange)"
-              : i % 3 === 1
-                ? "url(#node-purple)"
-                : "url(#node-violet)";
-          const cx = (n.x / 100) * size;
-          const cy = (n.y / 100) * size;
+          const isCenter = i === CENTER_INDEX;
+          const grad = isCenter ? "url(#node-orange)" : "url(#node-purple)";
+          const cx = (n.x / 100) * SVG_SIZE;
+          const cy = (n.y / 100) * SVG_SIZE;
           const dist = mouse ? Math.hypot(mouse.x - n.x, mouse.y - n.y) : 100;
           const boost = Math.max(0, 1 - dist / 25);
+
           return (
             <g key={n.id}>
               <circle
@@ -170,8 +202,10 @@ export function CloudNetwork() {
                 fill={grad}
                 stroke="rgba(255,255,255,0.35)"
                 strokeWidth={0.8}
-                onMouseEnter={() => setHover(n.id)}
-                onMouseLeave={() => setHover(null)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelected((prev) => (prev === n.id ? null : n.id));
+                }}
                 whileHover={{ scale: 1.12 }}
                 style={{ transformOrigin: `${cx}px ${cy}px`, cursor: "pointer" }}
               />
@@ -194,8 +228,49 @@ export function CloudNetwork() {
       </svg>
 
       <div className="pointer-events-none absolute left-1/2 top-3 -translate-x-1/2 rounded-full border border-white/10 bg-black/40 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-white/70 backdrop-blur">
-        {hover ? `> ${hover}` : "> hover a node"}
+        {selected ? `> ${selected}` : "> click a node"}
       </div>
+
+      <AnimatePresence>
+        {selectedNode && (
+          <motion.div
+            key={selectedNode.id}
+            initial={{ opacity: 0, y: 6, scale: 0.97 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 4, scale: 0.97 }}
+            transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="pointer-events-none absolute z-20 w-[min(220px,calc(100%-2.5rem))]"
+            style={{
+              left: `${selectedNode.x}%`,
+              top: `${selectedNode.y}%`,
+              transform: `translate(${synopsisOffset(selectedNode).x}, ${synopsisOffset(selectedNode).y})`,
+            }}
+          >
+            <div
+              className="relative rounded-xl border border-white/18 p-3.5 shadow-2xl shadow-black/50 backdrop-blur-md"
+              style={{
+                background:
+                  "linear-gradient(180deg, rgba(14, 10, 24, 0.96) 0%, rgba(8, 6, 16, 0.94) 100%)",
+              }}
+            >
+              <p className="font-mono text-[10px] uppercase tracking-widest text-purple-light">
+                {selectedNode.id}
+              </p>
+              <p className="mt-2 text-xs leading-relaxed text-white/90">
+                {CLOUD_NODE_SYNOPSIS[selectedNode.id]}
+              </p>
+              <span
+                aria-hidden
+                className="absolute h-2.5 w-2.5 rotate-45 border border-white/18"
+                style={{
+                  background: "rgba(12, 9, 20, 0.96)",
+                  ...synopsisArrowStyle(selectedNode),
+                }}
+              />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

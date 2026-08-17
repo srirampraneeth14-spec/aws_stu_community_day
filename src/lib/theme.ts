@@ -7,12 +7,16 @@ export const theme = {
   purpleLight: "#A78BFA",
   purpleMuted: "#8B5CF6",
   purpleDark: "#5B21B6",
+  purpleDeep: "#3B0764",
+  purpleGlow: "#6D28D9",
   green: "#7CCB8C",
   greenBright: "#22C55E",
   black: "#050508",
   blackElevated: "#0C0814",
   foreground: "#F4F0FF",
   muted: "#9B8FB8",
+  /** Top-left brand mark — orange (top-left) → purple (bottom-right) */
+  brandIconGradient: "linear-gradient(135deg, #FF9900 0%, #9B6DFF 100%)",
 } as const;
 
 export function rgba(hex: string, alpha: number) {

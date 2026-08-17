@@ -35,6 +35,22 @@ export const CLOUD_NODES = [
   "Serverless",
 ] as const;
 
+export const CLOUD_NODE_SYNOPSIS: Record<(typeof CLOUD_NODES)[number], string> = {
+  Compute:
+    "Virtual servers and elastic capacity on demand. Scale from a single instance to thousands without provisioning hardware.",
+  Storage:
+    "Object, block, and archive storage built for any scale. Store and retrieve data with durability designed for critical workloads.",
+  AI: "Machine learning and generative AI on managed infrastructure. Build, train, and deploy intelligent apps with foundation models and Bedrock.",
+  Containers:
+    "Run Docker and Kubernetes on ECS, EKS, and Fargate. Ship the same container from your laptop to production with less ops overhead.",
+  Networking:
+    "VPCs, load balancers, and global edge connectivity. Isolate workloads, route traffic securely, and reach users worldwide.",
+  Security:
+    "Identity, encryption, and threat detection at every layer. Enforce least privilege and compliance from your first deploy.",
+  Serverless:
+    "Functions and APIs that scale automatically with zero server management. Pay only for the compute you use — from zero to peak load.",
+};
+
 export const WHY_ATTEND = [
   {
     title: "Learn from Experts",
