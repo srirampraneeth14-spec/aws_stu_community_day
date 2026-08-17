@@ -4,6 +4,7 @@ import { useState } from "react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { SPEAKERS } from "@/data/event";
+import { theme } from "@/lib/theme";
 
 type Speaker = { name: string; role: string; company: string; image?: string; linkedin?: string };
 
@@ -25,7 +26,7 @@ function LinkedInLink({ name, linkedin }: { name: string; linkedin?: string }) {
       rel="noopener noreferrer"
       aria-label={`${name} LinkedIn`}
       onClick={(e) => e.stopPropagation()}
-      className="grid h-8 w-8 place-items-center rounded-lg border border-white/10 text-white/60 transition-colors hover:border-[#38BDF8]/50 hover:text-white"
+      className="grid h-8 w-8 place-items-center rounded-lg border border-white/10 text-white/60 transition-colors hover:border-purple-light/50 hover:text-white"
     >
       <Linkedin className="h-3.5 w-3.5" />
     </a>
@@ -50,10 +51,10 @@ function SpeakerAvatar({ person, index, className = "h-16 w-16" }: { person: Spe
           style={{
             background:
               index % 3 === 0
-                ? "linear-gradient(135deg,#FFB84D,#FF9900)"
+                ? `linear-gradient(135deg,${theme.awsLight},${theme.aws})`
                 : index % 3 === 1
-                  ? "linear-gradient(135deg,#7DD3FC,#38BDF8)"
-                  : "linear-gradient(135deg,#C4B5FD,#8B5CF6)",
+                  ? `linear-gradient(135deg,#E9D5FF,${theme.purpleLight})`
+                  : `linear-gradient(135deg,#C4B5FD,${theme.purple})`,
           }}
         >
           {initials(person.name)}
@@ -80,7 +81,7 @@ function SpeakerDetailDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
         overlayClassName="bg-black/90"
-        className="glass-strong max-w-md border-white/10 bg-[#0a0f1a]/95 p-8 text-center shadow-2xl shadow-[#38BDF8]/10 sm:rounded-3xl [&>button]:text-white/70 [&>button]:hover:text-white"
+        className="glass-strong max-w-md border-purple/20 bg-[var(--black-elevated)]/95 p-8 text-center shadow-2xl shadow-purple/10 sm:rounded-3xl [&>button]:text-white/70 [&>button]:hover:text-white"
       >
         <div className="flex flex-col items-center">
           <SpeakerAvatar person={person} index={index} className="h-52 w-52 sm:h-60 sm:w-60" />
@@ -142,7 +143,7 @@ export function Speakers() {
               }}
               role="button"
               tabIndex={0}
-              className="glass group relative z-0 cursor-pointer overflow-hidden rounded-2xl p-5 hover:z-10 hover:shadow-2xl hover:shadow-[#38BDF8]/15"
+              className="glass group relative z-0 cursor-pointer overflow-hidden rounded-2xl p-5 hover:z-10 hover:shadow-2xl hover:shadow-purple/15"
               style={{ transformOrigin: "center center" }}
             >
               <div
@@ -151,10 +152,10 @@ export function Speakers() {
                 style={{
                   background:
                     i % 3 === 0
-                      ? "radial-gradient(circle, #FF9900, transparent 70%)"
+                      ? `radial-gradient(circle, ${theme.aws}, transparent 70%)`
                       : i % 3 === 1
-                        ? "radial-gradient(circle, #38BDF8, transparent 70%)"
-                        : "radial-gradient(circle, #8B5CF6, transparent 70%)",
+                        ? `radial-gradient(circle, ${theme.purpleLight}, transparent 70%)`
+                        : `radial-gradient(circle, ${theme.purple}, transparent 70%)`,
                 }}
               />
               <SpeakerAvatar person={speaker as Speaker} index={i} />

@@ -1,4 +1,5 @@
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { theme, rgba } from "@/lib/theme";
 import { Cloud, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -25,15 +26,15 @@ export function Navbar() {
             scrolled ? "opacity-100" : "opacity-0",
           )}
           style={{
-            background: "linear-gradient(180deg, rgba(9,9,11,0.75) 0%, rgba(9,9,11,0.4) 100%)",
-            borderBottom: "1px solid rgba(255,255,255,0.06)",
+            background: `linear-gradient(180deg, ${rgba(theme.black, 0.82)} 0%, ${rgba(theme.black, 0.45)} 100%)`,
+            borderBottom: `1px solid ${rgba(theme.purple, 0.12)}`,
           }}
         />
         <nav className="relative mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <a href="#top" className="flex items-center gap-2 text-white">
             <span
               className="grid h-8 w-8 place-items-center rounded-lg"
-              style={{ background: "linear-gradient(135deg,#D6A34B,#94A3B8)" }}
+              style={{ background: `linear-gradient(135deg, ${theme.aws}, ${theme.purple})` }}
             >
               <Cloud className="h-4 w-4 text-black" />
             </span>
@@ -87,8 +88,7 @@ export function Navbar() {
           <div
             className="rounded-2xl border border-white/20 p-3 shadow-2xl shadow-black/50"
             style={{
-              background:
-                "linear-gradient(180deg, rgba(10,15,26,0.95) 0%, rgba(10,15,26,0.92) 100%)",
+              background: `linear-gradient(180deg, ${rgba(theme.blackElevated, 0.96)} 0%, ${rgba(theme.blackElevated, 0.92)} 100%)`,
               backdropFilter: "blur(24px) saturate(180%)",
               WebkitBackdropFilter: "blur(24px) saturate(180%)",
             }}

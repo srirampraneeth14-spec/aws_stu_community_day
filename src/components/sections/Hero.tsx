@@ -16,7 +16,7 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 font-tech text-[11px] uppercase tracking-widest text-white/70 backdrop-blur"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-[#7CCB8C] shadow-[0_0_8px_rgba(124,203,140,0.45)]" />
+            <span className="h-1.5 w-1.5 rounded-full bg-purple-light shadow-[0_0_8px_rgba(167,139,250,0.55)]" />
             Registration open · Learn · Build · Connect · Grow
           </motion.div>
 
@@ -28,7 +28,7 @@ export function Hero() {
           >
             Where Builders
             <br />
-            Meet the <span className="text-[#D7E0EA]">Cloud.</span>
+            Meet the <span className="text-gradient-cool">Cloud.</span>
           </motion.h1>
 
           <motion.p
@@ -58,7 +58,7 @@ export function Hero() {
 
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-white/60">
             <span className="flex items-center gap-2">
-              <CalendarDays className="h-4 w-4 text-[#94A3B8]" /> {EVENT_DATE}
+              <CalendarDays className="h-4 w-4 text-purple-light" /> {EVENT_DATE}
             </span>
             <a
               href={VENUE_MAPS_URL}
@@ -66,10 +66,10 @@ export function Hero() {
               rel="noopener noreferrer"
               className="flex items-center gap-2 transition-colors hover:text-white"
             >
-              <MapPin className="h-4 w-4 text-[#D6A34B]" /> {EVENT_VENUE_NAME}
+              <MapPin className="h-4 w-4 text-aws" /> {EVENT_VENUE_NAME}
             </a>
             <span className="flex items-center gap-2 font-tech text-xs text-white/40">
-              <Sparkles className="h-3.5 w-3.5 text-[#8FA3B8]" /> // sudo attend aws-community-day
+              <Sparkles className="h-3.5 w-3.5 text-purple-light" /> // sudo attend aws-community-day
             </span>
           </div>
 
@@ -85,7 +85,7 @@ export function Hero() {
               >
                 <p className="text-3xl font-bold text-white">
                   <CountUp to={s.value} />
-                  <span className="text-[#D6A34B]">{s.suffix}</span>
+                  <span className="text-aws">{s.suffix}</span>
                 </p>
                 <p className="mt-1 font-tech text-[10px] uppercase tracking-widest text-white/50">
                   {s.label}

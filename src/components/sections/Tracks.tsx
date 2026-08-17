@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import * as Icons from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { TRACKS } from "@/data/event";
+import { theme, rgba } from "@/lib/theme";
 
 export function Tracks() {
   return (
@@ -37,10 +38,10 @@ export function Tracks() {
                     style={{
                       background:
                         i % 3 === 0
-                          ? "linear-gradient(135deg, rgba(255,153,0,0.3), rgba(255,153,0,0.05))"
+                          ? `linear-gradient(135deg, ${rgba(theme.aws, 0.32)}, ${rgba(theme.aws, 0.06)})`
                           : i % 3 === 1
-                            ? "linear-gradient(135deg, rgba(56,189,248,0.3), rgba(56,189,248,0.05))"
-                            : "linear-gradient(135deg, rgba(139,92,246,0.3), rgba(139,92,246,0.05))",
+                            ? `linear-gradient(135deg, ${rgba(theme.purpleLight, 0.32)}, ${rgba(theme.purpleLight, 0.06)})`
+                            : `linear-gradient(135deg, ${rgba(theme.purple, 0.32)}, ${rgba(theme.purple, 0.06)})`,
                     }}
                   >
                     <Icon className="h-5 w-5 text-white" />

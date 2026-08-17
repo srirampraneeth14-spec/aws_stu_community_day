@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SPONSORS } from "@/data/event";
+import { theme } from "@/lib/theme";
 
 const TIER_STYLES: Record<string, { color: string; sub: string }> = {
-  Platinum: { color: "linear-gradient(120deg,#E5E7EB,#9CA3AF)", sub: "tier.platinum" },
-  Gold: { color: "linear-gradient(120deg,#FFD494,#FF9900)", sub: "tier.gold" },
-  Silver: { color: "linear-gradient(120deg,#CBD5E1,#94A3B8)", sub: "tier.silver" },
-  Community: { color: "linear-gradient(120deg,#8B5CF6,#38BDF8)", sub: "tier.community" },
+  Platinum: { color: "linear-gradient(120deg,#F5F3FF,#C4B5FD)", sub: "tier.platinum" },
+  Gold: { color: `linear-gradient(120deg,${theme.awsLight},${theme.aws})`, sub: "tier.gold" },
+  Silver: { color: "linear-gradient(120deg,#DDD6FE,#9333EA)", sub: "tier.silver" },
+  Community: { color: `linear-gradient(120deg,${theme.purpleLight},${theme.purple})`, sub: "tier.community" },
 };
 
 export function Sponsors() {

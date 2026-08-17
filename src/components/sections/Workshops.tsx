@@ -2,17 +2,18 @@ import { motion } from "framer-motion";
 import { Clock, Terminal } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { WORKSHOPS } from "@/data/event";
+import { theme, rgba } from "@/lib/theme";
 
 function levelStyle(level: string) {
   switch (level) {
     case "Beginner":
-      return { color: "#22C55E", bg: "rgba(34,197,94,0.15)" };
+      return { color: theme.awsLight, bg: rgba(theme.aws, 0.15) };
     case "Beginner to Intermediate":
-      return { color: "#FF9900", bg: "rgba(255,153,0,0.15)" };
+      return { color: theme.purpleLight, bg: rgba(theme.purple, 0.15) };
     case "Intermediate":
-      return { color: "#38BDF8", bg: "rgba(56,189,248,0.15)" };
+      return { color: theme.purple, bg: rgba(theme.purpleMuted, 0.18) };
     default:
-      return { color: "#8B5CF6", bg: "rgba(139,92,246,0.15)" };
+      return { color: theme.purpleDark, bg: rgba(theme.purpleDark, 0.2) };
   }
 }
 

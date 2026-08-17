@@ -8,7 +8,7 @@ export function ScrollProgress() {
       style={{ scaleX }}
       className="fixed left-0 right-0 top-0 z-[60] h-[2px] origin-left"
     >
-      <div className="h-full w-full bg-[#D6A34B]" />
+      <div className="h-full w-full bg-gradient-to-r from-aws via-purple-light to-purple" />
     </motion.div>
   );
 }

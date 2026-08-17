@@ -1,4 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
+import { theme } from "@/lib/theme";
 import { useRef, useState } from "react";
 import { ChevronDown, Clock, User } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -16,13 +17,13 @@ type Filter = (typeof FILTERS)[number];
 function trackColor(track: AgendaItem["track"]) {
   switch (track) {
     case "AI":
-      return "#8B5CF6";
+      return theme.purpleLight;
     case "DevOps":
-      return "#22C55E";
+      return theme.purpleMuted;
     case "Workshops":
-      return "#38BDF8";
+      return theme.purple;
     default:
-      return "#FF9900";
+      return theme.aws;
   }
 }
 
@@ -105,7 +106,7 @@ function AgendaCard({
       className="relative"
     >
       <span
-        className="absolute -left-[19px] top-5 h-3 w-3 rounded-full ring-4 ring-[#09090B] sm:-left-[27px]"
+        className="absolute -left-[19px] top-5 h-3 w-3 rounded-full ring-4 ring-[var(--black-base)] sm:-left-[27px]"
         style={{
           background: trackColor(item.track),
           boxShadow: `0 0 14px ${trackColor(item.track)}`,
@@ -118,7 +119,7 @@ function AgendaCard({
             transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
             className={cn(
               "glass rounded-2xl overflow-hidden transition-[box-shadow,ring-color] duration-300",
-              open && "ring-1 ring-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.35)]",
+              open && "ring-1 ring-purple/30 shadow-[0_8px_32px_rgba(5,5,8,0.45)]",
             )}
           >
             <CollapsibleTrigger className="group w-full cursor-pointer p-5 text-left transition-colors duration-200 hover:bg-white/[0.04] data-[state=open]:bg-white/[0.02]">
@@ -237,7 +238,7 @@ export function Agenda() {
             style={{ height: lineHeight }}
             className="absolute left-2 top-0 w-px sm:left-4"
           >
-            <div className="h-full w-full bg-gradient-to-b from-[#FF9900] via-[#38BDF8] to-[#8B5CF6]" />
+            <div className="h-full w-full bg-gradient-to-b from-[var(--aws)] via-[var(--purple-light)] to-[var(--purple)]" />
           </motion.div>
 
           <ul className="space-y-4">

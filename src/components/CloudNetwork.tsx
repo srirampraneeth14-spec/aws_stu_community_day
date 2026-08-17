@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useMemo, useState } from "react";
 import { CLOUD_NODES } from "@/data/event";
+import { theme, rgba } from "@/lib/theme";
 
 type Node = { id: string; x: number; y: number; r: number };
 
@@ -48,12 +49,10 @@ export function CloudNetwork() {
       }}
       onMouseLeave={() => setMouse(null)}
     >
-      {/* halo */}
       <div
         className="absolute inset-0 rounded-full blur-3xl"
         style={{
-          background:
-            "radial-gradient(circle at 50% 50%, rgba(255,153,0,0.28), rgba(56,189,248,0.18) 40%, transparent 70%)",
+          background: `radial-gradient(circle at 50% 50%, ${rgba(theme.aws, 0.24)}, ${rgba(theme.purple, 0.16)} 42%, transparent 70%)`,
         }}
       />
 
@@ -66,27 +65,26 @@ export function CloudNetwork() {
         <defs>
           <radialGradient id="node-orange" cx="50%" cy="40%" r="60%">
             <stop offset="0%" stopColor="#FFD494" />
-            <stop offset="60%" stopColor="#FF9900" />
-            <stop offset="100%" stopColor="#7A4600" />
-          </radialGradient>
-          <radialGradient id="node-blue" cx="50%" cy="40%" r="60%">
-            <stop offset="0%" stopColor="#B8E5FF" />
-            <stop offset="60%" stopColor="#38BDF8" />
-            <stop offset="100%" stopColor="#0B4A6A" />
+            <stop offset="60%" stopColor={theme.aws} />
+            <stop offset="100%" stopColor={theme.awsDark} />
           </radialGradient>
           <radialGradient id="node-purple" cx="50%" cy="40%" r="60%">
-            <stop offset="0%" stopColor="#D6C6FF" />
-            <stop offset="60%" stopColor="#8B5CF6" />
-            <stop offset="100%" stopColor="#3B1E7A" />
+            <stop offset="0%" stopColor="#E9D5FF" />
+            <stop offset="60%" stopColor={theme.purpleLight} />
+            <stop offset="100%" stopColor={theme.purpleDark} />
+          </radialGradient>
+          <radialGradient id="node-violet" cx="50%" cy="40%" r="60%">
+            <stop offset="0%" stopColor="#C4B5FD" />
+            <stop offset="60%" stopColor={theme.purple} />
+            <stop offset="100%" stopColor="#3B0764" />
           </radialGradient>
           <linearGradient id="link" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#FF9900" stopOpacity="0.7" />
-            <stop offset="50%" stopColor="#38BDF8" stopOpacity="0.5" />
-            <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0.7" />
+            <stop offset="0%" stopColor={theme.aws} stopOpacity="0.75" />
+            <stop offset="50%" stopColor={theme.purpleLight} stopOpacity="0.55" />
+            <stop offset="100%" stopColor={theme.purple} stopOpacity="0.75" />
           </linearGradient>
         </defs>
 
-        {/* concentric guide rings */}
         {[0.35, 0.55, 0.75].map((s, i) => (
           <circle
             key={i}
@@ -94,11 +92,10 @@ export function CloudNetwork() {
             cy={size / 2}
             r={(size / 2) * s}
             fill="none"
-            stroke="rgba(255,255,255,0.06)"
+            stroke={rgba(theme.purple, 0.12)}
           />
         ))}
 
-        {/* links */}
         {LINKS.map(([a, b], i) => {
           const na = nodesWithOffset[a];
           const nb = nodesWithOffset[b];
@@ -121,7 +118,6 @@ export function CloudNetwork() {
           );
         })}
 
-        {/* traveling packets */}
         {LINKS.slice(0, 6).map(([a, b], i) => {
           const na = nodesWithOffset[a];
           const nb = nodesWithOffset[b];
@@ -129,7 +125,7 @@ export function CloudNetwork() {
             <motion.circle
               key={`p${i}`}
               r={2.5}
-              fill="#FFB84D"
+              fill={theme.awsLight}
               initial={{ cx: (na.x / 100) * size, cy: (na.y / 100) * size, opacity: 0 }}
               animate={{
                 cx: [(na.x / 100) * size, (nb.x / 100) * size],
@@ -146,14 +142,13 @@ export function CloudNetwork() {
           );
         })}
 
-        {/* nodes */}
         {nodesWithOffset.map((n, i) => {
           const grad =
             i % 3 === 0
               ? "url(#node-orange)"
               : i % 3 === 1
-                ? "url(#node-blue)"
-                : "url(#node-purple)";
+                ? "url(#node-purple)"
+                : "url(#node-violet)";
           const cx = (n.x / 100) * size;
           const cy = (n.y / 100) * size;
           const dist = mouse ? Math.hypot(mouse.x - n.x, mouse.y - n.y) : 100;
@@ -198,8 +193,7 @@ export function CloudNetwork() {
         })}
       </svg>
 
-      {/* label chip */}
-      <div className="pointer-events-none absolute left-1/2 top-3 -translate-x-1/2 rounded-full border border-white/10 bg-black/40 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-white/70 backdrop-blur">
+      <div className="pointer-events-none absolute left-1/2 top-3 -translate-x-1/2 rounded-full border border-purple/20 bg-black/50 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-white/70 backdrop-blur">
         {hover ? `> ${hover}` : "> hover a node"}
       </div>
     </div>

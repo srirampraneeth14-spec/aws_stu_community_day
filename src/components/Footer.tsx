@@ -1,4 +1,5 @@
 import { Cloud, Instagram, Linkedin, Mail, MapPin, Youtube } from "lucide-react";
+import { theme } from "@/lib/theme";
 
 const WHATSAPP_COMMUNITY_URL = "https://chat.whatsapp.com/HN03AQ6Dt4PFbuRYFewatv";
 import { NAV_LINKS, VENUE_ADDRESS, VENUE_MAPS_URL } from "@/data/event";
@@ -10,25 +11,25 @@ const SOCIAL_LINKS = [
     name: "linkedin",
     href: "https://www.linkedin.com/company/aws-cloud-club/",
     Icon: Linkedin,
-    iconClass: "text-[#38BDF8]",
+    iconClass: "text-purple-light",
   },
   {
     name: "instagram",
     href: "https://www.instagram.com/awsclub_rec?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     Icon: Instagram,
-    iconClass: "text-[#FF9900]",
+    iconClass: "text-aws",
   },
   {
     name: "youtube",
     href: "https://youtube.com/@awsstudentbuildergroupatrec?si=Sj6Osho1EiC_-6D0",
     Icon: Youtube,
-    iconClass: "text-[#FF9900]",
+    iconClass: "text-aws",
   },
   {
     name: "meetup",
     href: "https://www.meetup.com/aws-cloud-club-at-raghu-eng-college",
     Icon: MeetupIcon,
-    iconClass: "text-[#FF9900]",
+    iconClass: "text-purple",
   },
 ] as const;
 
@@ -56,7 +57,7 @@ export function Footer() {
           <a href="#top" className="flex items-center gap-2 text-white">
             <span
               className="grid h-9 w-9 place-items-center rounded-lg"
-              style={{ background: "linear-gradient(135deg,#FF9900,#8B5CF6)" }}
+              style={{ background: `linear-gradient(135deg, ${theme.aws}, ${theme.purple})` }}
             >
               <Cloud className="h-4 w-4 text-black" />
             </span>
@@ -72,14 +73,14 @@ export function Footer() {
             rel="noopener noreferrer"
             className="mt-6 flex items-start gap-2 text-sm text-white/60 transition-colors hover:text-white"
           >
-            <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#FF9900]" />
+            <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-aws" />
             <span>{VENUE_ADDRESS}</span>
           </a>
           <a
             href="mailto:awscloudclubrecofficial@gmail.com"
             className="mt-2 flex items-center gap-2 text-sm text-white/60 hover:text-white"
           >
-            <Mail className="h-4 w-4 text-[#38BDF8]" />
+            <Mail className="h-4 w-4 text-purple-light" />
             awscloudclubrecofficial@gmail.com
           </a>
           <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
@@ -92,7 +93,7 @@ export function Footer() {
                 href={VENUE_MAPS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg border border-white/10 px-3 py-1.5 text-xs text-white/60 transition-colors hover:border-[#FF9900]/40 hover:text-white"
+                className="rounded-lg border border-white/10 px-3 py-1.5 text-xs text-white/60 transition-colors hover:border-aws/40 hover:text-white"
               >
                 Open in Maps
               </a>
@@ -164,11 +165,11 @@ export function Footer() {
       <div className="mx-auto mt-12 max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="glass rounded-2xl p-4 font-mono text-xs text-white/70">
           <p>
-            <span className="text-[#22C55E]">$</span> echo &quot;Thank you for building with the
+            <span className="text-purple-light">$</span> echo &quot;Thank you for building with the
             community.&quot;
           </p>
           <p className="mt-1 text-white/40">
-            <span className="text-[#22C55E]">$</span> exit 0
+            <span className="text-purple-light">$</span> exit 0
           </p>
         </div>
         <p className="mt-6 text-center font-mono text-[10px] uppercase tracking-widest text-white/30">

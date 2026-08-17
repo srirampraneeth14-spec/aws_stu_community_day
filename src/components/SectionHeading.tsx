@@ -15,7 +15,7 @@ export function SectionHeading({
 }) {
   return (
     <header className={align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
-      <p className="font-tech text-xs uppercase tracking-[0.25em] text-[#D6A34B]">
+      <p className="font-tech text-xs uppercase tracking-[0.25em] text-aws">
         <span className="text-white/40">#</span>
         {id.padStart(2, "0")} · {eyebrow}
       </p>

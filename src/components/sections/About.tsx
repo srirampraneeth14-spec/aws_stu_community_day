@@ -34,13 +34,13 @@ export function About() {
               want you to love it too. No gatekeeping. Beginners welcomed at the front.
             </p>
             <div className="glass mt-6 rounded-2xl p-5 font-mono text-sm text-white/70">
-              <span className="text-[#22C55E]">$</span> whoami
+              <span className="text-purple-light">$</span> whoami
               <br />
               <span className="text-white">builder</span>
               <br />
-              <span className="text-[#22C55E]">$</span> deploy --your potential
+              <span className="text-purple-light">$</span> deploy --your potential
               <br />
-              <span className="text-[#FF9900]">→ Build Once. Scale Forever.</span>
+              <span className="text-aws">→ Build Once. Scale Forever.</span>
             </div>
           </motion.div>
         </div>
