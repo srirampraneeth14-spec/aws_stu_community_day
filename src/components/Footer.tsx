@@ -1,8 +1,8 @@
 import { Cloud, Instagram, Linkedin, Mail, MapPin, Youtube } from "lucide-react";
+import { NAV_LINKS, VENUE_ADDRESS, VENUE_MAPS_URL } from "@/data/event";
 import { theme } from "@/lib/theme";
 
 const WHATSAPP_COMMUNITY_URL = "https://chat.whatsapp.com/HN03AQ6Dt4PFbuRYFewatv";
-import { NAV_LINKS, VENUE_ADDRESS, VENUE_MAPS_URL } from "@/data/event";
 const VENUE_MAP_EMBED_URL =
   "https://www.google.com/maps?q=Raghu+Engineering+College,+Dakamarri,+Bheemunipatnam+Mandal,+Visakhapatnam,+Andhra+Pradesh&output=embed";
 
@@ -17,19 +17,19 @@ const SOCIAL_LINKS = [
     name: "instagram",
     href: "https://www.instagram.com/awsclub_rec?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     Icon: Instagram,
-    iconClass: "text-aws",
+    iconClass: "text-purple",
   },
   {
     name: "youtube",
     href: "https://youtube.com/@awsstudentbuildergroupatrec?si=Sj6Osho1EiC_-6D0",
     Icon: Youtube,
-    iconClass: "text-aws",
+    iconClass: "text-purple-muted",
   },
   {
     name: "meetup",
     href: "https://www.meetup.com/aws-cloud-club-at-raghu-eng-college",
     Icon: MeetupIcon,
-    iconClass: "text-purple",
+    iconClass: "text-purple-dark",
   },
 ] as const;
 
@@ -57,7 +57,7 @@ export function Footer() {
           <a href="#top" className="flex items-center gap-2 text-white">
             <span
               className="grid h-9 w-9 place-items-center rounded-lg"
-              style={{ background: `linear-gradient(135deg, ${theme.aws}, ${theme.purple})` }}
+              style={{ background: `linear-gradient(135deg, ${theme.purpleLight}, ${theme.purple})` }}
             >
               <Cloud className="h-4 w-4 text-black" />
             </span>
@@ -73,7 +73,7 @@ export function Footer() {
             rel="noopener noreferrer"
             className="mt-6 flex items-start gap-2 text-sm text-white/60 transition-colors hover:text-white"
           >
-            <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-aws" />
+            <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-purple-light" />
             <span>{VENUE_ADDRESS}</span>
           </a>
           <a
@@ -93,7 +93,7 @@ export function Footer() {
                 href={VENUE_MAPS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg border border-white/10 px-3 py-1.5 text-xs text-white/60 transition-colors hover:border-aws/40 hover:text-white"
+                className="rounded-lg border border-white/10 px-3 py-1.5 text-xs text-white/60 transition-colors hover:border-purple-light/40 hover:text-white"
               >
                 Open in Maps
               </a>
@@ -165,11 +165,11 @@ export function Footer() {
       <div className="mx-auto mt-12 max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="glass rounded-2xl p-4 font-mono text-xs text-white/70">
           <p>
-            <span className="text-purple-light">$</span> echo &quot;Thank you for building with the
+            <span className="text-green">$</span> echo &quot;Thank you for building with the
             community.&quot;
           </p>
           <p className="mt-1 text-white/40">
-            <span className="text-purple-light">$</span> exit 0
+            <span className="text-green">$</span> exit 0
           </p>
         </div>
         <p className="mt-6 text-center font-mono text-[10px] uppercase tracking-widest text-white/30">

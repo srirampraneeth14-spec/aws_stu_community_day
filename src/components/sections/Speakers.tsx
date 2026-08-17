@@ -4,7 +4,7 @@ import { useState } from "react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { SPEAKERS } from "@/data/event";
-import { theme } from "@/lib/theme";
+import { purpleAvatarGradient, purpleRadial } from "@/lib/theme";
 
 type Speaker = { name: string; role: string; company: string; image?: string; linkedin?: string };
 
@@ -49,12 +49,7 @@ function SpeakerAvatar({ person, index, className = "h-16 w-16" }: { person: Spe
         <div
           className="grid h-full w-full place-items-center rounded-2xl text-lg font-black text-black"
           style={{
-            background:
-              index % 3 === 0
-                ? `linear-gradient(135deg,${theme.awsLight},${theme.aws})`
-                : index % 3 === 1
-                  ? `linear-gradient(135deg,#E9D5FF,${theme.purpleLight})`
-                  : `linear-gradient(135deg,#C4B5FD,${theme.purple})`,
+            background: purpleAvatarGradient(index),
           }}
         >
           {initials(person.name)}
@@ -81,7 +76,7 @@ function SpeakerDetailDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
         overlayClassName="bg-black/90"
-        className="glass-strong max-w-md border-purple/20 bg-[var(--black-elevated)]/95 p-8 text-center shadow-2xl shadow-purple/10 sm:rounded-3xl [&>button]:text-white/70 [&>button]:hover:text-white"
+        className="glass-strong max-w-md border-white/10 bg-[var(--black-elevated)]/95 p-8 text-center shadow-2xl shadow-purple/10 sm:rounded-3xl [&>button]:text-white/70 [&>button]:hover:text-white"
       >
         <div className="flex flex-col items-center">
           <SpeakerAvatar person={person} index={index} className="h-52 w-52 sm:h-60 sm:w-60" />
@@ -150,12 +145,7 @@ export function Speakers() {
                 aria-hidden
                 className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-60"
                 style={{
-                  background:
-                    i % 3 === 0
-                      ? `radial-gradient(circle, ${theme.aws}, transparent 70%)`
-                      : i % 3 === 1
-                        ? `radial-gradient(circle, ${theme.purpleLight}, transparent 70%)`
-                        : `radial-gradient(circle, ${theme.purple}, transparent 70%)`,
+                  background: purpleRadial(i),
                 }}
               />
               <SpeakerAvatar person={speaker as Speaker} index={i} />

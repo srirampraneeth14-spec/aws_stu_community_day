@@ -27,14 +27,14 @@ export function Navbar() {
           )}
           style={{
             background: `linear-gradient(180deg, ${rgba(theme.black, 0.82)} 0%, ${rgba(theme.black, 0.45)} 100%)`,
-            borderBottom: `1px solid ${rgba(theme.purple, 0.12)}`,
+            borderBottom: "1px solid rgba(255,255,255,0.06)",
           }}
         />
         <nav className="relative mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <a href="#top" className="flex items-center gap-2 text-white">
             <span
               className="grid h-8 w-8 place-items-center rounded-lg"
-              style={{ background: `linear-gradient(135deg, ${theme.aws}, ${theme.purple})` }}
+              style={{ background: `linear-gradient(135deg, ${theme.purpleLight}, ${theme.purple})` }}
             >
               <Cloud className="h-4 w-4 text-black" />
             </span>

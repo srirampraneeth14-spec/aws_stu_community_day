@@ -26,7 +26,7 @@ export function AchievementPopup() {
           <div className="glass-strong flex items-start gap-3 rounded-2xl p-4 shadow-2xl">
             <div
               className="grid h-10 w-10 shrink-0 place-items-center rounded-xl"
-              style={{ background: `linear-gradient(135deg, ${theme.aws}, ${theme.purple})` }}
+              style={{ background: `linear-gradient(135deg, ${theme.purpleLight}, ${theme.purple})` }}
             >
               <Sparkles className="h-5 w-5 text-black" />
             </div>

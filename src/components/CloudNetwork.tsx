@@ -193,7 +193,7 @@ export function CloudNetwork() {
         })}
       </svg>
 
-      <div className="pointer-events-none absolute left-1/2 top-3 -translate-x-1/2 rounded-full border border-purple/20 bg-black/50 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-white/70 backdrop-blur">
+      <div className="pointer-events-none absolute left-1/2 top-3 -translate-x-1/2 rounded-full border border-white/10 bg-black/40 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-white/70 backdrop-blur">
         {hover ? `> ${hover}` : "> hover a node"}
       </div>
     </div>

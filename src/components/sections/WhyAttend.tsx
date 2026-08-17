@@ -37,13 +37,13 @@ export function WhyAttend() {
                   aria-hidden
                   className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-60"
                   style={{
-                    background: `radial-gradient(circle, ${rgba(theme.aws, 0.45)}, transparent 70%)`,
+                    background: `radial-gradient(circle, ${rgba(theme.purple, 0.45)}, transparent 70%)`,
                   }}
                 />
                 <div
                   className="grid h-11 w-11 place-items-center rounded-xl"
                   style={{
-                    background: `linear-gradient(135deg, ${rgba(theme.aws, 0.24)}, ${rgba(theme.purple, 0.24)})`,
+                    background: `linear-gradient(135deg, ${rgba(theme.purpleLight, 0.22)}, ${rgba(theme.purple, 0.22)})`,
                   }}
                 >
                   <Icon className="h-5 w-5 text-white" />

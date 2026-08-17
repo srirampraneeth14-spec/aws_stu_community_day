@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import * as Icons from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { TRACKS } from "@/data/event";
-import { theme, rgba } from "@/lib/theme";
+import { purpleGradient } from "@/lib/theme";
 
 export function Tracks() {
   return (
@@ -36,12 +36,7 @@ export function Tracks() {
                   <div
                     className="grid h-10 w-10 place-items-center rounded-lg transition-transform group-hover:scale-110"
                     style={{
-                      background:
-                        i % 3 === 0
-                          ? `linear-gradient(135deg, ${rgba(theme.aws, 0.32)}, ${rgba(theme.aws, 0.06)})`
-                          : i % 3 === 1
-                            ? `linear-gradient(135deg, ${rgba(theme.purpleLight, 0.32)}, ${rgba(theme.purpleLight, 0.06)})`
-                            : `linear-gradient(135deg, ${rgba(theme.purple, 0.32)}, ${rgba(theme.purple, 0.06)})`,
+                      background: purpleGradient(i),
                     }}
                   >
                     <Icon className="h-5 w-5 text-white" />

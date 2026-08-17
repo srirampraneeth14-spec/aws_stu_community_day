@@ -7,11 +7,11 @@ import { theme, rgba } from "@/lib/theme";
 function levelStyle(level: string) {
   switch (level) {
     case "Beginner":
-      return { color: theme.awsLight, bg: rgba(theme.aws, 0.15) };
+      return { color: theme.purpleLight, bg: rgba(theme.purpleLight, 0.15) };
     case "Beginner to Intermediate":
-      return { color: theme.purpleLight, bg: rgba(theme.purple, 0.15) };
+      return { color: theme.purple, bg: rgba(theme.purple, 0.15) };
     case "Intermediate":
-      return { color: theme.purple, bg: rgba(theme.purpleMuted, 0.18) };
+      return { color: theme.purpleMuted, bg: rgba(theme.purpleMuted, 0.18) };
     default:
       return { color: theme.purpleDark, bg: rgba(theme.purpleDark, 0.2) };
   }

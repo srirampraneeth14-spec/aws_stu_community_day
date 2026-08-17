@@ -16,7 +16,7 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 font-tech text-[11px] uppercase tracking-widest text-white/70 backdrop-blur"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-purple-light shadow-[0_0_8px_rgba(167,139,250,0.55)]" />
+            <span className="h-1.5 w-1.5 rounded-full bg-green shadow-[0_0_8px_rgba(124,203,140,0.45)]" />
             Registration open · Learn · Build · Connect · Grow
           </motion.div>
 
@@ -66,7 +66,7 @@ export function Hero() {
               rel="noopener noreferrer"
               className="flex items-center gap-2 transition-colors hover:text-white"
             >
-              <MapPin className="h-4 w-4 text-aws" /> {EVENT_VENUE_NAME}
+              <MapPin className="h-4 w-4 text-purple-light" /> {EVENT_VENUE_NAME}
             </a>
             <span className="flex items-center gap-2 font-tech text-xs text-white/40">
               <Sparkles className="h-3.5 w-3.5 text-purple-light" /> // sudo attend aws-community-day
@@ -85,7 +85,7 @@ export function Hero() {
               >
                 <p className="text-3xl font-bold text-white">
                   <CountUp to={s.value} />
-                  <span className="text-aws">{s.suffix}</span>
+                  <span className="text-purple-light">{s.suffix}</span>
                 </p>
                 <p className="mt-1 font-tech text-[10px] uppercase tracking-widest text-white/50">
                   {s.label}

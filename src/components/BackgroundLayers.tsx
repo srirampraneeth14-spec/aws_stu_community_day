@@ -7,20 +7,20 @@ export function BackgroundLayers() {
       <div
         className="animate-aurora absolute -top-40 -left-40 h-[70vh] w-[70vh] rounded-full blur-3xl"
         style={{
-          background: `radial-gradient(circle at 30% 30%, ${rgba(theme.aws, 0.14)}, transparent 62%)`,
+          background: `radial-gradient(circle at 30% 30%, ${rgba(theme.purpleDark, 0.14)}, transparent 62%)`,
         }}
       />
       <div
         className="animate-aurora absolute top-1/3 -right-40 h-[80vh] w-[80vh] rounded-full blur-3xl"
         style={{
-          background: `radial-gradient(circle at 70% 40%, ${rgba(theme.purple, 0.18)}, transparent 62%)`,
+          background: `radial-gradient(circle at 70% 40%, ${rgba(theme.purple, 0.16)}, transparent 62%)`,
           animationDelay: "-6s",
         }}
       />
       <div
         className="animate-aurora absolute bottom-[-20vh] left-1/3 h-[70vh] w-[70vh] rounded-full blur-3xl"
         style={{
-          background: `radial-gradient(circle at 50% 50%, ${rgba(theme.purpleDark, 0.16)}, transparent 62%)`,
+          background: `radial-gradient(circle at 50% 50%, ${rgba(theme.purpleLight, 0.1)}, transparent 62%)`,
           animationDelay: "-12s",
         }}
       />
@@ -29,7 +29,7 @@ export function BackgroundLayers() {
       <div
         className="absolute inset-0"
         style={{
-          background: `radial-gradient(ellipse at 50% 0%, transparent 35%, ${rgba(theme.black, 0.75)} 100%)`,
+          background: `radial-gradient(ellipse at 50% 0%, transparent 40%, ${rgba(theme.black, 0.6)} 100%)`,
         }}
       />
     </div>

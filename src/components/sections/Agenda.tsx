@@ -17,13 +17,13 @@ type Filter = (typeof FILTERS)[number];
 function trackColor(track: AgendaItem["track"]) {
   switch (track) {
     case "AI":
-      return theme.purpleLight;
+      return theme.purple;
     case "DevOps":
       return theme.purpleMuted;
     case "Workshops":
-      return theme.purple;
+      return theme.purpleDark;
     default:
-      return theme.aws;
+      return theme.purpleLight;
   }
 }
 
@@ -119,7 +119,7 @@ function AgendaCard({
             transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
             className={cn(
               "glass rounded-2xl overflow-hidden transition-[box-shadow,ring-color] duration-300",
-              open && "ring-1 ring-purple/30 shadow-[0_8px_32px_rgba(5,5,8,0.45)]",
+              open && "ring-1 ring-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.35)]",
             )}
           >
             <CollapsibleTrigger className="group w-full cursor-pointer p-5 text-left transition-colors duration-200 hover:bg-white/[0.04] data-[state=open]:bg-white/[0.02]">
@@ -238,7 +238,7 @@ export function Agenda() {
             style={{ height: lineHeight }}
             className="absolute left-2 top-0 w-px sm:left-4"
           >
-            <div className="h-full w-full bg-gradient-to-b from-[var(--aws)] via-[var(--purple-light)] to-[var(--purple)]" />
+            <div className="h-full w-full bg-gradient-to-b from-purple-light via-purple to-purple-dark" />
           </motion.div>
 
           <ul className="space-y-4">

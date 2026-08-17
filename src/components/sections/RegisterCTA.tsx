@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { MagneticButton } from "@/components/MagneticButton";
-import { theme, rgba } from "@/lib/theme";
 
 export function RegisterCTA() {
   return (
@@ -14,12 +13,13 @@ export function RegisterCTA() {
           transition={{ duration: 0.7 }}
           className="relative overflow-hidden rounded-[32px] border border-white/10 p-10 sm:p-16"
           style={{
-            background: `radial-gradient(1200px 400px at 20% 0%, ${rgba(theme.aws, 0.12)}, transparent 62%), radial-gradient(1000px 400px at 100% 100%, ${rgba(theme.purple, 0.16)}, transparent 62%), linear-gradient(180deg, rgba(147, 51, 234, 0.06), rgba(5, 5, 8, 0.2))`,
+            background:
+              "radial-gradient(1200px 400px at 20% 0%, rgba(255,255,255,0.06), transparent 62%), radial-gradient(1000px 400px at 100% 100%, rgba(255,255,255,0.04), transparent 62%), linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01))",
           }}
         >
           <div className="grid-bg absolute inset-0 opacity-40" />
           <div className="relative">
-            <p className="font-tech text-xs uppercase tracking-[0.3em] text-aws">
+            <p className="font-tech text-xs uppercase tracking-[0.3em] text-purple-light">
               // registration.open
             </p>
             <h2 className="mt-4 max-w-3xl text-4xl font-black tracking-tight text-white sm:text-6xl">

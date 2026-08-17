@@ -5,9 +5,9 @@ import { theme } from "@/lib/theme";
 
 const TIER_STYLES: Record<string, { color: string; sub: string }> = {
   Platinum: { color: "linear-gradient(120deg,#F5F3FF,#C4B5FD)", sub: "tier.platinum" },
-  Gold: { color: `linear-gradient(120deg,${theme.awsLight},${theme.aws})`, sub: "tier.gold" },
-  Silver: { color: "linear-gradient(120deg,#DDD6FE,#9333EA)", sub: "tier.silver" },
-  Community: { color: `linear-gradient(120deg,${theme.purpleLight},${theme.purple})`, sub: "tier.community" },
+  Gold: { color: `linear-gradient(120deg,${theme.purpleLight},${theme.purple})`, sub: "tier.gold" },
+  Silver: { color: "linear-gradient(120deg,#DDD6FE,#7C3AED)", sub: "tier.silver" },
+  Community: { color: `linear-gradient(120deg,${theme.purpleMuted},${theme.purpleLight})`, sub: "tier.community" },
 };
 
 export function Sponsors() {

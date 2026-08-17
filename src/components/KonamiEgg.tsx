@@ -51,7 +51,7 @@ export function KonamiEgg() {
             animate={{ scale: 1, rotate: 0 }}
             className="glass-strong relative rounded-3xl px-8 py-6 text-center"
           >
-            <p className="font-mono text-xs uppercase tracking-widest text-aws">
+            <p className="font-mono text-xs uppercase tracking-widest text-purple-light">
               // secret unlocked
             </p>
             <p className="mt-2 text-3xl font-black text-white">

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { CREW, FACULTY } from "@/data/event";
-import { theme } from "@/lib/theme";
+import { purpleAvatarGradient, theme } from "@/lib/theme";
 
 type Organizer = { name: string; role: string; pill: string; image?: string; linkedin?: string };
 
@@ -14,7 +14,7 @@ const SUBSECTION_STYLES = {
     sub: "advisors",
   },
   Crew: {
-    color: `linear-gradient(120deg,${theme.awsLight},${theme.aws})`,
+    color: `linear-gradient(120deg,${theme.purpleLight},${theme.purple})`,
     sub: "AWS Team REC",
   },
 } as const;
@@ -50,12 +50,7 @@ function Avatar({
     <div
       className={`grid ${className} shrink-0 place-items-center rounded-2xl text-base font-black text-black`}
       style={{
-        background:
-          index % 3 === 0
-            ? `linear-gradient(135deg,${theme.awsLight},${theme.aws})`
-            : index % 3 === 1
-              ? `linear-gradient(135deg,#E9D5FF,${theme.purpleLight})`
-              : `linear-gradient(135deg,#C4B5FD,${theme.purple})`,
+        background: purpleAvatarGradient(index),
       }}
     >
       {initials(person.name)}
@@ -71,7 +66,7 @@ function LinkedInLink({ person }: { person: Organizer }) {
       rel={person.linkedin ? "noopener noreferrer" : undefined}
       aria-label={`${person.name} LinkedIn`}
       onClick={(e) => e.stopPropagation()}
-      className="grid h-8 w-8 place-items-center rounded-lg border border-white/10 text-white/60 transition-colors hover:border-aws/50 hover:text-white"
+      className="grid h-8 w-8 place-items-center rounded-lg border border-white/10 text-white/60 transition-colors hover:border-purple-light/50 hover:text-white"
     >
       <Linkedin className="h-3.5 w-3.5" />
     </a>
@@ -93,13 +88,13 @@ function OrganizerDetailDialog({
 }) {
   if (!person) return null;
 
-  const shadowClass = variant === "faculty" ? "shadow-purple/10" : "shadow-aws/10";
+  const shadowClass = "shadow-purple/10";
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
         overlayClassName="bg-black/90"
-        className={`glass-strong max-w-md border-purple/20 bg-[var(--black-elevated)]/95 p-8 text-center shadow-2xl ${shadowClass} sm:rounded-3xl [&>button]:text-white/70 [&>button]:hover:text-white`}
+        className={`glass-strong max-w-md border-white/10 bg-[var(--black-elevated)]/95 p-8 text-center shadow-2xl ${shadowClass} sm:rounded-3xl [&>button]:text-white/70 [&>button]:hover:text-white`}
       >
         <div className="flex flex-col items-center">
           <Avatar person={person} index={index} className="h-52 w-52 sm:h-60 sm:w-60" />
@@ -131,11 +126,9 @@ function InteractiveOrganizerGrid({
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const selected = selectedIndex !== null ? people[selectedIndex] : null;
 
-  const hoverShadowClass =
-    variant === "faculty" ? "hover:shadow-purple/15" : "hover:shadow-aws/15";
+  const hoverShadowClass = "hover:shadow-purple/15";
 
-  const pillHoverClass =
-    variant === "faculty" ? "group-hover:border-purple-light/30" : "group-hover:border-aws/30";
+  const pillHoverClass = "group-hover:border-purple-light/30";
 
   return (
     <>
