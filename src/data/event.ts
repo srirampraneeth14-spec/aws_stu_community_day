@@ -266,40 +266,22 @@ export const SPEAKERS = [
 
 export const WORKSHOPS = [
   {
-    title: "Your First Lambda",
+    title: "Build Your First Serverless Web App",
     level: "Beginner",
-    duration: "60m",
-    desc: "Ship a serverless API without ever leaving the browser.",
+    duration: "1:45 PM – 4:15 PM",
+    desc: "Hands-on lab to build and deploy your first serverless web application on AWS.",
   },
   {
-    title: "Intro to S3 + CloudFront",
-    level: "Beginner",
-    duration: "60m",
-    desc: "Deploy a globally cached static site in under an hour.",
+    title: "Build a GenAI App with Amazon Bedrock",
+    level: "Beginner to Intermediate",
+    duration: "1:45 PM – 4:15 PM",
+    desc: "Create a generative AI application using Amazon Bedrock in a guided workshop.",
   },
   {
-    title: "Build a RAG App with Bedrock",
+    title: "Docker to AWS: Deploy Your First Container",
     level: "Intermediate",
-    duration: "90m",
-    desc: "Combine embeddings, vector search, and Bedrock to answer questions from your docs.",
-  },
-  {
-    title: "GitOps with ArgoCD",
-    level: "Intermediate",
-    duration: "90m",
-    desc: "Model production deploys as pull requests. Reproducible, reviewable, revertible.",
-  },
-  {
-    title: "Deploy an EKS Cluster in 45 minutes",
-    level: "Advanced",
-    duration: "90m",
-    desc: "From zero to a hardened multi-node Kubernetes cluster with observability baked in.",
-  },
-  {
-    title: "Fine-tune a Foundation Model",
-    level: "Advanced",
-    duration: "120m",
-    desc: "Prepare a dataset, train on SageMaker, and evaluate results — end to end.",
+    duration: "1:45 PM – 4:15 PM",
+    desc: "Containerize an application and deploy it to AWS in this practical session.",
   },
 ];
 

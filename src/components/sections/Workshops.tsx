@@ -7,6 +7,8 @@ function levelStyle(level: string) {
   switch (level) {
     case "Beginner":
       return { color: "#22C55E", bg: "rgba(34,197,94,0.15)" };
+    case "Beginner to Intermediate":
+      return { color: "#FF9900", bg: "rgba(255,153,0,0.15)" };
     case "Intermediate":
       return { color: "#38BDF8", bg: "rgba(56,189,248,0.15)" };
     default:
@@ -26,7 +28,7 @@ export function Workshops() {
               Bring a laptop. <span className="text-gradient-cool">Leave with code.</span>
             </>
           }
-          subtitle="Guided, hands-on labs across three levels. Mentors on hand for every session."
+          subtitle="Three parallel hands-on workshops, 1:45 PM – 4:15 PM. Bring your laptop."
         />
         <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {WORKSHOPS.map((w, i) => {
