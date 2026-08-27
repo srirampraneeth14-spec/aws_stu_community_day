@@ -3,7 +3,7 @@ import { Linkedin } from "lucide-react";
 import { useState } from "react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
-import { SPEAKERS } from "@/data/event";
+import { SPEAKERS, KEYNOTE_SPEAKER, SESSION_SPEAKERS } from "@/data/event";
 import { purpleAvatarGradient, purpleRadial } from "@/lib/theme";
 
 type Speaker = { name: string; role: string; company: string; image?: string; linkedin?: string };
@@ -106,7 +106,7 @@ export function Speakers() {
     <section id="speakers" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          id="5"
+          id="4"
           eyebrow="Speakers"
           title={
             <>
@@ -115,54 +115,126 @@ export function Speakers() {
           }
           subtitle="AWS Heroes, Community Builders, and engineers doing the actual work."
         />
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {SPEAKERS.map((speaker, i) => (
-            <motion.article
-              key={speaker.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{
-                opacity: { duration: 0.45, delay: (i % 4) * 0.05 },
-                y: { duration: 0.45, delay: (i % 4) * 0.05 },
-                scale: { type: "spring", stiffness: 320, damping: 22 },
-                default: { type: "spring", stiffness: 320, damping: 22 },
-              }}
-              whileHover={{ scale: 1.08, y: -6 }}
-              onClick={() => setSelectedIndex(i)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  setSelectedIndex(i);
-                }
-              }}
-              role="button"
-              tabIndex={0}
-              className="glass group relative z-0 cursor-pointer overflow-hidden rounded-2xl p-5 hover:z-10 hover:shadow-2xl hover:shadow-purple/15"
-              style={{ transformOrigin: "center center" }}
-            >
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-60"
-                style={{
-                  background: purpleRadial(i),
-                }}
-              />
-              <SpeakerAvatar person={speaker as Speaker} index={i} />
-              <h3 className="mt-4 text-base font-semibold text-white transition-colors duration-300 group-hover:text-white">
-                {speaker.name}
-              </h3>
-              <p className="text-sm text-white/60 transition-colors duration-300 group-hover:text-white/80">
-                {speaker.role}
-              </p>
-              <p className="font-mono text-[10px] uppercase tracking-widest text-white/40 transition-colors duration-300 group-hover:text-white/60">
-                @ {speaker.company}
-              </p>
-              <div className="mt-4 flex gap-1.5">
-                <LinkedInLink name={speaker.name} linkedin={speaker.linkedin} />
+        <div className="mt-8 space-y-10">
+          {/* Keynote Speaker subsection */}
+          <div>
+            <div className="flex items-baseline justify-between">
+              <div>
+                <p className="text-2xl font-bold text-white">Keynote Speaker</p>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-white/40">featured</p>
               </div>
-            </motion.article>
-          ))}
+              <div className="h-px flex-1 translate-y-1 bg-gradient-to-r from-white/10 to-transparent" style={{ marginLeft: 24 }} />
+            </div>
+
+            <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <motion.article
+                key={KEYNOTE_SPEAKER.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{
+                  opacity: { duration: 0.45 },
+                  y: { duration: 0.45 },
+                  scale: { type: "spring", stiffness: 320, damping: 22 },
+                  default: { type: "spring", stiffness: 320, damping: 22 },
+                }}
+                whileHover={{ scale: 1.08, y: -6 }}
+                onClick={() => setSelectedIndex(0)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setSelectedIndex(0);
+                  }
+                }}
+                role="button"
+                tabIndex={0}
+                className="glass group relative z-0 cursor-pointer overflow-hidden rounded-2xl p-5 hover:z-10 hover:shadow-2xl hover:shadow-purple/15"
+                style={{ transformOrigin: "center center" }}
+              >
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-60"
+                  style={{
+                    background: purpleRadial(0),
+                  }}
+                />
+                <SpeakerAvatar person={KEYNOTE_SPEAKER as Speaker} index={0} />
+                <h3 className="mt-4 text-base font-semibold text-white transition-colors duration-300 group-hover:text-white">
+                  {KEYNOTE_SPEAKER.name}
+                </h3>
+                <p className="text-sm text-white/60 transition-colors duration-300 group-hover:text-white/80">
+                  {KEYNOTE_SPEAKER.role}
+                </p>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-white/40 transition-colors duration-300 group-hover:text-white/60">
+                  @ {KEYNOTE_SPEAKER.company}
+                </p>
+                <div className="mt-4 flex gap-1.5">
+                  <LinkedInLink name={KEYNOTE_SPEAKER.name} linkedin={KEYNOTE_SPEAKER.linkedin} />
+                </div>
+              </motion.article>
+            </div>
+          </div>
+
+          {/* Session Speakers subsection */}
+          <div>
+            <div className="flex items-baseline justify-between">
+              <div>
+                <p className="text-2xl font-bold text-white">Session & Workshops</p>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-white/40">sessions & workshops</p>
+              </div>
+              <div className="h-px flex-1 translate-y-1 bg-gradient-to-r from-white/10 to-transparent" style={{ marginLeft: 24 }} />
+            </div>
+
+            <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {SESSION_SPEAKERS.map((speaker, i) => (
+                <motion.article
+                  key={`${speaker.name}-${i}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{
+                    opacity: { duration: 0.45, delay: (i % 4) * 0.05 },
+                    y: { duration: 0.45, delay: (i % 4) * 0.05 },
+                    scale: { type: "spring", stiffness: 320, damping: 22 },
+                    default: { type: "spring", stiffness: 320, damping: 22 },
+                  }}
+                  whileHover={{ scale: 1.08, y: -6 }}
+                  onClick={() => setSelectedIndex(i + 1)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setSelectedIndex(i + 1);
+                    }
+                  }}
+                  role="button"
+                  tabIndex={0}
+                  className="glass group relative z-0 cursor-pointer overflow-hidden rounded-2xl p-5 hover:z-10 hover:shadow-2xl hover:shadow-purple/15"
+                  style={{ transformOrigin: "center center" }}
+                >
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-60"
+                    style={{
+                      background: purpleRadial(i + 1),
+                    }}
+                  />
+                  <SpeakerAvatar person={speaker as Speaker} index={i + 1} />
+                  <h3 className="mt-4 text-base font-semibold text-white transition-colors duration-300 group-hover:text-white">
+                    {speaker.name}
+                  </h3>
+                  <p className="text-sm text-white/60 transition-colors duration-300 group-hover:text-white/80">
+                    {speaker.role}
+                  </p>
+                  <p className="font-mono text-[10px] uppercase tracking-widest text-white/40 transition-colors duration-300 group-hover:text-white/60">
+                    @ {speaker.company}
+                  </p>
+                  <div className="mt-4 flex gap-1.5">
+                    <LinkedInLink name={speaker.name} linkedin={speaker.linkedin} />
+                  </div>
+                </motion.article>
+              ))}
+            </div>
+          </div>
         </div>
         <SpeakerDetailDialog
           person={selected}

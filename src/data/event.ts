@@ -8,10 +8,10 @@ export const VENUE_MAPS_URL =
 export const NAV_LINKS = [
   { id: "about", label: "About" },
   { id: "why", label: "Why Attend" },
-  { id: "tracks", label: "Tracks" },
   { id: "agenda", label: "Agenda" },
   { id: "speakers", label: "Speakers" },
   { id: "workshops", label: "Workshops" },
+  { id: "badge", label: "Badge" },
   { id: "sponsors", label: "Sponsors" },
   { id: "organizers", label: "Organizers" },
   { id: "faq", label: "FAQ" },
@@ -19,9 +19,9 @@ export const NAV_LINKS = [
 ] as const;
 
 export const STATS = [
-  { label: "Attendees", value: 1000, suffix: "+" },
-  { label: "Speakers", value: 20, suffix: "+" },
-  { label: "Sessions", value: 15, suffix: "+" },
+  { label: "Attendees", value: 500, suffix: "+" },
+  { label: "Speakers", value: 6, suffix: "+" },
+  { label: "Sessions", value: 9, suffix: "+" },
   { label: "Sponsors", value: 10, suffix: "+" },
 ];
 
@@ -131,7 +131,7 @@ export const AGENDA: AgendaItem[] = [
     startTime: "9:50 AM",
     endTime: "10:05 AM",
     title: "Keynote",
-    format: "AWS or industry speaker",
+    format: "Jessica Gilmore",
     track: "Cloud",
   },
   {
@@ -184,21 +184,14 @@ export const AGENDA: AgendaItem[] = [
   },
   {
     startTime: "12:05 PM",
-    endTime: "12:45 PM",
-    title: "Panel Discussion",
-    format: "4 panelists and moderator",
-    track: "Cloud",
-  },
-  {
-    startTime: "12:45 PM",
-    endTime: "1:45 PM",
+    endTime: "1:00 PM",
     title: "Lunch and Networking",
-    format: "Community networking",
+    format: "Community Networking",
     track: "Cloud",
   },
   {
-    startTime: "1:45 PM",
-    endTime: "4:15 PM",
+    startTime: "1:10 PM",
+    endTime: "3:30 PM",
     title: "Hands on Workshops",
     format: "3 parallel workshops",
     track: "Workshops",
@@ -221,41 +214,49 @@ export const AGENDA: AgendaItem[] = [
     ],
   },
   {
-    startTime: "4:15 PM",
-    endTime: "4:30 PM",
+    startTime: "3:30 PM",
+    endTime: "3:45 PM",
     title: "Break",
     track: "Cloud",
   },
   {
-    startTime: "4:30 PM",
-    endTime: "5:20 PM",
+    startTime: "3:50 PM",
+    endTime: "4:30 PM",
     title: "Panel Discussion",
     format: "Interactive",
     track: "Cloud",
   },
   {
-    startTime: "5:20 PM",
-    endTime: "5:30 PM",
-    title: "Closing Ceremony",
+    startTime: "4:30 PM",
+    endTime: "5:00 PM",
+    title: "Guest Felicitation & Closing Ceremony",
     format: "Vote of thanks and closing",
     track: "Cloud",
   },
 ];
 
-export const SPEAKERS = [
+export const KEYNOTE_SPEAKER = {
+  name: "Jessica Gilmore",
+  role: "Manager, Community Groups",
+  company: "Amazon",
+  image: "/speakers/Jessica.jpg",
+  linkedin: "https://www.linkedin.com/in/jessicagilmore1 ",
+};
+
+export const SESSION_SPEAKERS = [
+  {
+    name: "Ramakant Yadav",
+    role: "Founder",
+    company: "Scalar Field",
+    image: "/speakers/ramakant.png",
+    linkedin: "https://www.linkedin.com/in/ramakant-yadav1 ",
+  },
   {
     name: "Neha Prasad",
     role: "Analytics Specialist",
     company: "Amazon Web Services",
     image: "/speakers/neha prasad.jpg",
     linkedin: "https://www.linkedin.com/in/neha-prasad-66586a64 ",
-  },
-  {
-    name: "Nikita Mourya",
-    role: "Staff Cloud Platform Engineer",
-    company: "Appdirect",
-    image: "/speakers/Nikita_Mourya.jpg",
-    linkedin: "https://www.linkedin.com/in/nikita-mourya ",
   },
   {
     name: "Vishnu Rachapudi",
@@ -279,6 +280,9 @@ export const SPEAKERS = [
     linkedin: "https://www.linkedin.com/in/nagababu-medicharla-b2a91a117 ",
   },
 ];
+
+// Backwards compatible combined export
+export const SPEAKERS = [KEYNOTE_SPEAKER, ...SESSION_SPEAKERS];
 
 export const WORKSHOPS = [
   {
@@ -435,7 +439,7 @@ export const CREW = [
     image: "/crew/varshini.jpeg",
     linkedin: "https://www.linkedin.com/in/varshini-samireddy-996b67328",
   },
-  
+
   {
     name: "P Sri Ram Praneeth",
     role: "Technical and Labs Co-Ordinator",
@@ -516,7 +520,7 @@ export const FAQ = [
   {
     q: "Do I need prior AWS or cloud experience?",
     a: "Not at all. No prior AWS experience is required. Bring your curiosity, and you'll leave with new knowledge, practical insights, and valuable connections.",
-  },    
+  },
   {
     q: "Will food and refreshments be provided?",
     a: "Yes. Complimentary refreshments and lunch will be provided. Check the agenda for scheduled meal breaks.",

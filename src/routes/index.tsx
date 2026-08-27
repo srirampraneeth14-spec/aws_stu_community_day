@@ -12,7 +12,7 @@ import { Organizers } from "@/components/sections/Organizers";
 import { RegisterCTA } from "@/components/sections/RegisterCTA";
 import { Speakers } from "@/components/sections/Speakers";
 import { Sponsors } from "@/components/sections/Sponsors";
-import { Tracks } from "@/components/sections/Tracks";
+import { Badge } from "@/components/sections/Badge";
 import { WhyAttend } from "@/components/sections/WhyAttend";
 import { Workshops } from "@/components/sections/Workshops";
 
@@ -30,10 +30,10 @@ function Index() {
         <Hero />
         <About />
         <WhyAttend />
-        <Tracks />
         <Agenda />
         <Speakers />
         <Workshops />
+        <Badge />
         <Sponsors />
         <Organizers />
         <FAQ />
