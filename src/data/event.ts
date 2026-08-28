@@ -510,16 +510,12 @@ export const FAQ = [
     a: "Expect keynote sessions, technical talks, hands-on workshops, networking opportunities, sponsor booths, community interactions, giveaways, and real-world insights from AWS experts and community leaders.",
   },
   {
-    q: "Is AWS Community Day free to attend?",
-    a: "The event is paid, with affordable pricing for students and dedicated ticket categories for working professionals. Select the appropriate ticket during registration.",
-  },
-  {
     q: "Who can attend AWS Community Day?",
     a: "Students, Teachers/faculty, developers, software engineers, cloud professionals, startup founders, IT enthusiasts, educators, and anyone interested in cloud technology are welcome to attend.",
   },
   {
     q: "Do I need prior AWS or cloud experience?",
-    a: "Not at all. No prior AWS experience is required. Bring your curiosity, and you'll leave with new knowledge, practical insights, and valuable connections.",
+    a: "No! No prior experience is required. While AWS is a part of the event, we focus on exploring various tech domains and emerging technologies beyond AWS as well.",
   },
   {
     q: "Will food and refreshments be provided?",
@@ -534,16 +530,8 @@ export const FAQ = [
     a: "Recommended for workshops. Talks and keynotes can be enjoyed empty-handed with a coffee in the other.",
   },
   {
-    q: "Will sessions be recorded?",
-    a: "Main stage talks are recorded and released a few weeks after the event on our community channel.",
-  },
-  {
     q: "Is there Wi-Fi?",
     a: "Yes — venue Wi-Fi credentials are printed on your badge. Sponsors also provide backup networks.",
-  },
-  {
-    q: "How do I become a speaker or sponsor next year?",
-    a: "Reach out via the contact section below — the CFP and sponsor prospectus open a few months before each edition.",
   },
 ];
 
