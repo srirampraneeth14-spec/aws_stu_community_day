@@ -33,11 +33,11 @@ function Index() {
         <Agenda />
         <Speakers />
         <Workshops />
-        <Badge />
         <Sponsors />
         <Organizers />
         <FAQ />
         <RegisterCTA />
+        <Badge />
       </main>
       <Footer />
       <KonamiEgg />

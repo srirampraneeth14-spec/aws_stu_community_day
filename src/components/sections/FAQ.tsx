@@ -9,7 +9,7 @@ export function FAQ() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
           <SectionHeading
-            id="9"
+            id="8"
             eyebrow="FAQ"
             title={
               <>
