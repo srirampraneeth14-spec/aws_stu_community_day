@@ -113,7 +113,7 @@ export function Badge() {
 
   return (
     <>
-      <section id="badge" className="relative py-24 sm:py-32">
+      <section id="badge" className="relative pt-6 pb-24 sm:pt-8 sm:pb-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             id="9"

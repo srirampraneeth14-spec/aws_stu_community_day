@@ -4,7 +4,7 @@ import { MagneticButton } from "@/components/MagneticButton";
 
 export function RegisterCTA() {
   return (
-    <section id="register" className="relative py-24 sm:py-32">
+    <section id="register" className="relative pt-24 pb-6 sm:pt-32 sm:pb-8">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
