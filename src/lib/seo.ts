@@ -5,6 +5,7 @@ import {
   FAQ as FAQ_DATA,
   WORKSHOPS,
   SPEAKERS,
+  REGISTRATION_URL,
 } from "@/data/event";
 
 // ─── Constants ───────────────────────────────────────────────────────────────
@@ -66,7 +67,7 @@ export function getEventJsonLd() {
       price: "0",
       priceCurrency: "INR",
       availability: "https://schema.org/InStock",
-      url: SITE_URL,
+      url: REGISTRATION_URL,
     },
     performer: SPEAKERS.map((s) => ({
       "@type": "Person",

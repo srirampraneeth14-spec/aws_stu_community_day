@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { MagneticButton } from "@/components/MagneticButton";
+import { REGISTRATION_URL } from "@/data/event";
 
 export function RegisterCTA() {
   return (
@@ -30,9 +31,16 @@ export function RegisterCTA() {
               the community IRL. We&apos;ll bring the coffee.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <MagneticButton>
-                Register Now <ArrowRight className="h-4 w-4" />
-              </MagneticButton>
+              <a
+                href={REGISTRATION_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex"
+              >
+                <MagneticButton>
+                  Register Now <ArrowRight className="h-4 w-4" />
+                </MagneticButton>
+              </a>
               <MagneticButton variant="ghost" onClick={() => (window.location.hash = "#agenda")}>
                 See what&apos;s on
               </MagneticButton>

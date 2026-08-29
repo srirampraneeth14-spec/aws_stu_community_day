@@ -4,6 +4,7 @@ export const VENUE_ADDRESS =
   "Raghu Engineering College, Dakamarri, Bheemunipatnam Mandal, Visakhapatnam - 531162";
 export const VENUE_MAPS_URL =
   "https://www.google.com/maps/search/?api=1&query=Raghu+Engineering+College,Dakamarri,Bheemunipatnam+Mandal,Visakhapatnam+531162";
+export const REGISTRATION_URL = "https://konfhub.com/aws-student-community-day-rec";
 
 export const NAV_LINKS = [
   { id: "about", label: "About" },
