@@ -142,16 +142,19 @@ export const AGENDA: AgendaItem[] = [
     track: "Cloud",
     parallelTracks: [
       {
-        title: "Will Update Soon",
-        track: "TBD",
+        title: "To Be Announced",
+        track: "Cloud",
+        level: "TBA",
       },
       {
-        title: "Will Update Soon",
-        track: "TBD",
+        title: "To Be Announced",
+        track: "AI",
+        level: "TBA",
       },
       {
-        title: "Will Update Soon",
-        track: "TBD",
+        title: "To Be Announced",
+        track: "DevOps",
+        level: "TBA",
       },
     ],
   },
@@ -169,16 +172,19 @@ export const AGENDA: AgendaItem[] = [
     track: "DevOps",
     parallelTracks: [
       {
-        title: "Will Update Soon",
-        track: "TBD",
+        title: "To Be Announced",
+        track: "Cloud",
+        level: "TBA",
       },
       {
-        title: "Will Update Soon",
-        track: "TBD",
+        title: "To Be Announced",
+        track: "AI",
+        level: "TBA",
       },
       {
-        title: "Will Update Soon",
-        track: "TBD",
+        title: "To Be Announced",
+        track: "DevOps",
+        level: "TBA",
       },
     ],
   },
@@ -197,19 +203,19 @@ export const AGENDA: AgendaItem[] = [
     track: "Workshops",
     parallelTracks: [
       {
-        title: "Will Update Soon",
-        track: "TBD",
-        level: "TBD",
+        title: "To Be Announced",
+        track: "Workshops",
+        level: "TBA",
       },
       {
-        title: "Will Update Soon",
-        track: "TBD",
-        level: "TBD",
+        title: "To Be Announced",
+        track: "Workshops",
+        level: "TBA",
       },
       {
-        title: "Will Update Soon",
-        track: "TBD",
-        level: "TBD",
+        title: "To Be Announced",
+        track: "Workshops",
+        level: "TBA",
       },
     ],
   },
@@ -305,29 +311,26 @@ export const WORKSHOPS = [
   },
 ];
 
-export const SPONSORS = {
-  Platinum: [
-    { name: "Amazon Web Services", desc: "Cloud infrastructure powering the modern internet." },
+export type SponsorItem = {
+  name: string;
+  desc: string;
+  logo?: string;
+};
+
+export const SPONSORS: Record<string, SponsorItem[]> = {
+  "Title Sponsor": [
     {
-      name: "Nimbus AI",
-      desc: "Managed inference and fine-tuning for teams shipping AI products.",
+      name: "Amazon Web Services",
+      desc: "Cloud infrastructure and AI services powering modern computing worldwide.",
+      logo: "/aws_partner.jpeg",
     },
   ],
-  Gold: [
-    { name: "CloudScale", desc: "Cost-aware scaling for serverless workloads." },
-    { name: "Fortify", desc: "Runtime security for containers and Kubernetes." },
-    { name: "K8sHub", desc: "The community-run Kubernetes learning platform." },
-  ],
-  Silver: [
-    { name: "Serverless.co", desc: "Framework for building event-driven cloud apps." },
-    { name: "Fintechly", desc: "Cloud-native banking infrastructure." },
-    { name: "OpenLab", desc: "Open research collective for foundation models." },
-    { name: "DataForge", desc: "Streaming + lakehouse platform for the AWS ecosystem." },
-  ],
-  Community: [
-    { name: "Devs Meetup", desc: "Monthly meetup for the local developer community." },
-    { name: "WomenInCloud", desc: "Supporting women pursuing careers in cloud engineering." },
-    { name: "StudentCloud", desc: "Student chapter across regional universities." },
+  "Venue Partner": [
+    {
+      name: "Raghu Engineering College",
+      desc: "Premier engineering institution hosting AWS Student Community Day Vizag 2026.",
+      logo: "/raghu_venue.jpeg",
+    },
   ],
 };
 
@@ -399,7 +402,7 @@ export const FACULTY = [
 export const CREW = [
   {
     name: "T V Sathwik Sai",
-    role: "SBG Leader",
+    role: "Student Builder Group Leader",
     pill: "Core Team",
     image: "/crew/t-v-sathwik-sai.png",
     linkedin: "https://www.linkedin.com/in/sathwik-sai-t-v-ba202830a",

@@ -26,7 +26,7 @@ export function RegisterCTA() {
               Ready to <span className="text-gradient-cool">Build the Future?</span>
             </h2>
             <p className="mt-4 max-w-2xl text-base text-white/70 sm:text-lg">
-              Grab a free ticket, save your seat in the workshops that matter to you, and come meet
+              Grab your ticket, save your seat in the workshops that matter to you, and come meet
               the community IRL. We&apos;ll bring the coffee.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">

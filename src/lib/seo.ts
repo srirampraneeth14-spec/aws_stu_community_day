@@ -122,7 +122,7 @@ export function getFaqJsonLd() {
 
 export const SEO_TITLE = `${SITE_NAME} | ${ORG_NAME}`;
 
-export const SEO_DESCRIPTION = `Join ${SITE_NAME} on ${EVENT_DATE} at ${EVENT_VENUE_NAME}, Visakhapatnam — a free, community-run conference featuring keynotes, technical talks, and hands-on workshops on AWS, AI/ML, DevOps, serverless, and more. Organized by ${ORG_NAME}.`;
+export const SEO_DESCRIPTION = `Join ${SITE_NAME} on ${EVENT_DATE} at ${EVENT_VENUE_NAME}, Visakhapatnam — a community-run conference featuring keynotes, technical talks, and hands-on workshops on AWS, AI/ML, DevOps, serverless, and more. Organized by ${ORG_NAME}.`;
 
 export const SEO_URL = SITE_URL;
 export const SEO_IMAGE = `${SITE_URL}/og-image.jpeg`;
