@@ -23,7 +23,6 @@ export const STATS = [
   { label: "Attendees", value: 500, suffix: "+" },
   { label: "Speakers", value: 6, suffix: "+" },
   { label: "Sessions", value: 9, suffix: "+" },
-  { label: "Sponsors", value: 10, suffix: "+" },
 ];
 
 export const CLOUD_NODES = [

@@ -134,6 +134,14 @@
     background: color-mix(in oklab, var(--purple) 28%, transparent);
     color: var(--foreground);
   }
+
+  button,
+  [role="button"],
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"] {
+    cursor: pointer;
+  }
 }
 
 @utility font-mono {

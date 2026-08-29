@@ -31,9 +31,9 @@ export function MagneticButton({
         y.set(0);
       }}
       className={cn(
-        "group relative inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-tight transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D6A34B]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#09090B]",
+        "group relative inline-flex cursor-pointer items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-tight transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D6A34B]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#09090B]",
         variant === "primary" &&
-          "text-black shadow-[0_10px_30px_-12px_rgba(201,161,90,0.4)] hover:shadow-[0_10px_40px_-10px_rgba(201,161,90,0.55)]",
+          "text-black shadow-[0_2px_12px_rgba(214,163,75,0.25)] hover:shadow-[0_0_18px_rgba(214,163,75,0.45)] hover:scale-[1.02]",
         variant === "ghost" && "border border-white/15 text-white hover:bg-white/5",
         className,
       )}

@@ -65,7 +65,7 @@ export function Navbar() {
           <div className="flex items-center gap-2">
             <a
               href="#register"
-              className="hidden whitespace-nowrap rounded-full px-5 py-2 text-sm font-semibold text-black shadow-[0_10px_26px_-12px_rgba(201,161,90,0.45)] transition-transform hover:scale-[1.02] sm:inline-flex"
+              className="hidden whitespace-nowrap rounded-full px-5 py-2 text-sm font-semibold text-black shadow-[0_2px_12px_rgba(214,163,75,0.25)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_18px_rgba(214,163,75,0.45)] sm:inline-flex"
               style={{ background: "linear-gradient(120deg, #B7791F, #D6A34B 60%, #B7791F)" }}
             >
               Register Now
@@ -112,7 +112,7 @@ export function Navbar() {
             <a
               href="#register"
               onClick={() => setOpen(false)}
-              className="mt-2 block rounded-xl px-4 py-3 text-center text-sm font-semibold text-black"
+              className="mt-2 block rounded-xl px-4 py-3 text-center text-sm font-semibold text-black shadow-[0_2px_12px_rgba(214,163,75,0.25)] transition-all duration-300 hover:shadow-[0_0_18px_rgba(214,163,75,0.45)]"
               style={{ background: "linear-gradient(120deg, #B7791F, #D6A34B 60%, #B7791F)" }}
             >
               Register Now

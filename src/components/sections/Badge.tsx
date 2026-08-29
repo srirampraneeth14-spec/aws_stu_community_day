@@ -194,7 +194,7 @@ export function Badge() {
                     ref={generateBtnRef}
                     type="button"
                     onClick={onGenerate}
-                    className="mt-3 w-full rounded-xl px-4 py-3 text-sm font-semibold text-black transition-transform hover:scale-[1.01] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D6A34B]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#09090B]"
+                    className="mt-3 w-full cursor-pointer rounded-xl px-4 py-3 text-sm font-semibold text-black shadow-[0_2px_12px_rgba(214,163,75,0.25)] transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_0_18px_rgba(214,163,75,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D6A34B]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#09090B]"
                     style={{
                       background: "linear-gradient(120deg, #B7791F, #D6A34B 60%, #B7791F)",
                     }}
