@@ -33,7 +33,15 @@ function LinkedInLink({ name, linkedin }: { name: string; linkedin?: string }) {
   );
 }
 
-function SpeakerAvatar({ person, index, className = "h-16 w-16" }: { person: Speaker; index: number; className?: string }) {
+function SpeakerAvatar({
+  person,
+  index,
+  className = "h-16 w-16",
+}: {
+  person: Speaker;
+  index: number;
+  className?: string;
+}) {
   const hasImage = Boolean(person.image);
 
   return (
@@ -41,7 +49,7 @@ function SpeakerAvatar({ person, index, className = "h-16 w-16" }: { person: Spe
       {hasImage ? (
         <img
           src={person.image}
-          alt={person.name}
+          alt={`${person.name}, ${person.role} at ${person.company}`}
           loading="lazy"
           className="h-full w-full object-cover"
         />
@@ -121,9 +129,14 @@ export function Speakers() {
             <div className="flex items-baseline justify-between">
               <div>
                 <p className="text-2xl font-bold text-white">Keynote Speaker</p>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-white/40">featured</p>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-white/40">
+                  featured
+                </p>
               </div>
-              <div className="h-px flex-1 translate-y-1 bg-gradient-to-r from-white/10 to-transparent" style={{ marginLeft: 24 }} />
+              <div
+                className="h-px flex-1 translate-y-1 bg-gradient-to-r from-white/10 to-transparent"
+                style={{ marginLeft: 24 }}
+              />
             </div>
 
             <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -180,9 +193,14 @@ export function Speakers() {
             <div className="flex items-baseline justify-between">
               <div>
                 <p className="text-2xl font-bold text-white">Session & Workshops</p>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-white/40">sessions & workshops</p>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-white/40">
+                  sessions & workshops
+                </p>
               </div>
-              <div className="h-px flex-1 translate-y-1 bg-gradient-to-r from-white/10 to-transparent" style={{ marginLeft: 24 }} />
+              <div
+                className="h-px flex-1 translate-y-1 bg-gradient-to-r from-white/10 to-transparent"
+                style={{ marginLeft: 24 }}
+              />
             </div>
 
             <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

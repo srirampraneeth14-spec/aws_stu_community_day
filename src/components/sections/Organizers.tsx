@@ -40,7 +40,8 @@ function Avatar({
     return (
       <img
         src={person.image}
-        alt={person.name}
+        alt={`${person.name}, ${person.role}`}
+        loading="lazy"
         className={`${className} shrink-0 rounded-2xl object-cover object-top`}
       />
     );

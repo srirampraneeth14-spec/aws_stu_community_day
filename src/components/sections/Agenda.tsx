@@ -3,11 +3,7 @@ import { theme } from "@/lib/theme";
 import { useRef, useState } from "react";
 import { ChevronDown, Clock, User } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { AGENDA, type AgendaItem } from "@/data/event";
 import { cn } from "@/lib/utils";
 
@@ -41,15 +37,7 @@ function visibleParallelTracks(item: AgendaItem, filter: Filter) {
   return item.parallelTracks.filter((track) => track.track === filter);
 }
 
-function AgendaCard({
-  item,
-  filter,
-  index,
-}: {
-  item: AgendaItem;
-  filter: Filter;
-  index: number;
-}) {
+function AgendaCard({ item, filter, index }: { item: AgendaItem; filter: Filter; index: number }) {
   const [open, setOpen] = useState(false);
   const hasParallelTracks = Boolean(item.parallelTracks?.length);
   const tracks = visibleParallelTracks(item, filter);
@@ -74,9 +62,7 @@ function AgendaCard({
       <div className="mt-2 flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">
           <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-          {item.format && (
-            <p className="mt-1 text-sm text-white/50">{item.format}</p>
-          )}
+          {item.format && <p className="mt-1 text-sm text-white/50">{item.format}</p>}
           {item.speaker && (
             <p className="mt-1 flex items-center gap-1.5 text-sm text-white/60">
               <User className="h-3.5 w-3.5 text-white/40" />
@@ -175,9 +161,7 @@ function AgendaCard({
                         </span>
                       )}
                     </div>
-                    <p className="mt-2 text-sm font-medium text-white/90">
-                      {track.title}
-                    </p>
+                    <p className="mt-2 text-sm font-medium text-white/90">{track.title}</p>
                   </motion.div>
                 ))}
               </motion.div>
@@ -243,12 +227,7 @@ export function Agenda() {
 
           <ul className="space-y-4">
             {items.map((it, i) => (
-              <AgendaCard
-                key={`${it.startTime}-${it.title}`}
-                item={it}
-                filter={filter}
-                index={i}
-              />
+              <AgendaCard key={`${it.startTime}-${it.title}`} item={it} filter={filter} index={i} />
             ))}
           </ul>
         </div>

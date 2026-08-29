@@ -26,6 +26,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.05 }}
             className="mt-6 text-4xl font-black leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-7xl"
           >
+            <span className="sr-only">AWS Student Community Day Vizag 2026 — </span>
             Where Builders
             <br />
             Meet the <span className="text-gradient-cool">Cloud.</span>
@@ -69,7 +70,8 @@ export function Hero() {
               <MapPin className="h-4 w-4 text-purple-light" /> {EVENT_VENUE_NAME}
             </a>
             <span className="flex items-center gap-2 font-tech text-xs text-white/40">
-              <Sparkles className="h-3.5 w-3.5 text-purple-light" /> // sudo attend aws-community-day
+              <Sparkles className="h-3.5 w-3.5 text-purple-light" /> // sudo attend
+              aws-community-day
             </span>
           </div>
 

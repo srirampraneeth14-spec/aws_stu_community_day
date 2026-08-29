@@ -13,7 +13,7 @@ const FRAME = {
   y: 0.361,
   width: 0.541,
   height: 0.373,
-  radius: 0.020,
+  radius: 0.02,
 };
 
 /* ── helpers ────────────────────────────────────── */
@@ -65,12 +65,7 @@ function drawImageCover(
   ctx.drawImage(img, x + (w - sw) / 2, y + (h - sh) / 2, sw, sh);
 }
 
-function drawNameText(
-  ctx: CanvasRenderingContext2D,
-  tplW: number,
-  tplH: number,
-  trimmed: string,
-) {
+function drawNameText(ctx: CanvasRenderingContext2D, tplW: number, tplH: number, trimmed: string) {
   if (!trimmed) return;
 
   let fontSize = Math.floor(tplW * 0.055);
@@ -130,15 +125,9 @@ export interface BadgeRenderResult {
  * Render the badge onto a fresh canvas and return both the canvas element
  * (for `toBlob` download) and a data-URL (for `<img src>`).
  */
-export async function renderBadge(
-  photoSrc: string,
-  name: string,
-): Promise<BadgeRenderResult> {
+export async function renderBadge(photoSrc: string, name: string): Promise<BadgeRenderResult> {
   const trimmed = name.trim();
-  const [template, attendee] = await Promise.all([
-    loadImage(TEMPLATE_SRC),
-    loadImage(photoSrc),
-  ]);
+  const [template, attendee] = await Promise.all([loadImage(TEMPLATE_SRC), loadImage(photoSrc)]);
 
   const dpr = window.devicePixelRatio || 1;
   const tplW = template.naturalWidth;
@@ -185,13 +174,8 @@ export async function renderBadge(
  * resolution. Reuse across multiple name-text renders to skip the
  * expensive image-load and cover-fit math on every keystroke.
  */
-export async function createBadgeBackground(
-  photoSrc: string,
-): Promise<HTMLCanvasElement> {
-  const [template, attendee] = await Promise.all([
-    loadImage(TEMPLATE_SRC),
-    loadImage(photoSrc),
-  ]);
+export async function createBadgeBackground(photoSrc: string): Promise<HTMLCanvasElement> {
+  const [template, attendee] = await Promise.all([loadImage(TEMPLATE_SRC), loadImage(photoSrc)]);
 
   const tplW = template.naturalWidth;
   const tplH = template.naturalHeight;
@@ -226,10 +210,7 @@ export async function createBadgeBackground(
  * Fast path: composite a cached background canvas + name text.
  * Skips all image loading and cover-fit math.
  */
-export function renderBadgeFromCache(
-  bgCanvas: HTMLCanvasElement,
-  name: string,
-): BadgeRenderResult {
+export function renderBadgeFromCache(bgCanvas: HTMLCanvasElement, name: string): BadgeRenderResult {
   const trimmed = name.trim();
   const tplW = bgCanvas.width;
   const tplH = bgCanvas.height;

@@ -1,9 +1,4 @@
-import {
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { renderBadge } from "@/lib/renderBadge";
 
 /*
@@ -40,8 +35,7 @@ export function BadgeOverlay({ photoSrc, name, onClose, onReset }: BadgeOverlayP
   const closeRef = useRef<HTMLButtonElement>(null);
 
   const reducedMotion =
-    typeof window !== "undefined" &&
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const INTRO_MS = reducedMotion ? 50 : 400;
   const SHUTTER_MS = reducedMotion ? 50 : 350;
@@ -99,7 +93,10 @@ export function BadgeOverlay({ photoSrc, name, onClose, onReset }: BadgeOverlayP
     if (!el) return;
     closeRef.current?.focus();
     const handleKeyDown = (e: globalThis.KeyboardEvent) => {
-      if (e.key === "Escape") { onClose(); return; }
+      if (e.key === "Escape") {
+        onClose();
+        return;
+      }
       if (e.key !== "Tab") return;
       const focusable = el.querySelectorAll<HTMLElement>(
         'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
@@ -108,9 +105,15 @@ export function BadgeOverlay({ photoSrc, name, onClose, onReset }: BadgeOverlayP
       const first = focusable[0];
       const last = focusable[focusable.length - 1];
       if (e.shiftKey) {
-        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+        if (document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
       } else {
-        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+        if (document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
       }
     };
     document.addEventListener("keydown", handleKeyDown);
@@ -257,10 +260,7 @@ export function BadgeOverlay({ photoSrc, name, onClose, onReset }: BadgeOverlayP
         */}
         <div style={{ width: "100%", position: "relative" }}>
           {/* Camera body wrapper — carries breathe/recoil animations */}
-          <div
-            className={cameraAnimClass}
-            style={{ transformOrigin: "bottom center" }}
-          >
+          <div className={cameraAnimClass} style={{ transformOrigin: "bottom center" }}>
             {/* ───────────────────────────────────
                 CAMERA BODY — 340px fixed rounded square
                 Rich darker lavender gradient:
@@ -304,7 +304,8 @@ export function BadgeOverlay({ photoSrc, name, onClose, onReset }: BadgeOverlayP
                     position: "absolute",
                     inset: "2px",
                     borderRadius: "2px",
-                    background: "repeating-linear-gradient(90deg, rgba(255,255,255,0.2) 0px, rgba(255,255,255,0.2) 2px, transparent 2px, transparent 4px)",
+                    background:
+                      "repeating-linear-gradient(90deg, rgba(255,255,255,0.2) 0px, rgba(255,255,255,0.2) 2px, transparent 2px, transparent 4px)",
                   }}
                 />
                 {isShutter && !reducedMotion && (
@@ -365,13 +366,8 @@ export function BadgeOverlay({ photoSrc, name, onClose, onReset }: BadgeOverlayP
                     inset: 0,
                     borderRadius: "50%",
                     background:
-                      isDeveloping || isEjected || isComplete
-                        ? "#6ee76e"
-                        : "rgba(60,35,95,0.7)",
-                    boxShadow:
-                      isDeveloping
-                        ? "0 0 10px 3px rgba(110,231,110,0.75)"
-                        : "none",
+                      isDeveloping || isEjected || isComplete ? "#6ee76e" : "rgba(60,35,95,0.7)",
+                    boxShadow: isDeveloping ? "0 0 10px 3px rgba(110,231,110,0.75)" : "none",
                     transition: "background 0.3s, box-shadow 0.3s",
                   }}
                 />
@@ -468,9 +464,7 @@ export function BadgeOverlay({ photoSrc, name, onClose, onReset }: BadgeOverlayP
                   >
                     {/* Inner glass — dark violet-black */}
                     <div
-                      className={
-                        isShutter && !reducedMotion ? "cam-iris" : ""
-                      }
+                      className={isShutter && !reducedMotion ? "cam-iris" : ""}
                       style={{
                         width: "100%",
                         borderRadius: "50%",
@@ -547,10 +541,8 @@ export function BadgeOverlay({ photoSrc, name, onClose, onReset }: BadgeOverlayP
                   width: "100%",
                   height: "12px",
                   marginTop: "auto",
-                  background:
-                    "linear-gradient(180deg, #180D28 0%, #0C0516 100%)",
-                  boxShadow:
-                    "inset 0 2px 5px rgba(0,0,0,0.8), 0 1px 1px rgba(255,255,255,0.1)",
+                  background: "linear-gradient(180deg, #180D28 0%, #0C0516 100%)",
+                  boxShadow: "inset 0 2px 5px rgba(0,0,0,0.8), 0 1px 1px rgba(255,255,255,0.1)",
                   position: "relative",
                   zIndex: 6,
                 }}
@@ -585,9 +577,7 @@ export function BadgeOverlay({ photoSrc, name, onClose, onReset }: BadgeOverlayP
                 height: "100%",
                 transformOrigin: "top center",
                 transform:
-                  isComplete && !reducedMotion
-                    ? "rotate(1.5deg) translateY(3px)"
-                    : undefined,
+                  isComplete && !reducedMotion ? "rotate(1.5deg) translateY(3px)" : undefined,
               }}
             >
               {/* The sliding photo — translateY(-100%) → translateY(0%) */}
@@ -599,9 +589,7 @@ export function BadgeOverlay({ photoSrc, name, onClose, onReset }: BadgeOverlayP
                   left: "8%",
                   width: "84%",
                   height: "100%",
-                  transform: photoRevealed
-                    ? "translateY(0%)"
-                    : "translateY(-100%)",
+                  transform: photoRevealed ? "translateY(0%)" : "translateY(-100%)",
                   transition: reducedMotion
                     ? "transform 0.1s linear"
                     : `transform ${EJECT_DURATION_MS}ms cubic-bezier(.22,.8,.28,1)`,
@@ -659,8 +647,7 @@ export function BadgeOverlay({ photoSrc, name, onClose, onReset }: BadgeOverlayP
             onClick={onDownload}
             className="group relative inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-tight text-black shadow-[0_10px_30px_-12px_rgba(255,153,0,0.45)] transition-all hover:shadow-[0_10px_40px_-10px_rgba(255,153,0,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF9900]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#09090B]"
             style={{
-              background:
-                "linear-gradient(120deg, #e68a00, #FF9900 60%, #e68a00)",
+              background: "linear-gradient(120deg, #e68a00, #FF9900 60%, #e68a00)",
             }}
           >
             {downloaded ? "Downloaded ✓" : "Download Badge"}

@@ -303,42 +303,83 @@
 /* ── Polaroid Camera Overlay Animations ── */
 
 @keyframes camera-breathe {
-  0%, 100% { transform: scale(1); }
-  50%      { transform: scale(1.006); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.006);
+  }
 }
 
 @keyframes camera-recoil {
-  0%   { transform: translateY(0); }
-  40%  { transform: translateY(3px); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @keyframes iris-close {
-  0%   { clip-path: circle(50% at 50% 50%); }
-  45%  { clip-path: circle(0% at 50% 50%); }
-  55%  { clip-path: circle(0% at 50% 50%); }
-  100% { clip-path: circle(50% at 50% 50%); }
+  0% {
+    clip-path: circle(50% at 50% 50%);
+  }
+  45% {
+    clip-path: circle(0% at 50% 50%);
+  }
+  55% {
+    clip-path: circle(0% at 50% 50%);
+  }
+  100% {
+    clip-path: circle(50% at 50% 50%);
+  }
 }
 
 @keyframes settle-tip {
-  0%   { transform: rotate(0deg) translateY(0); }
-  55%  { transform: rotate(1.5deg) translateY(3px); }
-  100% { transform: rotate(1.5deg) translateY(3px); }
+  0% {
+    transform: rotate(0deg) translateY(0);
+  }
+  55% {
+    transform: rotate(1.5deg) translateY(3px);
+  }
+  100% {
+    transform: rotate(1.5deg) translateY(3px);
+  }
 }
 
 @keyframes overlay-flash {
-  0%   { opacity: 0; }
-  20%  { opacity: 0.95; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /* Only run motion-heavy animations when the user is OK with motion */
 @media (prefers-reduced-motion: no-preference) {
-  .cam-breathe  { animation: camera-breathe 2.8s ease-in-out infinite; }
-  .cam-recoil   { animation: camera-recoil 150ms ease-out forwards; }
-  .cam-iris     { animation: iris-close 300ms ease-in-out forwards; }
-  .cam-settle   { animation: settle-tip 200ms ease-out forwards; }
-  .cam-flash    { animation: overlay-flash 120ms ease-out forwards; }
+  .cam-breathe {
+    animation: camera-breathe 2.8s ease-in-out infinite;
+  }
+  .cam-recoil {
+    animation: camera-recoil 150ms ease-out forwards;
+  }
+  .cam-iris {
+    animation: iris-close 300ms ease-in-out forwards;
+  }
+  .cam-settle {
+    animation: settle-tip 200ms ease-out forwards;
+  }
+  .cam-flash {
+    animation: overlay-flash 120ms ease-out forwards;
+  }
 }
 
 /* Polaroid camera fixed sizing & controls */
@@ -360,6 +401,18 @@
   }
 }
 
+/* ── Reduced motion preference ── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 
-
-
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

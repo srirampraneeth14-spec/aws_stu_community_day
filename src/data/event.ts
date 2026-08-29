@@ -142,16 +142,16 @@ export const AGENDA: AgendaItem[] = [
     track: "Cloud",
     parallelTracks: [
       {
-        title: "AWS and Cloud Computing: From Zero to Your First Cloud Application",
-        track: "Cloud",
+        title: "Will Update Soon",
+        track: "TBD",
       },
       {
-        title: "Building with Generative AI on AWS",
-        track: "AI",
+        title: "Will Update Soon",
+        track: "TBD",
       },
       {
-        title: "Your AWS Journey: Certifications, Skills and Cloud Careers",
-        track: "Cloud",
+        title: "Will Update Soon",
+        track: "TBD",
       },
     ],
   },
@@ -169,16 +169,16 @@ export const AGENDA: AgendaItem[] = [
     track: "DevOps",
     parallelTracks: [
       {
-        title: "From Website to Serverless: Building Modern Web Apps on AWS",
-        track: "Cloud",
+        title: "Will Update Soon",
+        track: "TBD",
       },
       {
-        title: "Cloud Security 101: Keeping Your Applications Safe on AWS",
-        track: "Cloud",
+        title: "Will Update Soon",
+        track: "TBD",
       },
       {
-        title: "From Code to Cloud: DevOps and Containers on AWS",
-        track: "DevOps",
+        title: "Will Update Soon",
+        track: "TBD",
       },
     ],
   },
@@ -197,19 +197,19 @@ export const AGENDA: AgendaItem[] = [
     track: "Workshops",
     parallelTracks: [
       {
-        title: "Build Your First Serverless Web App",
-        track: "Workshops",
-        level: "Beginner",
+        title: "Will Update Soon",
+        track: "TBD",
+        level: "TBD",
       },
       {
-        title: "Build a GenAI App with Amazon Bedrock",
-        track: "Workshops",
-        level: "Beginner to Intermediate",
+        title: "Will Update Soon",
+        track: "TBD",
+        level: "TBD",
       },
       {
-        title: "Docker to AWS: Deploy Your First Container",
-        track: "Workshops",
-        level: "Intermediate",
+        title: "Will Update Soon",
+        track: "TBD",
+        level: "TBD",
       },
     ],
   },
@@ -240,7 +240,7 @@ export const KEYNOTE_SPEAKER = {
   role: "Manager, Community Groups",
   company: "Amazon",
   image: "/speakers/Jessica.jpg",
-  linkedin: "https://www.linkedin.com/in/jessicagilmore1 ",
+  linkedin: "https://www.linkedin.com/in/jessicagilmore1",
 };
 
 export const SESSION_SPEAKERS = [
@@ -249,35 +249,35 @@ export const SESSION_SPEAKERS = [
     role: "Founder",
     company: "Scalar Field",
     image: "/speakers/ramakant.png",
-    linkedin: "https://www.linkedin.com/in/ramakant-yadav1 ",
+    linkedin: "https://www.linkedin.com/in/ramakant-yadav1",
   },
   {
     name: "Neha Prasad",
     role: "Analytics Specialist",
     company: "Amazon Web Services",
     image: "/speakers/neha prasad.jpg",
-    linkedin: "https://www.linkedin.com/in/neha-prasad-66586a64 ",
+    linkedin: "https://www.linkedin.com/in/neha-prasad-66586a64",
   },
   {
     name: "Vishnu Rachapudi",
     role: "Cloud Engineer",
     company: "Sudo Consultants",
     image: "/speakers/Vishnu.jpg",
-    linkedin: "https://www.linkedin.com/in/vishnu-rachapudi-28956920b ",
+    linkedin: "https://www.linkedin.com/in/vishnu-rachapudi-28956920b",
   },
   {
     name: "Satyajith Samantray",
     role: "Principal Cloud Architect",
     company: "Searce Inc",
     image: "/speakers/satyajith.jpg",
-    linkedin: "https://www.linkedin.com/in/satyajit-samantray-b30a7075 ",
+    linkedin: "https://www.linkedin.com/in/satyajit-samantray-b30a7075",
   },
   {
     name: "Nagababu Medicherla",
     role: "Lead Cloud Architect",
     company: "Searce Inc",
     image: "/speakers/nagababu.jpg",
-    linkedin: "https://www.linkedin.com/in/nagababu-medicharla-b2a91a117 ",
+    linkedin: "https://www.linkedin.com/in/nagababu-medicharla-b2a91a117",
   },
 ];
 

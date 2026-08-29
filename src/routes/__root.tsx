@@ -11,6 +11,17 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import {
+  SEO_TITLE,
+  SEO_DESCRIPTION,
+  SEO_URL,
+  SEO_IMAGE,
+  SEO_IMAGE_ALT,
+  getEventJsonLd,
+  getOrganizationJsonLd,
+  getWebSiteJsonLd,
+  getFaqJsonLd,
+} from "../lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -77,31 +88,30 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "AWS Community Day — Where Builders Meet the Cloud" },
-      {
-        name: "description",
-        content:
-          "AWS Community Day: a full day of talks, hands-on workshops, and networking for builders, students, and cloud enthusiasts. Learn, build, connect, grow.",
-      },
-      { name: "author", content: "AWS Community" },
-      { property: "og:title", content: "AWS Community Day — Where Builders Meet the Cloud" },
-      {
-        property: "og:description",
-        content:
-          "AWS Community Day: a full day of talks, hands-on workshops, and networking for builders, students, and cloud enthusiasts. Learn, build, connect, grow.",
-      },
+      { title: SEO_TITLE },
+      { name: "description", content: SEO_DESCRIPTION },
+      { name: "robots", content: "index, follow" },
+      { name: "author", content: "AWS Student Builder Group REC" },
+      { name: "theme-color", content: "#050508" },
+      // Open Graph
+      { property: "og:title", content: SEO_TITLE },
+      { property: "og:description", content: SEO_DESCRIPTION },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: SEO_URL },
+      { property: "og:site_name", content: "AWS Student Community Day Vizag 2026" },
+      { property: "og:image", content: SEO_IMAGE },
+      { property: "og:image:width", content: "800" },
+      { property: "og:image:height", content: "418" },
+      { property: "og:image:alt", content: SEO_IMAGE_ALT },
+      // Twitter / X
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "AWS Community Day — Where Builders Meet the Cloud" },
-      {
-        name: "twitter:description",
-        content:
-          "AWS Community Day: a full day of talks, hands-on workshops, and networking for builders, students, and cloud enthusiasts. Learn, build, connect, grow.",
-      },
-      { property: "og:image", content: "/social-preview.png" },
-      { name: "twitter:image", content: "/social-preview.png" },
+      { name: "twitter:title", content: SEO_TITLE },
+      { name: "twitter:description", content: SEO_DESCRIPTION },
+      { name: "twitter:image", content: SEO_IMAGE },
+      { name: "twitter:image:alt", content: SEO_IMAGE_ALT },
     ],
     links: [
+      { rel: "canonical", href: `${SEO_URL}/` },
       {
         rel: "stylesheet",
         href: appCss,
@@ -112,6 +122,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(getEventJsonLd()),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(getOrganizationJsonLd()),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(getWebSiteJsonLd()),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(getFaqJsonLd()),
       },
     ],
   }),

@@ -57,7 +57,9 @@ export function Footer() {
           <a href="#top" className="flex items-center gap-2 text-white">
             <span
               className="grid h-9 w-9 place-items-center rounded-lg"
-              style={{ background: `linear-gradient(135deg, ${theme.purpleLight}, ${theme.purple})` }}
+              style={{
+                background: `linear-gradient(135deg, ${theme.purpleLight}, ${theme.purple})`,
+              }}
             >
               <Cloud className="h-4 w-4 text-black" />
             </span>

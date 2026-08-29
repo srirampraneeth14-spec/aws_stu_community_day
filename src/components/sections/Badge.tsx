@@ -50,7 +50,9 @@ export function Badge() {
         setPreviewBadgeUrl(null);
       });
 
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+    };
   }, [uploadPreviewUrl]);
 
   /* ── Fast name-only re-render on each keystroke (rAF, no debounce) ── */
@@ -152,10 +154,14 @@ export function Badge() {
             >
               <ol className="space-y-6">
                 <li>
-                  <p className="font-tech text-xs uppercase tracking-[0.24em] text-purple-light">
+                  <label
+                    htmlFor="badge-photo"
+                    className="font-tech text-xs uppercase tracking-[0.24em] text-purple-light"
+                  >
                     01 · Upload the image
-                  </p>
+                  </label>
                   <input
+                    id="badge-photo"
                     type="file"
                     accept="image/*"
                     onChange={onUpload}
@@ -164,10 +170,14 @@ export function Badge() {
                 </li>
 
                 <li>
-                  <p className="font-tech text-xs uppercase tracking-[0.24em] text-purple-light">
+                  <label
+                    htmlFor="badge-name"
+                    className="font-tech text-xs uppercase tracking-[0.24em] text-purple-light"
+                  >
                     02 · Write your name
-                  </p>
+                  </label>
                   <input
+                    id="badge-name"
                     type="text"
                     value={name}
                     onChange={(event) => setName(event.target.value)}

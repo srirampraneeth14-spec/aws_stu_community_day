@@ -30,7 +30,10 @@ export function Navbar() {
             borderBottom: "1px solid rgba(255,255,255,0.06)",
           }}
         />
-        <nav className="relative mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <nav
+          aria-label="Main navigation"
+          className="relative mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
+        >
           <a href="#top" className="flex items-center gap-2 text-white">
             <span
               className="grid h-8 w-8 place-items-center rounded-lg"
