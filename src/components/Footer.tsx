@@ -8,28 +8,28 @@ const VENUE_MAP_EMBED_URL =
 
 const SOCIAL_LINKS = [
   {
-    name: "linkedin",
+    name: "LinkedIn",
     href: "https://www.linkedin.com/company/aws-cloud-club/",
     Icon: Linkedin,
-    iconClass: "text-purple-light",
+    iconClass: "text-[#0A66C2]",
   },
   {
-    name: "instagram",
+    name: "Instagram",
     href: "https://www.instagram.com/awsclub_rec?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     Icon: Instagram,
-    iconClass: "text-purple",
+    iconClass: "text-[#E4405F]",
   },
   {
-    name: "youtube",
+    name: "YouTube",
     href: "https://youtube.com/@awsstudentbuildergroupatrec?si=Sj6Osho1EiC_-6D0",
     Icon: Youtube,
-    iconClass: "text-purple-muted",
+    iconClass: "text-[#FF0000]",
   },
   {
-    name: "meetup",
+    name: "Meetup",
     href: "https://www.meetup.com/aws-cloud-club-at-raghu-eng-college",
     Icon: MeetupIcon,
-    iconClass: "text-purple-dark",
+    iconClass: "text-[#F64060]",
   },
 ] as const;
 
@@ -56,14 +56,17 @@ export function Footer() {
         <div className="md:col-span-2">
           <a href="#top" className="flex items-center gap-2 text-white">
             <span
-              className="grid h-9 w-9 place-items-center rounded-lg"
-              style={{
-                background: `linear-gradient(135deg, ${theme.purpleLight}, ${theme.purple})`,
-              }}
+              className="grid h-8 w-8 place-items-center rounded-lg"
+              style={{ background: theme.brandIconGradient }}
             >
               <Cloud className="h-4 w-4 text-black" />
             </span>
-            <span className="text-base font-bold tracking-tight">AWS Community Day</span>
+            <span className="flex flex-col leading-none">
+              <span className="text-base font-bold tracking-tight">AWS Community Day</span>
+              <span className="font-tech text-[10px] uppercase tracking-[0.2em] text-white/45">
+                where builders meet the cloud
+              </span>
+            </span>
           </a>
           <p className="mt-4 max-w-md text-sm leading-relaxed text-white/60">
             A community-run conference by builders, for builders. Talks, hands-on workshops, and the

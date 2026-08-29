@@ -20,7 +20,7 @@ export const NAV_LINKS = [
 ] as const;
 
 export const STATS = [
-  { label: "Attendees", value: 500, suffix: "+" },
+  { label: "Attendees", value: 600, suffix: "+" },
   { label: "Speakers", value: 6, suffix: "+" },
   { label: "Sessions", value: 9, suffix: "+" },
 ];
