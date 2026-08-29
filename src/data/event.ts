@@ -391,12 +391,6 @@ export const FACULTY = [
     image: "/faculty/varanasi-usha-bala.png",
     linkedin: "https://www.linkedin.com/in/dr-varanasi-usha-bala-17345914",
   },
-  {
-    name: "M Siva Kumar",
-    role: "Faculty Co-Ordinator, AWS REC",
-    pill: "REC",
-    image: "/faculty/m-siva-kumar.png",
-  },
 ];
 
 export const CREW = [
