@@ -36,7 +36,7 @@ export function Workshops() {
             const s = levelStyle(w.level);
             return (
               <motion.article
-                key={w.title}
+                key={`${w.title}-${i}`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}

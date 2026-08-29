@@ -292,22 +292,22 @@ export const SPEAKERS = [KEYNOTE_SPEAKER, ...SESSION_SPEAKERS];
 
 export const WORKSHOPS = [
   {
-    title: "Build Your First Serverless Web App",
-    level: "Beginner",
+    title: "To Be Announced",
+    level: "TBA",
     duration: "1:45 PM – 4:15 PM",
-    desc: "Hands-on lab to build and deploy your first serverless web application on AWS.",
+    desc: "Hands-on lab session details and prerequisites will be announced soon.",
   },
   {
-    title: "Build a GenAI App with Amazon Bedrock",
-    level: "Beginner to Intermediate",
+    title: "To Be Announced",
+    level: "TBA",
     duration: "1:45 PM – 4:15 PM",
-    desc: "Create a generative AI application using Amazon Bedrock in a guided workshop.",
+    desc: "Hands-on lab session details and prerequisites will be announced soon.",
   },
   {
-    title: "Docker to AWS: Deploy Your First Container",
-    level: "Intermediate",
+    title: "To Be Announced",
+    level: "TBA",
     duration: "1:45 PM – 4:15 PM",
-    desc: "Containerize an application and deploy it to AWS in this practical session.",
+    desc: "Hands-on lab session details and prerequisites will be announced soon.",
   },
 ];
 
