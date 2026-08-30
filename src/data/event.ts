@@ -79,7 +79,7 @@ export const WHY_ATTEND = [
   },
   {
     title: "Swag & Giveaways",
-    body: "Stickers, tees, credits, and surprise drops from sponsors throughout the day.",
+    body: "Stickers, surprise drops and more from AWS throughout the day.",
     icon: "Gift",
   },
 ];
