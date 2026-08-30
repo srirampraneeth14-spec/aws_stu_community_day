@@ -158,7 +158,7 @@ export function Badge() {
                     htmlFor="badge-photo"
                     className="font-tech text-xs uppercase tracking-[0.24em] text-purple-light"
                   >
-                    01 · Upload the image
+                    01 · Upload your image
                   </label>
                   <input
                     id="badge-photo"
