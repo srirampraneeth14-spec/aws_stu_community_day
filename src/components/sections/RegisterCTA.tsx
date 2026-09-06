@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { MagneticButton } from "@/components/MagneticButton";
-import { REGISTRATION_URL } from "@/data/event";
+import { IS_REGISTRATION_OPEN, REGISTRATION_URL } from "@/data/event";
 
 export function RegisterCTA() {
   return (
@@ -20,32 +20,66 @@ export function RegisterCTA() {
         >
           <div className="grid-bg absolute inset-0 opacity-40" />
           <div className="relative">
-            <p className="font-tech text-xs uppercase tracking-[0.3em] text-purple-light">
-              // registration.open
-            </p>
-            <h2 className="mt-4 max-w-3xl text-4xl font-black tracking-tight text-white sm:text-6xl">
-              Ready to <span className="text-gradient-cool">Build the Future?</span>
-            </h2>
-            <p className="mt-4 max-w-2xl text-base text-white/70 sm:text-lg">
-              Grab your ticket, save your seat in the workshops that matter to you, and come meet
-              the community IRL. We&apos;ll bring the coffee.
-            </p>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <a
-                href={REGISTRATION_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex"
-              >
-                <MagneticButton>
-                  Register Now <ArrowRight className="h-4 w-4" />
-                </MagneticButton>
-              </a>
-              <MagneticButton variant="ghost" onClick={() => (window.location.hash = "#agenda")}>
-                See what&apos;s on
-              </MagneticButton>
-              <span className="font-tech text-xs text-white/40">// Deploy Your Potential</span>
-            </div>
+            {IS_REGISTRATION_OPEN ? (
+              <>
+                <p className="font-tech text-xs uppercase tracking-[0.3em] text-purple-light">
+                  // registration.open
+                </p>
+                <h2 className="mt-4 max-w-3xl text-4xl font-black tracking-tight text-white sm:text-6xl">
+                  Ready to <span className="text-gradient-cool">Build the Future?</span>
+                </h2>
+                <p className="mt-4 max-w-2xl text-base text-white/70 sm:text-lg">
+                  Grab your ticket, save your seat in the workshops that matter to you, and come meet
+                  the community IRL. We&apos;ll bring the coffee.
+                </p>
+                <div className="mt-8 flex flex-wrap items-center gap-3">
+                  <a
+                    href={REGISTRATION_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex"
+                  >
+                    <MagneticButton>
+                      Register Now <ArrowRight className="h-4 w-4" />
+                    </MagneticButton>
+                  </a>
+                  <MagneticButton variant="ghost" onClick={() => (window.location.hash = "#agenda")}>
+                    See what&apos;s on
+                  </MagneticButton>
+                  <span className="font-tech text-xs text-white/40">// Deploy Your Potential</span>
+                </div>
+              </>
+            ) : (
+              <>
+                <p className="font-tech text-xs uppercase tracking-[0.3em] text-rose-400">
+                  // registration.closed
+                </p>
+                <h2 className="mt-4 max-w-3xl text-4xl font-black tracking-tight text-white sm:text-6xl">
+                  Registrations are <span className="text-gradient-aws">Now Closed!</span>
+                </h2>
+                <p className="mt-4 max-w-2xl text-base text-white/70 sm:text-lg">
+                  Thank you for the tremendous enthusiasm! All passes have been claimed and registrations are officially closed. If you secured your spot, we look forward to seeing you at Raghu Engineering College on Saturday, September 19!
+                </p>
+                <div className="mt-8 flex flex-wrap items-center gap-3">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-rose-500/30 bg-rose-500/10 px-5 py-2.5 text-sm font-semibold text-rose-300 shadow-[0_0_16px_rgba(244,63,94,0.15)]">
+                    <span className="h-2 w-2 rounded-full bg-rose-500" />
+                    Registrations Closed · Housefull
+                  </div>
+                  <MagneticButton onClick={() => (window.location.hash = "#agenda")}>
+                    Explore Agenda <ArrowRight className="h-4 w-4" />
+                  </MagneticButton>
+                  <a
+                    href={REGISTRATION_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-tech text-xs text-white/50 underline underline-offset-4 transition-colors hover:text-white/80"
+                  >
+                    View on KonfHub
+                  </a>
+                  <span className="font-tech text-xs text-white/40">// See you at the cloud</span>
+                </div>
+              </>
+            )}
           </div>
         </motion.div>
       </div>

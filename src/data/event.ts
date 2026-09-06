@@ -5,12 +5,14 @@ export const VENUE_ADDRESS =
 export const VENUE_MAPS_URL =
   "https://www.google.com/maps/search/?api=1&query=Raghu+Engineering+College,Dakamarri,Bheemunipatnam+Mandal,Visakhapatnam+531162";
 export const REGISTRATION_URL = "https://konfhub.com/aws-student-community-day-rec";
+export const IS_REGISTRATION_OPEN = false;
 
 export const NAV_LINKS = [
   { id: "about", label: "About" },
   { id: "why", label: "Why Attend" },
   { id: "agenda", label: "Agenda" },
   { id: "speakers", label: "Speakers" },
+  { id: "hackathon", label: "Hackathon" },
   { id: "workshops", label: "Workshops" },
   { id: "sponsors", label: "Sponsors" },
   { id: "organizers", label: "Organizers" },
@@ -68,9 +70,9 @@ export const WHY_ATTEND = [
     icon: "Users",
   },
   {
-    title: "Career Opportunities",
-    body: "Connect with sponsor booths hiring across cloud, ML, DevOps, and platform roles.",
-    icon: "Briefcase",
+    title: "AI Innovation Hackathon",
+    body: "Build real-world agentic AI prototypes, demo live before an industry judging panel, and compete for a ₹30,000 prize pool.",
+    icon: "Trophy",
   },
   {
     title: "Community",

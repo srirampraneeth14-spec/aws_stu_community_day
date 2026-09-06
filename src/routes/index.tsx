@@ -15,6 +15,7 @@ import { Sponsors } from "@/components/sections/Sponsors";
 import { Badge } from "@/components/sections/Badge";
 import { WhyAttend } from "@/components/sections/WhyAttend";
 import { Workshops } from "@/components/sections/Workshops";
+import { Hackathon } from "@/components/sections/Hackathon";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -32,6 +33,7 @@ function Index() {
         <WhyAttend />
         <Agenda />
         <Speakers />
+        <Hackathon />
         <Workshops />
         <Sponsors />
         <Organizers />

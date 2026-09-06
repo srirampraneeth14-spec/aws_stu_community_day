@@ -3,7 +3,7 @@ import { theme, rgba } from "@/lib/theme";
 import { Cloud, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { NAV_LINKS } from "@/data/event";
+import { IS_REGISTRATION_OPEN, NAV_LINKS } from "@/data/event";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -34,14 +34,14 @@ export function Navbar() {
           aria-label="Main navigation"
           className="relative mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
         >
-          <a href="#top" className="flex items-center gap-2 text-white">
+          <a href="#top" className="flex shrink-0 items-center gap-2.5 text-white">
             <span
-              className="grid h-8 w-8 place-items-center rounded-lg"
+              className="grid h-8 w-8 shrink-0 aspect-square place-items-center rounded-lg shadow-sm"
               style={{ background: theme.brandIconGradient }}
             >
-              <Cloud className="h-4 w-4 text-black" />
+              <Cloud className="h-4 w-4 shrink-0 text-black" />
             </span>
-            <span className="flex flex-col leading-none">
+            <span className="flex shrink-0 flex-col leading-none whitespace-nowrap">
               <span className="text-sm font-bold tracking-tight">AWS Community Day</span>
               <span className="font-tech text-[10px] uppercase tracking-[0.2em] text-white/45">
                 where builders meet the cloud
@@ -49,12 +49,12 @@ export function Navbar() {
             </span>
           </a>
 
-          <ul className="hidden items-center gap-1 lg:flex">
+          <ul className="hidden items-center gap-0.5 xl:flex 2xl:gap-1">
             {NAV_LINKS.map((l) => (
               <li key={l.id}>
                 <a
                   href={`#${l.id}`}
-                  className="whitespace-nowrap rounded-full px-3 py-1.5 text-sm text-white/70 transition-colors hover:bg-white/5 hover:text-white"
+                  className="whitespace-nowrap rounded-full px-2.5 py-1 text-[13px] text-white/70 transition-colors hover:bg-white/5 hover:text-white 2xl:px-3 2xl:py-1.5 2xl:text-sm"
                 >
                   {l.label}
                 </a>
@@ -62,19 +62,29 @@ export function Navbar() {
             ))}
           </ul>
 
-          <div className="flex items-center gap-2">
-            <a
-              href="#register"
-              className="hidden whitespace-nowrap rounded-full px-5 py-2 text-sm font-semibold text-black shadow-[0_2px_12px_rgba(214,163,75,0.25)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_18px_rgba(214,163,75,0.45)] sm:inline-flex"
-              style={{ background: "linear-gradient(120deg, #B7791F, #D6A34B 60%, #B7791F)" }}
-            >
-              Register Now
-            </a>
+          <div className="flex shrink-0 items-center gap-2">
+            {IS_REGISTRATION_OPEN ? (
+              <a
+                href="#register"
+                className="hidden shrink-0 whitespace-nowrap rounded-full px-5 py-2 text-sm font-semibold text-black shadow-[0_2px_12px_rgba(214,163,75,0.25)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_18px_rgba(214,163,75,0.45)] sm:inline-flex"
+                style={{ background: "linear-gradient(120deg, #B7791F, #D6A34B 60%, #B7791F)" }}
+              >
+                Register Now
+              </a>
+            ) : (
+              <a
+                href="#register"
+                className="hidden shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-rose-500/30 bg-rose-500/10 px-4 py-1.5 text-xs font-semibold text-rose-300 shadow-[0_0_12px_rgba(244,63,94,0.15)] transition-all duration-300 hover:bg-rose-500/20 sm:inline-flex"
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-rose-500" />
+                Registrations Closed
+              </a>
+            )}
             <button
               onClick={() => setOpen((v) => !v)}
               aria-label="Toggle menu"
               aria-expanded={open}
-              className="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-white lg:hidden"
+              className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-white/10 text-white xl:hidden"
             >
               {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
             </button>
@@ -86,7 +96,7 @@ export function Navbar() {
         <motion.div
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
-          className="fixed inset-x-3 top-[64px] z-50 lg:hidden"
+          className="fixed inset-x-3 top-[64px] z-50 xl:hidden"
         >
           <div
             className="rounded-2xl border border-white/20 p-3 shadow-2xl shadow-black/50"
@@ -97,8 +107,13 @@ export function Navbar() {
             }}
           >
             <ul className="grid grid-cols-2 gap-1">
-              {NAV_LINKS.map((l) => (
-                <li key={l.id}>
+              {NAV_LINKS.map((l, idx) => (
+                <li
+                  key={l.id}
+                  className={cn(
+                    idx === NAV_LINKS.length - 1 && NAV_LINKS.length % 2 !== 0 && "col-span-2 text-center",
+                  )}
+                >
                   <a
                     href={`#${l.id}`}
                     onClick={() => setOpen(false)}
@@ -109,14 +124,25 @@ export function Navbar() {
                 </li>
               ))}
             </ul>
-            <a
-              href="#register"
-              onClick={() => setOpen(false)}
-              className="mt-2 block rounded-xl px-4 py-3 text-center text-sm font-semibold text-black shadow-[0_2px_12px_rgba(214,163,75,0.25)] transition-all duration-300 hover:shadow-[0_0_18px_rgba(214,163,75,0.45)]"
-              style={{ background: "linear-gradient(120deg, #B7791F, #D6A34B 60%, #B7791F)" }}
-            >
-              Register Now
-            </a>
+            {IS_REGISTRATION_OPEN ? (
+              <a
+                href="#register"
+                onClick={() => setOpen(false)}
+                className="mt-2 block rounded-xl px-4 py-3 text-center text-sm font-semibold text-black shadow-[0_2px_12px_rgba(214,163,75,0.25)] transition-all duration-300 hover:shadow-[0_0_18px_rgba(214,163,75,0.45)]"
+                style={{ background: "linear-gradient(120deg, #B7791F, #D6A34B 60%, #B7791F)" }}
+              >
+                Register Now
+              </a>
+            ) : (
+              <a
+                href="#register"
+                onClick={() => setOpen(false)}
+                className="mt-2 flex items-center justify-center gap-2 rounded-xl border border-rose-500/30 bg-rose-500/10 px-4 py-3 text-center text-sm font-semibold text-rose-300 transition-all duration-300 hover:bg-rose-500/20"
+              >
+                <span className="h-2 w-2 rounded-full bg-rose-500" />
+                Registrations Closed
+              </a>
+            )}
           </div>
         </motion.div>
       )}

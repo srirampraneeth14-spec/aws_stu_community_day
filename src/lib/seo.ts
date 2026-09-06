@@ -6,6 +6,7 @@ import {
   WORKSHOPS,
   SPEAKERS,
   REGISTRATION_URL,
+  IS_REGISTRATION_OPEN,
 } from "@/data/event";
 
 // ─── Constants ───────────────────────────────────────────────────────────────
@@ -66,7 +67,9 @@ export function getEventJsonLd() {
       "@type": "Offer",
       price: "0",
       priceCurrency: "INR",
-      availability: "https://schema.org/InStock",
+      availability: IS_REGISTRATION_OPEN
+        ? "https://schema.org/InStock"
+        : "https://schema.org/SoldOut",
       url: REGISTRATION_URL,
     },
     performer: SPEAKERS.map((s) => ({

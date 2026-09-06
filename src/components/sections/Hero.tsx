@@ -3,7 +3,7 @@ import { ArrowRight, CalendarDays, MapPin, Sparkles } from "lucide-react";
 import { CloudNetwork } from "@/components/CloudNetwork";
 import { CountUp } from "@/components/CountUp";
 import { MagneticButton } from "@/components/MagneticButton";
-import { EVENT_DATE, EVENT_VENUE_NAME, STATS, VENUE_MAPS_URL } from "@/data/event";
+import { EVENT_DATE, EVENT_VENUE_NAME, IS_REGISTRATION_OPEN, STATS, VENUE_MAPS_URL } from "@/data/event";
 
 export function Hero() {
   return (
@@ -16,8 +16,17 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 font-tech text-[11px] uppercase tracking-widest text-white/70 backdrop-blur"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-green shadow-[0_0_8px_rgba(124,203,140,0.45)]" />
-            Registration open · Learn · Build · Connect · Grow
+            {IS_REGISTRATION_OPEN ? (
+              <>
+                <span className="h-1.5 w-1.5 rounded-full bg-green shadow-[0_0_8px_rgba(124,203,140,0.45)]" />
+                Registration open · Learn · Build · Connect · Grow
+              </>
+            ) : (
+              <>
+                <span className="h-1.5 w-1.5 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.6)]" />
+                Registrations Closed · Sold Out · September 19
+              </>
+            )}
           </motion.div>
 
           <motion.h1
@@ -49,12 +58,29 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.25 }}
             className="mt-8 flex flex-wrap items-center gap-3"
           >
-            <MagneticButton onClick={() => (window.location.hash = "#register")}>
-              Register Now <ArrowRight className="h-4 w-4" />
-            </MagneticButton>
-            <MagneticButton variant="ghost" onClick={() => (window.location.hash = "#agenda")}>
-              Explore Agenda
-            </MagneticButton>
+            {IS_REGISTRATION_OPEN ? (
+              <>
+                <MagneticButton onClick={() => (window.location.hash = "#register")}>
+                  Register Now <ArrowRight className="h-4 w-4" />
+                </MagneticButton>
+                <MagneticButton variant="ghost" onClick={() => (window.location.hash = "#agenda")}>
+                  Explore Agenda
+                </MagneticButton>
+              </>
+            ) : (
+              <>
+                <button
+                  onClick={() => (window.location.hash = "#register")}
+                  className="inline-flex cursor-pointer items-center gap-2 rounded-full border border-rose-500/30 bg-rose-500/10 px-5 py-2.5 text-sm font-semibold text-rose-300 shadow-[0_0_15px_rgba(244,63,94,0.15)] transition-all hover:bg-rose-500/15"
+                >
+                  <span className="h-2 w-2 rounded-full bg-rose-500" />
+                  Registrations Closed
+                </button>
+                <MagneticButton onClick={() => (window.location.hash = "#agenda")}>
+                  Explore Agenda <ArrowRight className="h-4 w-4" />
+                </MagneticButton>
+              </>
+            )}
           </motion.div>
 
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-white/60">
