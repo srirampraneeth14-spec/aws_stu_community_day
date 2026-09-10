@@ -135,9 +135,9 @@ export function HackathonPage() {
               Registrations open · Closes September 15
             </span>
           ) : (
-            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-rose-500/30 bg-rose-500/10 px-4 py-1.5 font-tech text-xs tracking-[0.08em] text-rose-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-rose-500" />
-              Registrations Closed · Submissions in Progress
+            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-4 py-1.5 font-tech text-xs tracking-[0.08em] text-purple-300">
+              <span className="h-1.5 w-1.5 rounded-full bg-green animate-pulse-glow" />
+              Hackathon Submissions in Progress
             </span>
           )}
 
