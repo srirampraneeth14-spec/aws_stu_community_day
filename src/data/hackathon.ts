@@ -71,8 +71,8 @@ export const HACKATHON_FORMAT = [
 export const HACKATHON_ELIGIBILITY_CARDS = [
   {
     idx: "01 · eligibility",
-    title: "Open to All Students",
-    body: "Students from Raghu Engineering College and any other college or university may participate. Individual participants or teams of up to 2.",
+    title: "Students Who are Registered to AWS SCD Vizag 2026 are Eligible",
+    body: "Individual participants or teams of up to 2.",
   },
   {
     idx: "02 · tech stack",
