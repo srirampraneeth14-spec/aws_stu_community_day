@@ -15,7 +15,7 @@ export const SUBMISSION_FORM_URL: string = "https://forms.gle/z22eHTawTrEtATsN9"
 export const HACKATHON_STATS = [
   { value: "₹30,000", label: "Prize pool · AI & dev tools" },
   { value: "Up to 10", label: "Finalist teams" },
-  { value: "2 weeks", label: "Build period" },
+  { value: "1 Week", label: "Build period" },
   { value: "Sep 16", label: "Submission deadline" },
 ] as const;
 
@@ -108,16 +108,10 @@ export const HACKATHON_FINALIST_REQUIREMENTS = [
 
 export const HACKATHON_TIMELINE = [
   {
-    date: "Sep 3",
-    title: "Registrations Open",
-    desc: "Hackathon announced. Register solo or with your team.",
-    isFinal: false,
-  },
-  {
-    date: "Sep 15",
-    title: "Registrations Close",
-    desc: "Last day to enter. Keep building.",
-    isFinal: false,
+    date: "Sep 10",
+    title: "Submissions Open",
+    desc: "Submit your project.",
+    isFinal: true,
   },
   {
     date: "Sep 16",
@@ -135,7 +129,7 @@ export const HACKATHON_TIMELINE = [
     date: "Sep 19",
     title: "Final Demo & Judging Round",
     desc: "Live demos and judging at Raghu Engineering College, followed by results and awards. Exact session timing will be announced with the event agenda.",
-    isFinal: true,
+    isFinal: false,
   },
 ] as const;
 
