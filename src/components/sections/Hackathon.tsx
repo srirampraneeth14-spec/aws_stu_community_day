@@ -20,7 +20,7 @@ export function Hackathon() {
               <span className="text-gradient-aws">Hackathon</span>
             </>
           }
-          subtitle="Building Real-World Agentic AI Systems — a two-stage competition with a ₹30,000 prize pool of AI & developer tools. Build it, demo it, win it."
+          subtitle="Build Something Real — a two-stage competition open to any domain. ₹30,000 prize pool of AI & developer tools. Build it, demo it, win it."
         />
 
         {/* ── Stats row ── */}

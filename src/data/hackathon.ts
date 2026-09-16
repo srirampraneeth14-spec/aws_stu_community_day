@@ -16,16 +16,16 @@ export const HACKATHON_STATS = [
   { value: "₹30,000", label: "Prize pool · AI & dev tools" },
   { value: "Up to 10", label: "Finalist teams" },
   { value: "1 Week", label: "Build period" },
-  { value: "Sep 16", label: "Submission deadline" },
+  { value: "Sep 17", label: "Submission deadline" },
 ] as const;
 
 // ─── Challenge ───────────────────────────────────────────────────────────────
 
 export const HACKATHON_CHALLENGE = {
   quote:
-    "Build a real-world Agentic AI system that can reason, plan, and take actions to solve a meaningful problem. Your solution should demonstrate genuine AI/agentic capability — not just a wrapper around an existing chatbot or API.",
+    "Build a real-world project in any domain you're passionate about — AI/ML, web & mobile, IoT, developer tools, open source, or anything else. Your solution should demonstrate strong technical execution, clear problem-solving, and genuine creativity.",
   description:
-    "Pick any problem domain you care about. What matters is that your system does real work: multi-step reasoning, tool use, autonomous decision-making, memory and context management, or end-to-end task completion.",
+    "Pick any problem domain you care about. What matters is that your project does real work: a functional prototype that solves a meaningful problem with solid engineering, thoughtful design, and a working demo.",
   domains: [
     "finance",
     "healthcare",
@@ -38,7 +38,7 @@ export const HACKATHON_CHALLENGE = {
     "your own idea",
   ],
   examples:
-    "Need a starting point? Think of an agent that reads research papers and produces briefs, automates a campus workflow end to end, monitors financial data and acts on it, or triages and resolves support requests on its own.",
+    "Need a starting point? Think of an AI agent that automates a campus workflow, a web app that solves a real student problem, an IoT prototype, a developer tool, a data dashboard, or a creative hack that makes you say 'why didn't this exist before?'",
 } as const;
 
 // ─── Format (How It Works) ───────────────────────────────────────────────────
@@ -50,7 +50,7 @@ export const HACKATHON_FORMAT = [
     items: [
       "Register solo or as a team (up to 2 members)",
       "Build your working prototype during the build period",
-      "Submit your project by September 16, 11:59 PM",
+      "Submit your project by September 17, 11:59 PM",
       "Eligible submissions are reviewed and up to 10 finalist teams are selected for the final judging round",
     ],
   },
@@ -99,7 +99,7 @@ export const HACKATHON_SUBMISSION_NOTE =
 export const HACKATHON_FINALIST_REQUIREMENTS = [
   "Working prototype: required",
   "Original work built for this hackathon: required",
-  "Meaningful AI/agentic component: required",
+  "Clear problem statement and technical depth: required",
   "Complete submission before deadline: required",
   "Team able to demonstrate and explain its own implementation: required",
 ] as const;
@@ -114,13 +114,13 @@ export const HACKATHON_TIMELINE = [
     isFinal: true,
   },
   {
-    date: "Sep 16",
+    date: "Sep 17",
     title: "Submission Deadline",
     desc: "Prototype, GitHub repo, solution brief, and demo video due.",
     isFinal: false,
   },
   {
-    date: "Sep 17",
+    date: "Sep 18",
     title: "Finalists Announced",
     desc: "Up to 10 teams selected for the final round.",
     isFinal: false,
@@ -142,9 +142,9 @@ export const HACKATHON_RUBRIC = [
     desc: "Quality of implementation, system design, appropriate use of models/APIs/tools/infrastructure, engineering decisions, completeness of the working system.",
   },
   {
-    criterion: "Agentic AI Design & Capability",
+    criterion: "Problem-Solving & Domain Depth",
     points: 20,
-    desc: "Genuine agentic behavior — reasoning and planning, tool use, decision-making, multi-step execution, memory/context management, autonomous task completion.",
+    desc: "Clarity of the problem being solved, depth of domain understanding, effectiveness of the solution, and how well the project addresses a real-world need.",
   },
   {
     criterion: "Evaluation, Reliability & Responsible AI",
@@ -244,8 +244,8 @@ export const HACKATHON_FAQ = [
     a: "Yes. The hackathon is open to students from any college or university.",
   },
   {
-    q: 'What counts as "agentic AI"?',
-    a: "Systems that go beyond a single prompt-response: reasoning and planning, calling tools/APIs, making decisions, executing multi-step workflows, managing memory or context, or completing tasks autonomously.",
+    q: "Does my project have to be AI-based?",
+    a: "No. You can build in any domain — AI/ML, web, mobile, IoT, developer tools, data, or anything else you're passionate about. What matters is a working prototype with strong technical execution and clear problem-solving.",
   },
   {
     q: "Where and how do I submit?",

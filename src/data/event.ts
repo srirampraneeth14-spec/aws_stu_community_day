@@ -71,7 +71,7 @@ export const WHY_ATTEND = [
   },
   {
     title: "AI Innovation Hackathon",
-    body: "Build real-world agentic AI prototypes, demo live before an industry judging panel, and compete for a ₹30,000 prize pool.",
+    body: "Build real-world prototypes in any domain, demo live before an industry judging panel, and compete for a ₹30,000 prize pool.",
     icon: "Trophy",
   },
   {

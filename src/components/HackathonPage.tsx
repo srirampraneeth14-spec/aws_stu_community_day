@@ -148,11 +148,11 @@ export function HackathonPage() {
 
           <p className="mt-5 max-w-2xl text-base text-white/60 sm:text-lg">
             <strong className="text-white">
-              Building Real-World Agentic AI Systems.
+              Build Something Real.
             </strong>{" "}
             A two-stage competition organized by the AWS Student Builder Group,
             Raghu Engineering College, as part of AWS Student Community Day Vizag
-            2026. Build a working agentic AI prototype, demo it live before an
+            2026. Build a working prototype in any domain you're passionate about, demo it live before an
             industry judging panel, and win.
           </p>
 
@@ -267,10 +267,10 @@ export function HackathonPage() {
             className="mt-8 max-w-3xl rounded-r-2xl border-l-4 border-purple bg-[#0c0814] px-6 py-5 text-base font-medium leading-relaxed text-white/90"
           >
             Build a real-world{" "}
-            <span className="text-purple-light">Agentic AI system</span> that
-            can reason, plan, and take actions to solve a meaningful problem.
-            Your solution should demonstrate genuine AI/agentic capability — not
-            just a wrapper around an existing chatbot or API.
+            <span className="text-purple-light">project in any domain</span> you're
+            passionate about — AI/ML, web, mobile, IoT, developer tools, or anything else.
+            Your solution should demonstrate strong technical execution and genuine creativity — not
+            just a wrapper around an existing API.
           </motion.div>
 
           <motion.p

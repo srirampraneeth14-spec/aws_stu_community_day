@@ -12,7 +12,7 @@ export const Route = createFileRoute("/hackathon")({
       {
         name: "description",
         content:
-          "AI Innovation Hackathon — Building Real-World Agentic AI Systems. Part of AWS Student Community Day Vizag 2026 at Raghu Engineering College. Build a working agentic AI prototype, get judged by an industry panel, and win from a ₹30,000 prize pool of AI & developer tools.",
+          "AI Innovation Hackathon — Build Something Real in any domain you're passionate about. Part of AWS Student Community Day Vizag 2026 at Raghu Engineering College. Build a working prototype, get judged by an industry panel, and win from a ₹30,000 prize pool of AI & developer tools.",
       },
     ],
   }),
