@@ -585,6 +585,16 @@ export function HackathonPage() {
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 className={`glass overflow-hidden rounded-2xl p-6 ${j.tba ? "border-dashed opacity-75" : ""}`}
               >
+                {/* Judge photo */}
+                {j.photo && (
+                  <div className="mb-4 flex justify-center">
+                    <img
+                      src={j.photo}
+                      alt={j.name}
+                      className="h-24 w-24 rounded-full object-cover border-2 border-white/10 shadow-lg"
+                    />
+                  </div>
+                )}
                 <span className="inline-block rounded-full border border-[rgba(255,153,0,0.35)] px-3 py-0.5 font-tech text-[10px] uppercase tracking-[0.15em] text-[#FFB84D]">
                   Judge
                 </span>

@@ -175,19 +175,22 @@ export const HACKATHON_JUDGES = [
     name: "Ramakant Yadav",
     org: "Founder @ Scalar Field",
     bio: "AI, technology & entrepreneurship — building AI-driven products.",
+    photo: "/speakers/ramakant.png",
     tba: false,
   },
   {
     name: "Neha Prasad",
     org: "Analytics Specialist @ Amazon Web Services",
     bio: "Data, analytics, AI & cloud — advising organizations on large-scale data and AI solutions.",
+    photo: "/speakers/neha prasad.jpg",
     tba: false,
   },
   {
-    name: "To Be Announced",
-    org: "Industry Expert",
-    bio: "Additional panel members will be announced soon.",
-    tba: true,
+    name: "Srikanth",
+    org: "AWS Faculty Co-ordinator",
+    bio: "Technology professional with expertise in engineering and innovation.",
+    photo: "/faculty/srikanth.jpeg",
+    tba: false,
   },
 ] as const;
 
