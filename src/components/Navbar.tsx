@@ -3,7 +3,7 @@ import { theme, rgba } from "@/lib/theme";
 import { Cloud, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { IS_REGISTRATION_OPEN, NAV_LINKS } from "@/data/event";
+import { IS_EVENT_COMPLETED, IS_REGISTRATION_OPEN, NAV_LINKS } from "@/data/event";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -63,7 +63,15 @@ export function Navbar() {
           </ul>
 
           <div className="flex shrink-0 items-center gap-2">
-            {IS_REGISTRATION_OPEN ? (
+            {IS_EVENT_COMPLETED ? (
+              <a
+                href="#register"
+                className="hidden shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-green/30 bg-green/10 px-4 py-1.5 text-xs font-semibold text-green shadow-[0_0_12px_rgba(124,203,140,0.15)] transition-all duration-300 hover:bg-green/20 sm:inline-flex"
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-green" />
+                Event Completed
+              </a>
+            ) : IS_REGISTRATION_OPEN ? (
               <a
                 href="#register"
                 className="hidden shrink-0 whitespace-nowrap rounded-full px-5 py-2 text-sm font-semibold text-black shadow-[0_2px_12px_rgba(214,163,75,0.25)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_18px_rgba(214,163,75,0.45)] sm:inline-flex"
@@ -124,7 +132,16 @@ export function Navbar() {
                 </li>
               ))}
             </ul>
-            {IS_REGISTRATION_OPEN ? (
+            {IS_EVENT_COMPLETED ? (
+              <a
+                href="#register"
+                onClick={() => setOpen(false)}
+                className="mt-2 flex items-center justify-center gap-2 rounded-xl border border-green/30 bg-green/10 px-4 py-3 text-center text-sm font-semibold text-green transition-all duration-300 hover:bg-green/20"
+              >
+                <span className="h-2 w-2 rounded-full bg-green" />
+                Event Completed
+              </a>
+            ) : IS_REGISTRATION_OPEN ? (
               <a
                 href="#register"
                 onClick={() => setOpen(false)}

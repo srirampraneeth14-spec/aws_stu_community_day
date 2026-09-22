@@ -6,6 +6,7 @@ import { REGISTRATION_URL } from "./event";
 
 export const HACKATHON_REGISTRATION_URL = REGISTRATION_URL;
 export const IS_HACKATHON_REGISTRATION_OPEN = false;
+export const IS_HACKATHON_COMPLETED = true;
 
 /** Project submission form URL */
 export const SUBMISSION_FORM_URL: string = "https://forms.gle/z22eHTawTrEtATsN9";
@@ -111,7 +112,7 @@ export const HACKATHON_TIMELINE = [
     date: "Sep 10",
     title: "Submissions Open",
     desc: "Submit your project.",
-    isFinal: true,
+    isFinal: false,
   },
   {
     date: "Sep 17",
@@ -129,7 +130,7 @@ export const HACKATHON_TIMELINE = [
     date: "Sep 19",
     title: "Final Demo & Judging Round",
     desc: "Live demos and judging at Raghu Engineering College, followed by results and awards. Exact session timing will be announced with the event agenda.",
-    isFinal: false,
+    isFinal: true,
   },
 ] as const;
 

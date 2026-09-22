@@ -28,6 +28,7 @@ import {
   HACKATHON_FAQ,
   HACKATHON_REGISTRATION_URL,
   IS_HACKATHON_REGISTRATION_OPEN,
+  IS_HACKATHON_COMPLETED,
 } from "@/data/hackathon";
 
 /* ── Shared animation preset ── */
@@ -86,7 +87,12 @@ export function HackathonPage() {
           </a>
 
           {/* Register CTA */}
-          {IS_HACKATHON_REGISTRATION_OPEN ? (
+          {IS_HACKATHON_COMPLETED ? (
+            <span className="hidden shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-green/30 bg-green/10 px-4 py-1.5 text-xs font-semibold text-green shadow-[0_0_12px_rgba(124,203,140,0.15)] sm:inline-flex">
+              <span className="h-1.5 w-1.5 rounded-full bg-green" />
+              Hackathon Completed
+            </span>
+          ) : IS_HACKATHON_REGISTRATION_OPEN ? (
             <a
               href={HACKATHON_REGISTRATION_URL}
               target="_blank"
@@ -129,7 +135,12 @@ export function HackathonPage() {
         />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Badge pill */}
-          {IS_HACKATHON_REGISTRATION_OPEN ? (
+          {IS_HACKATHON_COMPLETED ? (
+            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-green/30 bg-green/10 px-4 py-1.5 font-tech text-xs tracking-[0.08em] text-green">
+              <span className="h-1.5 w-1.5 rounded-full bg-green" />
+              Hackathon Completed · Event Concluded
+            </span>
+          ) : IS_HACKATHON_REGISTRATION_OPEN ? (
             <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-[rgba(255,153,0,0.35)] bg-[rgba(255,153,0,0.08)] px-4 py-1.5 font-tech text-xs tracking-[0.08em] text-[#FFB84D]">
               <span className="h-1.5 w-1.5 rounded-full bg-green animate-pulse-glow" />
               Registrations open · Closes September 15
@@ -162,7 +173,12 @@ export function HackathonPage() {
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-3">
-            {IS_HACKATHON_REGISTRATION_OPEN ? (
+            {IS_HACKATHON_COMPLETED ? (
+              <span className="inline-flex items-center gap-2 rounded-full border border-green/30 bg-green/10 px-5 py-2.5 text-sm font-semibold text-green shadow-[0_0_15px_rgba(124,203,140,0.15)]">
+                <span className="h-2 w-2 rounded-full bg-green" />
+                Hackathon Concluded 🎉
+              </span>
+            ) : IS_HACKATHON_REGISTRATION_OPEN ? (
               <a
                 href={HACKATHON_REGISTRATION_URL}
                 target="_blank"
@@ -735,7 +751,43 @@ export function HackathonPage() {
       {/* ════════════════════════════════════════════════════════════════════ */}
       <section id="submit" className="relative pt-24 pb-16 sm:pt-32 sm:pb-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {IS_HACKATHON_REGISTRATION_OPEN ? (
+          {IS_HACKATHON_COMPLETED ? (
+            <motion.div
+              {...fadeUp}
+              className="relative overflow-hidden rounded-[32px] border border-white/10 p-10 text-center sm:p-16"
+              style={{
+                background:
+                  "radial-gradient(1200px 400px at 20% 0%, rgba(255,255,255,0.06), transparent 62%), radial-gradient(1000px 400px at 100% 100%, rgba(255,255,255,0.04), transparent 62%), linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01))",
+              }}
+            >
+              <div className="grid-bg absolute inset-0 opacity-40" />
+              <div className="relative">
+                <p className="font-tech text-xs uppercase tracking-[0.3em] text-green">
+                  // hackathon.concluded
+                </p>
+                <h2 className="mt-4 text-3xl font-black tracking-tight text-white sm:text-5xl">
+                  AI Innovation Hackathon{" "}
+                  <span className="text-gradient-cool">has Concluded!</span>
+                </h2>
+                <p className="mx-auto mt-4 max-w-2xl text-base text-white/70 sm:text-lg">
+                  Submissions, live demos, and judging on September 19 at Raghu Engineering College are now complete. Congratulations to all our finalists and winners for building incredible real-world prototypes!
+                </p>
+                <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+                  <span className="inline-flex items-center gap-2 rounded-full border border-green/30 bg-green/10 px-5 py-2.5 text-sm font-semibold text-green shadow-[0_0_16px_rgba(124,203,140,0.15)]">
+                    <span className="h-2 w-2 rounded-full bg-green" />
+                    Submissions & Judging Completed
+                  </span>
+                  <Link
+                    to="/"
+                    hash="hackathon"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold text-white/80 transition-colors hover:bg-white/5 hover:text-white"
+                  >
+                    <ArrowLeft className="h-4 w-4" /> Back to Main Event
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          ) : IS_HACKATHON_REGISTRATION_OPEN ? (
             <motion.div
               {...fadeUp}
               className="relative overflow-hidden rounded-[32px] border border-white/10 p-10 text-center sm:p-16"

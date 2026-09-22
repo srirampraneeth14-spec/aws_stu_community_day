@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { MagneticButton } from "@/components/MagneticButton";
-import { IS_REGISTRATION_OPEN, REGISTRATION_URL } from "@/data/event";
+import { IS_EVENT_COMPLETED, IS_REGISTRATION_OPEN, REGISTRATION_URL } from "@/data/event";
 
 export function RegisterCTA() {
   return (
@@ -20,7 +20,37 @@ export function RegisterCTA() {
         >
           <div className="grid-bg absolute inset-0 opacity-40" />
           <div className="relative">
-            {IS_REGISTRATION_OPEN ? (
+            {IS_EVENT_COMPLETED ? (
+              <>
+                <p className="font-tech text-xs uppercase tracking-[0.3em] text-green">
+                  // event.completed
+                </p>
+                <h2 className="mt-4 max-w-3xl text-4xl font-black tracking-tight text-white sm:text-6xl">
+                  Thank You for an <span className="text-gradient-cool">Amazing Day!</span>
+                </h2>
+                <p className="mt-4 max-w-2xl text-base text-white/70 sm:text-lg">
+                  AWS Student Community Day Vizag 2026 has officially concluded! Thank you to our 600+ attendees, inspiring speakers, dedicated faculty, generous sponsors, and tireless student organizers who made this milestone gathering a resounding success.
+                </p>
+                <div className="mt-8 flex flex-wrap items-center gap-3">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-green/30 bg-green/10 px-5 py-2.5 text-sm font-semibold text-green shadow-[0_0_16px_rgba(124,203,140,0.15)]">
+                    <span className="h-2 w-2 rounded-full bg-green" />
+                    Event Completed · See You Next Time!
+                  </div>
+                  <MagneticButton onClick={() => (window.location.hash = "#agenda")}>
+                    Explore Agenda <ArrowRight className="h-4 w-4" />
+                  </MagneticButton>
+                  <a
+                    href={REGISTRATION_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-tech text-xs text-white/50 underline underline-offset-4 transition-colors hover:text-white/80"
+                  >
+                    View on KonfHub
+                  </a>
+                  <span className="font-tech text-xs text-white/40">// Thank you builders</span>
+                </div>
+              </>
+            ) : IS_REGISTRATION_OPEN ? (
               <>
                 <p className="font-tech text-xs uppercase tracking-[0.3em] text-purple-light">
                   // registration.open

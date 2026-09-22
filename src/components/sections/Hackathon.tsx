@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Bot, Calendar, Trophy, Users } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { SectionHeading } from "@/components/SectionHeading";
-import { HACKATHON_STATS, HACKATHON_CHALLENGE } from "@/data/hackathon";
+import { HACKATHON_STATS, HACKATHON_CHALLENGE, IS_HACKATHON_COMPLETED } from "@/data/hackathon";
 import { theme, rgba } from "@/lib/theme";
 
 const STAT_ICONS = [Trophy, Users, Calendar, Calendar] as const;
@@ -112,11 +112,13 @@ export function Hackathon() {
                 "linear-gradient(120deg, #B7791F, #D6A34B 60%, #B7791F)",
             }}
           >
-            View Full Details
+            {IS_HACKATHON_COMPLETED ? "View Hackathon Recap" : "View Full Details"}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </Link>
           <span className="font-tech text-xs text-white/40">
-            // challenge · timeline · judging · prizes
+            {IS_HACKATHON_COMPLETED
+              ? "// challenge · timeline · judging · completed"
+              : "// challenge · timeline · judging · prizes"}
           </span>
         </motion.div>
       </div>
